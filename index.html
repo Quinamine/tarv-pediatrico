@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-MZ">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doseador de Antirretrovirais - TARV PEDIÁTRICO</title>
+        <meta name="robots" content="index, follow"/>
+        <meta name="description" content="Calcula automaticamente a dose de acordo com o peso, inclusive a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o antirretroviral." /> 
+        <meta name="author" content="Adérito Félix Quinamine" />
+
+        <!-- PARTILHA NAS REDES SOCIAIS -->
+        <meta property="og:url" content="https://www.quinamine.github.io/tarv-pediatrico/index.html"/>
+        <meta property="og:title" content="Doseador de Antirretrovirais" />
+        <meta property="og:description" content="Calcula automaticamente a dose de acordo com o peso, inclusive a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o antirretroviral." />
+        <meta property="og:image" content="https://www.quinamine.github.io/aderito-felix-quinamine/imagens/#.jpg"/>
+       
+        <!-- DESIGN -->
+		<link rel="stylesheet" href="estilos/reset.css" />
+        <link rel="stylesheet" href="estilos/index.css" />
+
+        <!-- FONTES -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+        <!-- SCRIPTS -->
+        <script src="funcoes/index.js"></script>
+        <script src="funcoes/darv.js"></script>
+         
+        <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Doseador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
+
+    </head>
+    <body>
+        
+        <header>
+           <div class="_100vw">
+                <div class="linha">
+                    <a href="index.html" id="logotipo">Tarv Pediátrico</a>
+                </div>                
+           </div>
+           <nav class="linha menu-principal">
+                <ul>
+                    <li><a href="javascript:void(0);" class="current" data-titulodaaba="Doseador de ARVs" data-artigorelacionado="instrucoes-darv" data-for="arvs" data-optiondefault="placeholder">Doseador de ARVs</a></li>
+                    <li><a href="javascript:void(0);" role="button" data-titulodaaba="Tratamento Profilático com CTZ" data-artigorelacionado="criterios-de-tpc" data-for="ctz" data-optiondefault="CTZ-susp">TPC</a></li>
+                    <li><a href="javascript:void(0);" role="button"  data-titulodaaba="Tratamento Preventivo de TB" data-artigorelacionado="criterios-de-tpt" data-for="anti-tb" data-optiondefault="isoniazida-100">TPT</a></li>
+                </ul>
+           </nav>
+        </header>
+
+        <main class="linha">
+           
+            <div class="doseador">
+                <h1>Doseador de ARVs</h1>
+
+                <div class="campo-de-peso">
+                    <label for="peso" class="peso">Peso:</label>
+                    <input type="number" min="3" max="45" id="peso" placeholder="Digite o peso da criança"/>
+                    <label for="peso" class="kg">kg</label>
+                </div>
+                <p class="msg-de-validacao-de-peso"></p>
+
+                <div class="campo-de-farmaco">                            
+                    <label for="farmaco" class="arv">ARV:&nbsp;</label>
+                   
+                    <ul class="select">
+                        <li class="placeholder arvs selected" data-nome="placeholder">Toque aqui para  abrir a lista dos ARVs</li>
+
+                        <div class="caixa-de-pesquisa">
+                            <button>
+                                &larr;
+                            </button>
+                            <input type="search" id="src" placeholder="Pesquisar antirretrovirais" />
+                        </div>
+
+                        <div class="optgroup arvs abc-3tc">
+                            <h3>ABACAVIR + LAMIVUDINA</h3>
+                            <li data-nome="ABC">ABC 60 mg Comp.</li>
+                            <li data-nome="ABC/3TC-60-30mg">ABC/3TC 60 mg/30 mg Comp.</li>
+                            <li data-nome="ABC/3TC-120-60mg">ABC/3TC 120 mg/60 mg Comp.</li>
+                            <li data-nome="ABC/3TC-600-300mg">ABC/3TC 600 mg/300 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs dtg">
+                            <h3>DOLUTEGRAVIR</h3>
+                            <li data-nome="pDTG-10mg">pDTG 10 mg Comp.</li>
+                            <li data-nome="DTG-50mg">DTG 50 mg Comp.</li>
+                            <li data-nome="TDF/3TC/DTG">TDF/3TC/DTG 300/300/50 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs lpv-r">
+                            <h3>LOPINAVIR + RITONAVIR</h3>
+                            <li data-nome="LPV/r-40-10mg">LPV/r 40 mg/10 mg Cáps./Saquetas</li>
+                            <li data-nome="LPV/r-xpe">LPV/r 80 mg/20 mg/ml Xarope</li>
+                            <li data-nome="LPV/r-100-25mg">LPV/r 100 mg/25 mg Comp.</li>
+                            <li data-nome="LPV/r-200-50mg">LPV/r 200 mg/50 mg Comp.</li>
+                            <li data-nome="ABC/3TC-LPV/r">ABC/3TC/LPV/r 30/15/40/10 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs azt-3tc">
+                            <h3>ZIDOVUDINA + LAMIVUDINA</h3>
+                            <li data-nome="AZT-xpe">AZT 10 mg/ml Xarope</li>
+                            <li data-nome="Duovir-ped">AZT/3TC 60 mg/30 mg Comp.</li>
+                            <li data-nome="Duovir-adult">AZT/3TC 300 mg/150 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs azt-3tc-nvp">
+                            <h3>ZIDOVUDINA + LAMIVUDINA + NEVIRAPINA</h3>
+                            <li data-nome="DuovirN-ped">AZT/3TC/NVP 60/30/50 mg Comp.</li>
+                            <li data-nome="DuovirN-adult">AZT/3TC/NVP 300/150/200 mg Comp.</li>
+                        </div>
+                        
+                        <div class="optgroup arvs tdf-3tc">
+                            <h3>TENOFOVIR + LAMIVUDINA</h3>
+                            <li data-nome="TDF/3TC">TDF/3TC 300 mg/300 mg Comp.</li>
+                        </div>
+                        
+                        <div class="optgroup arvs tdf-3tc-efv">
+                            <h3>TENOFOVIR + LAMIVUDINA + EFAVIRENZ</h3>
+                            <li data-nome="TDF/3TC/EFV-400">TDF/3TC/EFV 300/300/400 mg Comp.</li>
+                            <li data-nome="TDF/3TC/EFV-600">TDF/3TC/EFV 300/300/600 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs efv">
+                            <h3>EFAVIRENZ</h3>
+                            <li data-nome="EFV">EFV 200 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs atv-r">
+                            <h3>ATAZANAVIR + RITONAVIR</h3>
+                            <li data-nome="ATV/r">ATV/r 300 mg/100 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs rtv">
+                            <h3>RITONAVIR</h3>
+                            <li data-nome="RTV-25">RTV 25 mg Comp.</li>
+                            <li data-nome="RTV-100-superboosting" class="rtv">
+                                RTV 100 mg Comp. <sup>(para superboosting)</sup>
+                            </li>
+                            <li data-nome="RTV-100-3alinha" class="rtv">
+                                RTV 100 mg Comp. <sup>(na 3ª linha com DRV)</sup>
+                            </li>
+                        </div>
+
+                        <div class="optgroup arvs ral">
+                            <h3>RALTEGRAVIR</h3>
+                            <li data-nome="RAL-25">RAL 25 mg Comp.</li>
+                            <li data-nome="RAL-400">RAL 400 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup arvs drv">
+                            <h3>DARUNAVIR</h3>
+                            <li data-nome="drv-75">DRV 75 mg Comp.</li>
+                            <li data-nome="drv-150">DRV 150 mg Comp.</li>
+                            <li data-nome="drv-600">DRV 600 mg Comp.</li>
+                        </div>
+
+                        <div class="optgroup ctz hide">
+                            <h3>TRATAMENTO PROFILÁTICO COM COTRIMOXAZOL</h3>
+                            <li data-nome="CTZ-susp">Cotrimoxazol 240 mg/5 ml Susp.</li>
+                            <li data-nome="CTZ-cp">Cotrimoxazol 480 mg Comp.</li>
+                        </div>    
+                            
+                        <div class="optgroup anti-tb hide">
+                            <h3>TRATAMENTO PREVENTIVO DE TUBERCULOSE</h3>
+                            <li data-nome="isoniazida-100">Isoniazida 100 mg Comp.</li>
+                            <li data-nome="isoniazida-300">Isoniazida 300 mg Comp.</li>
+                            <li data-nome="levofloxacina-100">Levofloxacina 100 mg Comp.</li>
+                            <li data-nome="levofloxacina-250">Levofloxacina 250 mg Comp.</li>
+
+                            <h3>PROFILAXIA DE NEUROPATICA PERIFÉRICA</h3>
+                            <li data-nome="piridoxina-25">Piridoxina 25 mg Comp.</li>
+                            <li data-nome="piridoxina-50">Piridoxina 50 mg Comp.</li>
+                        </div>
+                       
+                    </ul>
+                </div>
+
+                <div class="output dose-e-posologia">
+                    <h2>Dose e Posologia</h2>
+                   <div class="dose"></div>
+                </div>
+
+                <div class="output recomendacoes">
+                    <h2>Recomendações</h2>
+                    <p class="recomendacao"></p>
+                </div>
+            </div>
+            
+            <article>
+                <section class="instrucoes-darv on">
+                    <h2>Instruções de utilização do Doseador de ARVs</h2>
+
+                    <p>O <b>Doseador de ARVs</b> ou abreviamente <b>Darv</b> é um serviço online gratuito que de forma automática calcula doses terapêuticas dos antirretrovirais para a população infanto-juvenil (crianças e jovens) em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</strong></p>
+
+                    <p>O Darv está basicamente estruturado da seguinte forma:</p>
+
+                    <ul>
+                        <li>Um campo de <b>Peso</b> para inserir o peso em kg da criança para a qual o Profissional de Saúde pretende calcular a dose;</li>
+
+                        <li>Um campo de <b>ARV</b> com a lista dos antirretrovirais. Aqui o usuário (Profissional de Saúde) escolhe o antirretroviral do qual pretende calcular a dose. 
+
+                        </li>
+
+                        <li><b>Dose e Posologia:</b> secção de saída em que são mostradas automaticamente a dose e a posologia do antirretroviral selecionado de acordo com o peso inserido.</li>
+
+                        <li><b>Recomendações:</b> secção de saída em que são mostradas sugestões e informações adicionais pertinentes ao fármaco selecionado.</li>
+                    </ul>
+
+                    <h3>Apresentação da dose</h3>
+
+                    <p>Normalmente a dose é apresentada numa mini-tabela com seis (6) linhas e 11 colunas.</p>
+
+                    <ul>
+                        <li>A 1ª linha possui duas colunas com os títulos <b>Dose-manhã</b> e <b>Dose-noite</b> respectivamente.</li>
+
+                        <li>Na 2ª linha, abaixo do título <b>Dose-manhã</b>, é mostrada a dose do ARV que deve ser tomada ou administrada de manhã e abaixo do título <b>Dose-noite</b>, é mostrada a dose do ARV que deve ser tomada ou administrada a noite.</li>
+
+                        <li>Na 3ª linha apresenta-se a unidade de medição da dose (exemplo: <b>cp</b> ou <b>ml</b> se o fármaco for em suspensão e/ou xarope).</li>
+
+                        <li>Na 6ª linha é indicada a quantidade de comprimidos que deve ser fornecida ao paciente de acordo com o tipo de dispensa.  A primeira célula da linha mostra o número de comprimidos a fornecer ao paciente se a dispensa for mensal (DM) e a segunda célula mostra o número de comprimidos que deve ser fornecido ao paciente se a dispensa for trimestral (DT).</li>
+
+                        <li>
+                            As linhas 4 e 5 são titulos da 6ª linha, isto é, indicam o tipo de dispensa.
+                        </li>
+                    </ul>
+
+                    <div class="exemplo">
+
+                        <p class="destaque ex"><b>Por exemplo:</b> Utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 14 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:</p>
+
+                        <figure>
+                            <img src="imagens/formato-de-impressao-da-dose.png" alt="Formato de apresentação da dose">
+                        </figure>
+                                                
+                        <p class="destaque interpretacao"><b>Interpretação:</b> Neste caso significa que diariamente o paciente deve tomar 2.5 comprimidos de manhã e devem ser fornecidos ao paciente 75 comprimidos (se a dispensa for mensal) ou 225 comprimidos (em caso de dispensa trimestral).</p>
+                    </div>
+
+                    <h4>Situações em que a dose aparece como "<b>&minus;</b>"</h4>
+
+                    <p>O "<b>&minus;</b>" deve ser interpretado como "<b>Não aplicável</b>". Existem três situações em que a dose aparece como "<b>&minus;</b>":</p>
+
+                    <ol>
+                        <li><b>"&minus;" só na célula correspondente à Dose-noite</b> – neste caso significa que não há dose nocturna ou seja, o fármaco deve ser tomado só de manhã. Por exemplo, a Organização Mundial da Saúde (OMS) recomenda que o ABC/3TC seja administrado uma vez por dia (preferencialmente de manhã).</li>
+
+                        <figure>
+                            <img src="imagens/traco-na-dosenoite.png" alt="Ilustração do traço (-) na Dose-noite">
+                        </figure>
+
+                        <li><b>"&minus;" só na célula correspondente à Dose-manhã</b> – significa que não há dose matinal, o fármaco deve ser tomado somente a noite. Exemplo EFV 200 mg.     
+                        </li>
+
+                        <figure>
+                            <img src="imagens/traco-na-dosemanha.png" alt="Ilustração do traço (-) na Dose-manhã">
+                        </figure>
+                        
+                        <li>
+                            <b>"&minus;" em ambas as células (Dose-manhã e Dose-noite)</b> – significando que não deve ser tomado ou administrado. As possiveis razões podem ser duas (2):
+
+                            <figure class="margin-top-10">
+                                <img src="imagens/traco-na-dosemanha-e-dosenoite.png" alt="Ilustração do traço (-) na Dose-manhã">
+                            </figure>
+
+                            <ol class="sublista">                      
+                                <li>
+                                <b>A composição farmacológica do antirretroviral é insuficiente para o peso ou exigiria a toma de muitos comprimidos (o que pode comprometer a adesão)</b>. Por exemplo, o ABC/3TC de 120 mg/60 mg está indicado para crianças com peso de até 24.9 kg. A partir de 25 kg, a criança já pode tomar o ABC/3TC 600 mg/300 mg.
+                                </li>
+    
+                                <li class="last-child">
+                                    <b>A composição farmacológica do antiretroviral é demais para o peso</b>.
+                                    Por exemplo, o ABC/3TC de 600 mg/300 mg está indicado apenas para crianças com peso a partir de 25 kg e abaixo disso não é aplicável (recomenda-se o ABC/3TC de 120 mg/60 mg).
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                    <p>
+                        Nas situações em que a dose se apresenta como "<b>&minus;</b>" em ambas células (Dose-manhã e Dose-noite), o Doseador de ARVs geralmente mostra uma mensagem de sugestão indicando o mesmo fármaco porém com composição farmacológica aplicável para o peso inserido.
+                    </p>
+                </section>
+
+                <section class="criterios-de-tpc">
+                    <h2>Critérios de Tratamento Profilático com Cotrimoxazol</h2>
+
+                    <p>Iniciar o cotrimoxazol a:</p>
+
+                    <ul>
+                        <li>Crianças &lt; 5 anos independentemente do estadio clínico ou CD4.</li> 
+                        <li>Crianças &ge; 5 anos se CD4 &le; 500 cel/mm<sup>3</sup> ou estadio II, III ou IV.</li>
+                    </ul>
+
+                    <p>Suspender o cotrimoxazol se:</p>
+                    <ul>
+                        <li>Idade &ge; 5 anos e CD4 &gt; 500 cel/mm<sup>3</sup> em 2 medições consecutivas com intervalo &ge; 6 meses.</li>
+                    </ul>
+
+                    <h3>Contraindicações</h3>
+                    <ul>
+                        <li>Alergia às Sulfamidas (por exemplo, Cotrimoxazol, Fanzidar, Sulfadiazina);</li>
+
+                       
+
+                        <li>Anemia (Hb &lt; 8.0) ou Neutropenia (neutrófilos &lt; 1500 cels/mm3).
+
+                        <span class="destaque">
+                            Estes valores apresentam variação de acordo com a idade, o sexo e o local onde se vive. O tipo do Aparelho laboratorial também pode contribuir na variação destes valores, pelo que o Clínico deve observar os valores de referência da sua Unidade Sanitária.</li>
+                        </span>
+
+                        <li>Doente que tomou Fansidar há menos de 30 dias.</li> 
+
+                    </ul>
+                </section>
+                
+                <section class="criterios-de-tpt">
+                    <h2>Critérios de Tratamento Profilático com Isoniazida</h2>
+
+                    <p>Depois de excluir a tuberculose activa, iniciar profilaxia com Isoniazida a:</p>
+
+                    <ul>
+                        <li>Todas as crianças com idade &ge; 1 ano.</li> 
+                        <li>Toda criança &lt; 1 ano com história de contacto com TB (somente em caso de contacto).</li>
+                    </ul>
+                </section>
+    
+            </article>
+
+        </main>
+
+        <section class="propaganda">
+            <div class="linha">
+                
+                <h3>Talvez você se interesse também por:</h3>
+                
+                <div class="linha-dos-cards">
+                    <div class="col">
+                        <a href="https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html" target="_blank">
+                            <figure>
+                                <img src="imagens/calculadora-de-doses.png" alt="Calculadora de Doses Pediátricas"/>
+                            </figure> 
+    
+                            <div class="description">
+                                <h5>Calculadora de Doses Pediátricas</h5>
+                                <p>
+                                    Determina automaticamente doses terapêuticas dos medicamentos mais usuais na prática clínica com base no Formulário Nacional de Medicamentos bastando o usuário inserir o peso e escolher o fármaco do qual pretende calcular a dose. <span class="visitar">Visitar &raquo;</span> 
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html" target="_blank">
+                            <figure>
+                                <img src="imagens/totalizador-de-resumo-mensal-de-hiv.png" alt="Totalizador de Resumo Mensal de HIV/SIDA" />
+                            </figure>  
+                            
+                            <div class="description">
+                                <h5>Totalizador de Resumo Mensal de HIV/SIDA</h5>
+                                <p>
+                                    Serviço online gratuito que auxilia na totalização do respectivo resumo a partir dos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" target="_blank">
+                            <figure>
+                                <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas" />
+                            </figure> 
+                            <div class="description">
+                                
+                                <h5>Totalizador de Resumo Mensal de Consultas</h5>
+                                <p>
+                                Serviço online gratuito que auxilia na elaboração do relatório de consultas externas através do cálculo dos subtotais e totais a partir dos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span>
+                                </p>
+    
+                            </div>
+                        </a> 
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+
+        <footer>
+            <div class="linha">
+                <p>
+                    Desenvolvido com &hearts; por: <a href="quinamine.github.io/aderito-felix-quinamine/index.html" target="_blank">Adérito Félix Quinamine</a> -&nbsp;&copy;&nbsp;Tarv&nbsp;Pediátrico - Disponível desde <time datetime="2021-09-18">09/09/2021</time> -&nbsp;Última&nbsp;actualização:&nbsp;<time datetime="2021-09-18">08/10/2022</time>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
