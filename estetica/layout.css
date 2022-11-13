@@ -6,14 +6,14 @@
     --anchor-color: #1558bc;
     --blc-text-color: #333333;
     --yt-text-color: #d4d8da;
-    --danger-color: #fb332c;
+    --alert-color: #fb332c;
     --alert-text-bgc: #ffdcdc;
     --alert-text-border: #ffbebe;
     --yt: #ffffff;
     --fullblack: #000000;
     --black-alpha-5: rgba(0, 0, 0, .5);
-    --btn-bgc: var(--primary-color);
-    --btn-hover-bgc: #d27832;
+    --btn-bgc: #d27832; 
+    --btn-hover-bgc: var(--primary-color);
     --important-text-bgc: #fff0d4;
     --gray: #888888;
     --gray-a: #aaaaaa;
@@ -23,10 +23,15 @@
     --gray-light: #f4f4f4;
     --gray-dark: #555555;
     --placeholder-color: #757575;
-    --border-color: var(--gray-d);
+    --border-color: var(--gray-c);
     --header-bgc: var(--gray-dark);
-    --footer-bgc: var(--header-bgc);
-    --blue: #0060EE; 
+    --footer-bgc: var(--header-bgc); 
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --border-color: var(--gray-a);
+    }
 }
 
 body {
@@ -142,23 +147,22 @@ button, input {
 }
 
 .linha {
-    max-width: 1124px;
+    max-width: 1245px;
     margin: 0 auto;
 }
 
-header div.linha, 
-footer div.linha {
-    padding-left: 4%;
-    padding-right: 4%;
-}
-
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1023px) {
     header div.linha, 
     footer div.linha {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 0 4%;
     }
+}
 
+@media screen and (min-width: 1024px) and (max-width: 1244px) {
+    header div.linha, 
+    footer div.linha {
+        padding: 0 10px;
+    }
 }
 
 /* CABECALHO */
@@ -176,6 +180,18 @@ header div._100vw a#logotipo {
     color: var(--primary-color);
     font-family: "Lobster", cursive, Arial, Helvetica, sans-serif;
     font-size: 22px;
+}
+
+
+nav.menu-principal {
+    width: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+    nav {
+        max-width: 1245px;
+        margin: auto;
+    }
 }
 
 nav.menu-principal ul {
@@ -218,11 +234,11 @@ nav.menu-principal a.current {
 
 @media screen and (max-width: 375px) {
     nav.menu-principal li:first-child a.current {
-        border-left: 1px solid var(--gray-c);
+        border-left: 1px solid var(--border-color);
     }
     
     nav.menu-principal li:last-child a.current {
-        border-right: 1px solid var(--gray-c);
+        border-right: 1px solid var(--border-color);
     }
 }
 
@@ -264,8 +280,10 @@ article {
     article {
         max-height: 80vh;
         overflow-y: auto;
+        margin-top: 0;
         border-top: none;
-        padding: 0 10px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     article::-webkit-scrollbar {
@@ -288,9 +306,14 @@ article {
 }
 
 article section {
-    max-width: 700px;
-    margin: 0 auto;
     display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    article section {
+        max-width: 700px;
+        margin: 0 auto;
+    }
 }
 
 article section.on {
@@ -411,12 +434,13 @@ div.contentor-dos-cards a {
     display: grid;
     grid-template-rows: 145px 1fr;
     color: var(--gray-dark);
+    height: 100%;
 }
 
 section.propaganda a figure {
     overflow: hidden;
     margin-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--gray-d);
 }
 
 section.propaganda figure img {
@@ -425,16 +449,37 @@ section.propaganda figure img {
 }
 
 section.propaganda a div.description {
-    padding: 0 10px;
+    padding: 0 10px 10px 10px;
     background-color: var(--yt);
+    display: flex;
+    flex-direction: column;
 }
 
 div.contentor-dos-cards div.description h5 {
-   font-size: var(--blc-text-color) !important;
+   color: var(--blc-text-color);
+   font-size: 14px;
 }
 
+div.contentor-dos-cards div.description p {
+    font-size: 13px;
+    flex: 1;
+    margin-bottom: 10px;
+ }
+
 div.description span.visitar {
-    color: var(--anchor-color);
+    font-size: 14px;
+    color: var(--yt);
+    background-color: var(--btn-bgc);
+    display: block;
+    padding: 2px;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0;
+    width: 110px;
+}
+
+div.description span.visitar:hover {
+    background-color: var(--btn-hover-bgc);
 }
 
 /* RODAPÉ */

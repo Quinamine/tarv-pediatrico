@@ -5,8 +5,7 @@ div.doseador {
   align-self: start;
   width: 100%;
   max-width: 375px;
-  margin: 0 auto;
-  border: 1px solid var(--gray-c);
+  border: 1px solid var(--border-color);
   border-top: none;
   padding: 20px 10px 10px 10px !important;
   background-color: var(--yt);
@@ -14,13 +13,13 @@ div.doseador {
 
 @media screen and (min-width: 376px) {
   div.doseador {
-    border-top: 1px solid var(--gray-c);
+    border-top: 1px solid var(--border-color);
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1124px) {
+@media screen and (min-width: 1024px) and (max-width: 1244px) {
   div.doseador {
     margin-left: 10px;
   }
@@ -38,7 +37,7 @@ div.doseador h1 {
 
 div.doseador > div {
   min-height: 35px;
-  border: 1px solid var(--gray-c);
+  border: 1px solid var(--border-color);
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -258,8 +257,8 @@ p.msg-de-validacao-de-peso {
 }
 p.msg-de-validacao-de-peso.on {
   font-size: 14px;
-  color: var(--danger-color);
-  background-color: var(alert-text-bgc);
+  color: var(--alert-color);
+  background-color: var(--alert-text-bgc);
   padding: 2px 8px;
   border-top: 1px solid var(--alert-text-border);
 }
