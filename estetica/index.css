@@ -245,7 +245,6 @@ ul.select.on div.optgroup li:hover {
   background-color: var(--gray-d);
 }
 
-
 /* Classes Manipuláveis com JS */
 .hide {
   display: none !important;

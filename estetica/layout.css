@@ -114,11 +114,18 @@ b, strong {
     font-weight: bold;
 }
 
+span.sup-parent {
+    position: relative; 
+    display: inline-block;
+    margin-right: 6px;
+}
+
 sup {
     position: absolute;
     top: -1px;
     font-size: 11px;
     font-weight: bold;
+    margin-right: 2px;
 }
 
 abbr {
@@ -368,10 +375,6 @@ article div.exemplo img {
     }
 }
 
-article section.criterios-de-tpc li {
-    position: relative; /* Para as tags sup e sub */
-}
-
 section.criterios-de-tpc span.destaque {
     display: block;
     font-size: 13px;
@@ -437,6 +440,35 @@ div.contentor-dos-cards a {
     height: 100%;
 }
 
+div.contentor-dos-cards a div:first-child {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--gray-c);
+}
+
+@media screen and (max-width: 1023px) {
+    div.contentor-dos-cards a div:first-child {
+        background-size: 100%;
+    }
+}
+
+div.contentor-dos-cards a div.cdp {
+    background-image: url("../imagens/calculadora-de-doses.png");
+}
+
+div.contentor-dos-cards a div.trmhiv {
+    background-image: url("../imagens/totalizador-de-resumo-mensal-de-hiv.png");
+}
+
+div.contentor-dos-cards a div.trmc {
+    background: url("../imagens/totalizador-de-resumo-mensal-de-consultas.png");
+}
+
+div.contentor-dos-cards a div.trmsaaj {
+    background: url("../imagens/totalizador-de-resumo-mensal-de-saaj.png");
+}
+
+
+/*
 section.propaganda a figure {
     overflow: hidden;
     margin-bottom: 10px;
@@ -446,7 +478,7 @@ section.propaganda a figure {
 section.propaganda figure img {
     max-width: initial;
     border-radius: 5px 5px 0 0;
-}
+}*/
 
 section.propaganda a div.description {
     padding: 0 10px 10px 10px;
