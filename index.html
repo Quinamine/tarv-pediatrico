@@ -7,26 +7,30 @@
         <title>Doseador de Antirretrovirais - TARV PEDIÁTRICO</title>
         <meta name="robots" content="index, follow"/>
         <meta name="description" content="Calcula automaticamente a dose de acordo com o peso, inclusive a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o antirretroviral." /> 
+        <meta name="keywords" content="Doseador de Antirretrovirais, Doseador de Arvs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose." />
         <meta name="author" content="Adérito Félix Quinamine" />
 
         <!-- PARTILHA NAS REDES SOCIAIS -->
         <meta property="og:url" content="https://www.quinamine.github.io/tarv-pediatrico/index.html"/>
         <meta property="og:title" content="Doseador de Antirretrovirais" />
         <meta property="og:description" content="Calcula automaticamente a dose de acordo com o peso, inclusive a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o antirretroviral." />
-        <meta property="og:image" content="https://www.quinamine.github.io/aderito-felix-quinamine/imagens/#.jpg"/>
+        <meta property="og:image" content="https://www.quinamine.github.io/tarv-pediatrico/imagens/doseador-de-arvs.png">
        
         <!-- DESIGN -->
-		<link rel="stylesheet" href="estilos/reset.css" />
-        <link rel="stylesheet" href="estilos/index.css" />
+        <link rel="stylesheet" href="estetica/reset.css" />
+        <link rel="stylesheet" href="estetica/layout.css" />
+        <link rel="stylesheet" href="estetica/index.css" />
 
         <!-- FONTES -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        
+        <script src="https://kit.fontawesome.com/bddeb642f0.js" crossorigin="anonymous"></script>
 
         <!-- SCRIPTS -->
-        <script src="funcoes/index.js"></script>
-        <script src="funcoes/darv.js"></script>
+        <script src="fisiologia/index.js"></script>
+        <script src="fisiologia/darv.js"></script>
          
         <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Doseador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
 
@@ -68,11 +72,16 @@
 
                         <div class="caixa-de-pesquisa">
                             <button>
-                                &larr;
+                                <svg style="width: 16px; height: 16px; ">
+                                    <line x1="0%" x2="50%" y1="50%" y2="0" stroke-width="2px" stroke="#333"></line>
+                                    <line x1="0%" x2="50%" y1="50%" y2="100%" stroke-width="2px" stroke="#333"></line>
+                                    <line x1="-1" x2="100%" y1="50%" y2="50%" stroke-width="2px" stroke="#333"></line>
+                                </svg>
                             </button>
                             <input type="search" id="src" placeholder="Pesquisar antirretrovirais" />
                         </div>
 
+                        <i class="fa-regular fa-arrow-left-long"></i>
                         <div class="optgroup arvs abc-3tc">
                             <h3>ABACAVIR + LAMIVUDINA</h3>
                             <li data-nome="ABC">ABC 60 mg Comp.</li>
@@ -191,9 +200,9 @@
                 <section class="instrucoes-darv on">
                     <h2>Instruções de utilização do Doseador de ARVs</h2>
 
-                    <p>O <b>Doseador de ARVs</b> ou abreviamente <b>Darv</b> é um serviço online gratuito que de forma automática calcula doses terapêuticas dos antirretrovirais para a população infanto-juvenil (crianças e jovens) em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</strong></p>
+                    <p>O <b>Doseador de ARVs</b> ou abreviamente <b>DARV</b> é um serviço online gratuito que de forma automática calcula doses terapêuticas dos antirretrovirais para a população infanto-juvenil (crianças e jovens) em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</strong></p>
 
-                    <p>O Darv está basicamente estruturado da seguinte forma:</p>
+                    <p>O DARV está basicamente estruturado da seguinte forma:</p>
 
                     <ul>
                         <li>Um campo de <b>Peso</b> para inserir o peso em kg da criança para a qual o Profissional de Saúde pretende calcular a dose;</li>
@@ -216,7 +225,7 @@
 
                         <li>Na 2ª linha, abaixo do título <b>Dose-manhã</b>, é mostrada a dose do ARV que deve ser tomada ou administrada de manhã e abaixo do título <b>Dose-noite</b>, é mostrada a dose do ARV que deve ser tomada ou administrada a noite.</li>
 
-                        <li>Na 3ª linha apresenta-se a unidade de medição da dose (exemplo: <b>cp</b> ou <b>ml</b> se o fármaco for em suspensão e/ou xarope).</li>
+                        <li>Na 3ª linha apresenta-se a unidade de medição da dose (exemplo: <b>cp</b> ou <b>ml</b> se o fármaco for sólido ou em suspensão respectivamente).</li>
 
                         <li>Na 6ª linha é indicada a quantidade de comprimidos que deve ser fornecida ao paciente de acordo com o tipo de dispensa.  A primeira célula da linha mostra o número de comprimidos a fornecer ao paciente se a dispensa for mensal (DM) e a segunda célula mostra o número de comprimidos que deve ser fornecido ao paciente se a dispensa for trimestral (DT).</li>
 
@@ -255,9 +264,9 @@
                         </figure>
                         
                         <li>
-                            <b>"&minus;" em ambas as células (Dose-manhã e Dose-noite)</b> – significando que não deve ser tomado ou administrado. As possiveis razões podem ser duas (2):
+                            <b>"&minus;" em ambas as células (Dose-manhã e Dose-noite)</b> – significando que não deve ser tomado ou administrado. As possíveis razões podem ser duas (2):
 
-                            <figure class="margin-top-10">
+                            <figure class="mt-10">
                                 <img src="imagens/traco-na-dosemanha-e-dosenoite.png" alt="Ilustração do traço (-) na Dose-manhã">
                             </figure>
 
@@ -275,7 +284,7 @@
                     </ol>
 
                     <p>
-                        Nas situações em que a dose se apresenta como "<b>&minus;</b>" em ambas células (Dose-manhã e Dose-noite), o Doseador de ARVs geralmente mostra uma mensagem de sugestão indicando o mesmo fármaco porém com composição farmacológica aplicável para o peso inserido.
+                        Nas situações em que a dose é apresentada como "<b>&minus;</b>" em ambas células (Dose-manhã e Dose-noite), o Doseador de ARVs geralmente mostra uma mensagem de sugestão indicando o mesmo fármaco porém com composição farmacológica aplicável para o peso inserido.
                     </p>
                 </section>
 
@@ -286,12 +295,12 @@
 
                     <ul>
                         <li>Crianças &lt; 5 anos independentemente do estadio clínico ou CD4.</li> 
-                        <li>Crianças &ge; 5 anos se CD4 &le; 500 cel/mm<sup>3</sup> ou estadio II, III ou IV.</li>
+                        <li>Crianças &ge; 5 anos se CD4 &le; 500 cel/mm<sup>3</sup>&nbsp; ou estadio II, III ou IV.</li>
                     </ul>
 
                     <p>Suspender o cotrimoxazol se:</p>
                     <ul>
-                        <li>Idade &ge; 5 anos e CD4 &gt; 500 cel/mm<sup>3</sup> em 2 medições consecutivas com intervalo &ge; 6 meses.</li>
+                        <li>Idade &ge; 5 anos e CD4 &gt; 500 cel/mm<sup>3</sup>&nbsp; em 2 medições consecutivas com intervalo &ge; 6 meses.</li>
                     </ul>
 
                     <h3>Contraindicações</h3>
@@ -300,7 +309,7 @@
 
                        
 
-                        <li>Anemia (Hb &lt; 8.0) ou Neutropenia (neutrófilos &lt; 1500 cels/mm3).
+                        <li>Anemia (Hb &lt; 8.0) ou Neutropenia (neutrófilos &lt; 1500 cels/mm<sup>3</sup>&nbsp; ).
 
                         <span class="destaque">
                             Estes valores apresentam variação de acordo com a idade, o sexo e o local onde se vive. O tipo do Aparelho laboratorial também pode contribuir na variação destes valores, pelo que o Clínico deve observar os valores de referência da sua Unidade Sanitária.</li>
@@ -327,11 +336,11 @@
         </main>
 
         <section class="propaganda">
-            <div class="linha">
+            <div class="linha-de-propaganda">
                 
-                <h3>Talvez você se interesse também por:</h3>
+                <h4>Talvez você se interesse também por:</h4>
                 
-                <div class="linha-dos-cards">
+                <div class="contentor-dos-cards">
                     <div class="col">
                         <a href="https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html" target="_blank">
                             <figure>
@@ -341,7 +350,21 @@
                             <div class="description">
                                 <h5>Calculadora de Doses Pediátricas</h5>
                                 <p>
-                                    Determina automaticamente doses terapêuticas dos medicamentos mais usuais na prática clínica com base no Formulário Nacional de Medicamentos bastando o usuário inserir o peso e escolher o fármaco do qual pretende calcular a dose. <span class="visitar">Visitar &raquo;</span> 
+                                    Determina automaticamente doses terapêuticas dos medicamentos mais usuais na prática clínica com base no Formulário Nacional de Medicamentos, bastando o usuário inserir o peso e escolher o fármaco do qual pretende calcular a dose. <span class="visitar">Visitar &raquo;</span> 
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html" target="_blank">
+                            <figure>
+                                <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ"/>
+                            </figure> 
+    
+                            <div class="description">
+                                <h5>Totalizador de Resumo Mensal de SAAJ</h5>
+                                <p>
+                                    Serviço online gratuito que auxilia na elaboração do resumo mensal de SAAJ, através do cálculo automático dos totais a partir dos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span> 
                                 </p>
                             </div>
                         </a>
@@ -355,7 +378,7 @@
                             <div class="description">
                                 <h5>Totalizador de Resumo Mensal de HIV/SIDA</h5>
                                 <p>
-                                    Serviço online gratuito que auxilia na totalização do respectivo resumo a partir dos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span>
+                                    Serviço online gratuito que auxilia na elaboração do resumo mensal de HIV/SIDA calculando automaticamente os totais com base nos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span> 
                                 </p>
                             </div>
                         </a>
@@ -369,7 +392,7 @@
                                 
                                 <h5>Totalizador de Resumo Mensal de Consultas</h5>
                                 <p>
-                                Serviço online gratuito que auxilia na elaboração do relatório de consultas externas através do cálculo dos subtotais e totais a partir dos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span>
+                                    Serviço online gratuito que auxilia na elaboração do resumo mensal de consultas externas, através do cálculo automático dos subtotais e totais a partir dos dados inseridos pelo usuário (Profissional de Saúde). <span class="visitar">Visitar &raquo;</span>
                                 </p>
     
                             </div>
@@ -383,7 +406,7 @@
         <footer>
             <div class="linha">
                 <p>
-                    Desenvolvido com &hearts; por: <a href="quinamine.github.io/aderito-felix-quinamine/index.html" target="_blank">Adérito Félix Quinamine</a> -&nbsp;&copy;&nbsp;Tarv&nbsp;Pediátrico - Disponível desde <time datetime="2021-09-18">09/09/2021</time> -&nbsp;Última&nbsp;actualização:&nbsp;<time datetime="2021-09-18">08/10/2022</time>
+                    Desenvolvido por: <a href="quinamine.github.io/aderito-felix-quinamine/index.html" target="_blank">Adérito Félix Quinamine</a> &copy;&nbsp;Tarv&nbsp;Pediátrico -&nbsp;Disponível&nbsp;desde&nbsp;<time datetime="2021-09-18">09/09/2021</time>. Última&nbsp;actualização:&nbsp;<time datetime="2021-09-18">08/10/2022</time>
                 </p>
             </div>
         </footer>

@@ -163,7 +163,7 @@ class Darv {
         }
 
         else if ((this.arv==="RAL-400") && (this.peso<25)) {
-            recomendacaoOutput.innerHTML = `Para peso &lt; 25 kg, recomenda-se o "RAL 25 mg Comp.</b>".`; 
+            recomendacaoOutput.innerHTML = `Para peso &lt; 25 kg, recomenda-se o "<b>RAL 25 mg Comp.</b>".`; 
         }
 
         // RITONAVIR 
@@ -1025,8 +1025,6 @@ function instanciarClasse () {
         }
     }
 }
-
-
 var peso, arvs, campoDeDoseEposologia, recomendacaoOutput;
 
 window.addEventListener("load", () => {

@@ -1,0 +1,296 @@
+
+/* Doseador */
+
+div.doseador {
+  align-self: start;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  border: 1px solid var(--gray-c);
+  border-top: none;
+  padding: 20px 10px 10px 10px !important;
+  background-color: var(--yt);
+}
+
+@media screen and (min-width: 376px) {
+  div.doseador {
+    border-top: 1px solid var(--gray-c);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1124px) {
+  div.doseador {
+    margin-left: 10px;
+  }
+}
+
+div.doseador h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 355px) {
+  div.doseador h1 {
+    font-size: 19px;
+  }
+}
+
+div.doseador > div {
+  min-height: 35px;
+  border: 1px solid var(--gray-c);
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition-duration: 400ms;
+}
+
+div.doseador > div.hover {
+  border-color: var(--primary-color);
+}
+
+div.doseador > div.output {
+  min-height: 84px;
+  position: relative;
+  padding: 20px 8px;
+  flex-direction: column;
+}
+
+div.doseador > div.output h2 {
+  margin: 0;
+  position: absolute;
+  top: -18px;
+  left: 3px;
+  background-color: var(--yt);
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--gray-dark);
+}
+
+div.doseador > div.output p.recomendacao {
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  margin: 0;
+  align-self: flex-start;
+  width: 100%;
+}
+
+div.doseador > div.output 
+p.recomendacao.pad-10 {
+  padding: 10px;
+}
+
+div.doseador > div label {
+  margin-left: 8px;
+  font-weight: bold;
+  color: var(--gray);
+}
+
+div.doseador > div label.kg {
+  color: inherit;
+  font-weight: initial;
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+div.doseador > div input, 
+div.doseador > div ul.select {
+  flex: 1;
+}
+
+div.doseador > div input {
+  align-self: stretch;
+  padding: 5px;
+  font-size: 15px;
+}
+
+/* Campo de fármaco */
+
+ul.select {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+ul.select.on {
+  display: block;
+  padding: 10px 4% 4% 4%;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  background-color: var(--gray-light);
+  box-shadow: 0 4px 15px var(--gray-a);
+}  
+
+@media screen and (min-width: 1024px) {
+  div.doseador > div.campo-de-farmaco {
+    position: relative;
+  }
+
+  ul.select.on {
+    top: 0;
+    min-height: 60vh;
+    max-height: 60vh;
+    padding: 10px 8px;
+  } 
+}
+
+ul.select li {
+  flex: 1;
+  padding: 5px;
+  list-style: none;
+  margin: 0;
+  display: none;
+  transition: padding 250ms ease;
+}
+
+ul.select li:active {
+  opacity: 0.7;
+}
+
+ul.select li.placeholder {
+  color: var(--placeholder-color) !important;
+}
+
+ul.select li.selected {
+  display: initial;
+  flex: 1;
+  margin: 0;
+}
+
+@media screen and (max-width: 345px) {
+  ul.select li.selected {
+    font-size: 13.5px;
+  }
+}
+
+ul.select div.optgroup {
+  width: 100%;
+  display: flex;
+}
+
+ul.select div.optgroup h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  display: none;
+}
+
+ul.select div.optgroup li.rtv {
+  position: relative;
+}
+
+ul.select div.caixa-de-pesquisa {
+  position: sticky;
+  top: -10px;
+  display: flex;
+  background-color: inherit;
+  z-index: 1000;
+}
+
+ul.select div.caixa-de-pesquisa button, 
+ul.select div.caixa-de-pesquisa input {
+  display: none;
+}
+
+ul.select div.caixa-de-pesquisa button {
+  background-color: inherit;
+}
+
+ul.select div.caixa-de-pesquisa input {
+  width: 100%;
+  min-height: 35px;
+}
+
+ul.select.on li.placeholder {
+  display: none !important;
+}
+
+ul.select.on div.caixa-de-pesquisa {
+  box-shadow: 0 1px 3px var(--gray-c);
+  margin-bottom: 5px;
+  background-color: var(--yt);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+ul.select.on div.caixa-de-pesquisa button, 
+ul.select.on div.caixa-de-pesquisa input {
+  display: block;
+  background-color: var(--yt);
+}
+
+ul.select.on div.optgroup {
+  display: block;
+}
+
+ul.select.on div.optgroup h3, 
+ul.select.on div.optgroup li {
+  display: block;
+}
+
+ul.select.on div.optgroup li {
+  padding-left: 4%;
+}
+
+ul.select.on div.optgroup li:hover {
+  background-color: var(--gray-d);
+}
+
+
+/* Classes Manipuláveis com JS */
+.hide {
+  display: none !important;
+}
+
+p.msg-de-validacao-de-peso {
+  margin: 8px 0 0 0;
+  transition-duration: 150ms;
+}
+p.msg-de-validacao-de-peso.on {
+  font-size: 14px;
+  color: var(--danger-color);
+  background-color: var(alert-text-bgc);
+  padding: 2px 8px;
+  border-top: 1px solid var(--alert-text-border);
+}
+
+table {
+  min-width: 280px;
+  border: 1px solid var(--gray-c);
+  background-color: var(--gray-light);
+  margin: 0 auto;
+  font-size: 15px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  line-height: 1.5;
+}
+
+table th {
+  background-color: var(--gray-d);
+}
+
+table td {
+  font-weight: bold;
+}
+
+table tr th:first-child, table tr td:first-child {
+  border-right: 1px solid var(--gray-c);
+}
+
+table tr.l3 {
+  border: 1px solid var(--gray-c);
+}
+
