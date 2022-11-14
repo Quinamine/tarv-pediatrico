@@ -5,10 +5,15 @@ const doseador = {
     abrirSelect() {
         select.classList.add("on");
         select.querySelector("#src").focus();
+
+        if(window.innerWidth < 1024) {
+            document.querySelector("body").classList.add("overflow-h");
+        }
     },
 
     fecharSelect() {
         select.classList.remove("on");
+        document.querySelector("body").classList.remove("overflow-h");
 
         // Para resetar o input.value e os resultados da pesquisa anterior
         const selectChildren = select.querySelectorAll("li.placeholder, div.optgroup.arvs h3, div.optgroup.arvs li");
@@ -182,7 +187,8 @@ window.addEventListener("load", () => {
 // EVENTO DE FECHAMENTO DO SELECT 
 window.addEventListener("click", event => {
    
-   const selectChildren = document.querySelectorAll("ul.select *");
+    const selectChildren = document.querySelectorAll("ul.select *");
+   
     let numChildrenClicked = 0;
     for (const child of selectChildren) {
         if(child === event.target) {
@@ -190,7 +196,7 @@ window.addEventListener("click", event => {
         }
     }
 
-    if(numChildrenClicked < 1) {
+    if(numChildrenClicked < 1  && event.target !== select){
         doseador.fecharSelect();
         document.querySelector(".campo-de-farmaco").classList.remove("focus");
     }

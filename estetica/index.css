@@ -44,6 +44,10 @@ body {
     font-size: 15px;
 }
 
+body.overflow-h {
+    overflow: hidden;
+}
+
 *::selection {
     background-color: var(--primary-color);
     color: var(--yt);
