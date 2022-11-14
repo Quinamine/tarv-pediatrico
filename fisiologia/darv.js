@@ -247,10 +247,10 @@ class Darv {
             doseEposologiaOutput.innerHTML = `
             <table>
                 <thead>
-                    <tr><th>Dose-manhã</th><th>Dose-noite</th></tr>
+                    <tr><th>Dose-manhã</th> <th>Dose-noite</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>${doseManha}</td><td>${doseNoite}</td></tr>
+                    <tr><td>${doseManha}</td> <td>${doseNoite}</td></tr>
                 </tbody>
             </table>
             `;
@@ -328,25 +328,19 @@ class Darv {
 
             doseEposologiaOutput.innerHTML = `<table>
                 <thead>
-                    <tr> 
-                        <th>Dose-manhã</th> <th>Dose-noite</th> 
-                    </tr>
+                    <tr> <th>Dose-manhã</th> <th>Dose-noite</th> </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>${doseManha}</td><td>${doseNoite}</td>
-                    </tr>
-                    <tr>
-                        <td>${formaFarmaceuticaManha}</td><td>${formaFarmaceuticaNoite}</td>
+                        <td>${doseManha} <br/> ${formaFarmaceuticaManha}</td> 
+                        <td>${doseNoite} <br/> ${formaFarmaceuticaNoite}</td>
                     </tr>
                 </tbody>
                 <thead>
                     <tr class="l3"> 
                         <th colspan="2">Nº de ${this.retornarEmbalagem}:</th> 
                     </tr>
-                    <tr> 
-                        <th>30 dias</th> <th>90 dias</th> 
-                    </tr>
+                    <tr> <th>30 dias</th> <th>90 dias</th> </tr>
                 </thead>
                 <tbody>
                     <tr> 

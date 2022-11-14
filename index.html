@@ -18,7 +18,6 @@
        
         <!-- DESIGN -->
         <link rel="stylesheet" href="estetica/reset.css" />
-        <link rel="stylesheet" href="estetica/layout.css" />
         <link rel="stylesheet" href="estetica/index.css" />
 
         <!-- FONTES -->
@@ -218,19 +217,17 @@
 
                     <h3>Apresentação da dose</h3>
 
-                    <p>Normalmente a dose é apresentada numa mini-tabela com seis (6) linhas e 11 colunas.</p>
+                    <p>Normalmente a dose é apresentada numa mini-tabela com cinco (5) linhas e 9 colunas.</p>
 
                     <ul>
                         <li>A 1ª linha possui duas colunas com os títulos <b>Dose-manhã</b> e <b>Dose-noite</b> respectivamente.</li>
 
                         <li>Na 2ª linha, abaixo do título <b>Dose-manhã</b>, é mostrada a dose do ARV que deve ser tomada ou administrada de manhã e abaixo do título <b>Dose-noite</b>, é mostrada a dose do ARV que deve ser tomada ou administrada a noite.</li>
 
-                        <li>Na 3ª linha apresenta-se a unidade de medição da dose (exemplo: <b>cp</b> ou <b>ml</b> se o fármaco for sólido ou em suspensão respectivamente).</li>
-
-                        <li>Na 6ª linha é indicada a quantidade de comprimidos que deve ser fornecida ao paciente de acordo com o tipo de dispensa.  A primeira célula da linha mostra o número de comprimidos a fornecer ao paciente se a dispensa for mensal (DM) e a segunda célula mostra o número de comprimidos que deve ser fornecido ao paciente se a dispensa for trimestral (DT).</li>
+                        <li>Na 5ª linha é indicada a quantidade de comprimidos que deve ser fornecida ao paciente de acordo com o tipo de dispensa.  A primeira célula da linha mostra o número de comprimidos a fornecer ao paciente se a dispensa for mensal (DM) e a segunda célula mostra o número de comprimidos que deve ser fornecido ao paciente se a dispensa for trimestral (DT).</li>
 
                         <li>
-                            As linhas 4 e 5 são titulos da 6ª linha, isto é, indicam o tipo de dispensa.
+                            As linhas 3 e 4 são titulos da 5ª linha, isto é, indicam o tipo de dispensa.
                         </li>
                     </ul>
 
@@ -238,9 +235,19 @@
 
                         <p class="destaque ex"><b>Por exemplo:</b> Utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 14 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:</p>
 
-                        <figure>
-                            <img src="imagens/formato-de-impressao-da-dose.png" alt="Formato de apresentação da dose">
-                        </figure>
+                        <table>
+                            <thead>
+                                <tr> <th>Dose-manhã</th> <th>Dose-noite</th> </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <td>2.5 <br/> cp(s)</td> <td>&minus; <br/> &minus;</td> </tr>
+
+                                <tr class="l3"> <th colspan="2">Nº de comprimidos para:</th> </tr>
+
+                                <tr> <th>30 dias</th> <th>90 dias</th> </tr>
+                                <tr> <td>75</td> <td>225</td> </tr>
+                            </tbody> 
+                        </table>
                                                 
                         <p class="destaque interpretacao"><b>Interpretação:</b> Neste caso significa que diariamente o paciente deve tomar 2.5 comprimidos de manhã e devem ser fornecidos ao paciente 75 comprimidos (se a dispensa for mensal) ou 225 comprimidos (em caso de dispensa trimestral).</p>
                     </div>
@@ -251,24 +258,49 @@
 
                     <ol>
                         <li><b>"&minus;" só na célula correspondente à Dose-noite</b> – neste caso significa que não há dose nocturna ou seja, o fármaco deve ser tomado só de manhã. Por exemplo, a Organização Mundial da Saúde (OMS) recomenda que o ABC/3TC seja administrado uma vez por dia (preferencialmente de manhã).</li>
+                        
+                        <table>
+                            <thead>
+                                <tr> <th>Dose-manhã</th> <th>Dose-noite</th> </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <td>1.5 <br/> cp(s)</td> <td>&minus; <br/> &minus;</td> </tr>
 
-                        <figure>
-                            <img src="imagens/traco-na-dosenoite.png" alt="Ilustração do traço (-) na Dose-noite">
-                        </figure>
+                                <tr class="l3"> <th colspan="2">Nº de comprimidos para:</th> </tr>
 
+                                <tr> <th>30 dias</th> <th>90 dias</th> </tr>
+                                <tr> <td>45</td> <td>135</td> </tr>
+                            </tbody> 
+                        </table>
+                        
                         <li><b>"&minus;" só na célula correspondente à Dose-manhã</b> – significa que não há dose matinal, o fármaco deve ser tomado somente a noite. Exemplo EFV 200 mg.     
                         </li>
 
-                        <figure>
-                            <img src="imagens/traco-na-dosemanha.png" alt="Ilustração do traço (-) na Dose-manhã">
-                        </figure>
+                        <table>
+                            <thead>
+                                <tr> <th>Dose-manhã</th> <th>Dose-noite</th> </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <td>&minus; <br/> &minus;</td> <td>2 <br/> cp(s)</td> </tr>
+
+                                <tr class="l3"> <th colspan="2">Nº de comprimidos para:</th> </tr>
+
+                                <tr> <th>30 dias</th> <th>90 dias</th> </tr>
+                                <tr> <td>60</td> <td>180</td> </tr>
+                            </tbody> 
+                        </table>
                         
                         <li>
                             <b>"&minus;" em ambas as células (Dose-manhã e Dose-noite)</b> – significando que não deve ser tomado ou administrado. As possíveis razões podem ser duas (2):
 
-                            <figure class="mt-10">
-                                <img src="imagens/traco-na-dosemanha-e-dosenoite.png" alt="Ilustração do traço (-) na Dose-manhã">
-                            </figure>
+                            <table>
+                                <thead>
+                                    <tr><th>Dose-manhã</th><th>Dose-noite</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>&minus;</td><td>&minus;</td></tr>
+                                </tbody>
+                            </table>
 
                             <ol class="sublista">                      
                                 <li>
