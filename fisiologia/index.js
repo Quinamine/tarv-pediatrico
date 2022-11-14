@@ -29,7 +29,7 @@ const doseador = {
     pesquisarFarmaco(query) {
         let queryToLowerCase = query.toLowerCase();
         let farmacos = select.querySelectorAll("div.arvs li");
-        let titulos_dos_farmacos = select.querySelectorAll("h3");
+        let titulos_dos_farmacos = select.querySelectorAll("div.arvs h3");
         
         // PESQUISA DIRECTAMENTE PELO NOME DO FÁRMACO
         for (const farmaco of farmacos) {
@@ -48,9 +48,9 @@ const doseador = {
             let tituloInnerText = titulo.textContent.toLowerCase();
 
             if(tituloInnerText.includes(queryToLowerCase)) {
-                let titleParent = titulo.parentElement.children;
+                let titleParentChildren = titulo.parentElement.children;
 
-                for (const child of titleParent) {
+                for (const child of titleParentChildren) {
                     child.classList.remove("hide");
                 } 
             } else {
@@ -61,38 +61,35 @@ const doseador = {
 }
 
 const menu = {
-    mostrarConteudoRelacionado(aba) {
-        const conteudos = document.querySelectorAll("article section");
-        const conteudoRelacionado = aba.dataset.artigorelacionado;
+    mostrarArtigoRelacionadoAaba(aba) {
+        const artigos = document.querySelectorAll("article section");
+        const artigoRelacionado = aba.dataset.artigorelacionado;
         let titulo_do_doseador = document.querySelector(".doseador h1");
 
         for (let i = 0; i < abas_do_menu.length; i++) {
             abas_do_menu[i].classList.remove("current");
-            conteudos[i].classList.remove("on");
+            artigos[i].classList.remove("on");
 
-            if(conteudos[i].matches(`.${conteudoRelacionado}`)) {
-                conteudos[i].classList.add("on");
+            if(artigos[i].matches(`.${artigoRelacionado}`)) {
+                artigos[i].classList.add("on");
             }
         }
         aba.classList.add("current");
         titulo_do_doseador.textContent = aba.dataset.titulodaaba;
     },
 
-    mostrarFarmacosRelacionados(aba) {
-        const listasDeFarmacos = document.querySelectorAll("div.optgroup");
-        for (const lista of listasDeFarmacos) {
-            lista.classList.add("hide");
+    mostrarFarmacosRelacionadosAaba(aba) {
+        const gruposDeFarmacos = document.querySelectorAll("div.optgroup");
+        const GrupoDeFarmacosRelacionadosAaba =  document.querySelectorAll(`div.optgroup.${aba.dataset.for}`);
+
+        for (const grupo of gruposDeFarmacos) {
+            grupo.classList.add("hide");
         }
-
-        const farmacosRelacionados =  document.querySelectorAll(`div.optgroup.${aba.dataset.for}`)
-
         // Looping por optgroup.arvs ser um nodelist
-        for (const f of farmacosRelacionados) {
-            f.classList.remove("hide");
+        for (const grupo of GrupoDeFarmacosRelacionadosAaba) {
+            grupo.classList.remove("hide");
         }
-        
-
-        
+            
         const elementosRelacionados = document.querySelectorAll("label.arv, li.placeholder, div.caixa-de-pesquisa");
         
         if(aba.dataset.for !== "arvs") {
@@ -119,8 +116,8 @@ window.addEventListener("load", () => {
     // INVOCAÇÃO 
     abas_do_menu.forEach ( aba => {
         aba.addEventListener("click", () => {
-            menu.mostrarConteudoRelacionado(aba);
-            menu.mostrarFarmacosRelacionados(aba);
+            menu.mostrarArtigoRelacionadoAaba(aba);
+            menu.mostrarFarmacosRelacionadosAaba(aba);
 
             // Para resetar o input.value e os resultados da pesquisa da aba do Doseador
             menu.fecharSelect();
@@ -128,24 +125,34 @@ window.addEventListener("load", () => {
     })
 
     // DOSEADOR 
+    const campoFarmaco = document.querySelector(".campo-de-farmaco");
     select = document.querySelector("ul.select");
     selectOptions = select.querySelectorAll("li");
     selectSrc = select.querySelector("input#src");
+    const selectSrcBtn = select.querySelector("button.voltar");
+   
 
     selectOptions.forEach ( option => {
         option.addEventListener("click", () => {
             if(select.matches(".on")) {
                 doseador.selecionarFarmaco(option);
                 doseador.fecharSelect();
+                campoFarmaco.classList.add("focus");
             } else {
                 doseador.abrirSelect();
-            }       
-        })
-    })
+            } 
+        });
+    });
 
-    selectSrc.addEventListener("input", () => {
-        doseador.pesquisarFarmaco(selectSrc.value);
-    })
+    selectSrc.addEventListener("input", () => doseador.pesquisarFarmaco(selectSrc.value));
+
+    selectSrcBtn.addEventListener("click", () => doseador.fecharSelect()); 
+
+    // Adicionar borda laranja aos campos de peso e fármaco
+    const campoPeso = document.querySelector("input#peso");
+
+    campoPeso.addEventListener("focusin", () => campoPeso.parentElement.classList.add("focus"));
+    campoPeso.addEventListener("focusout", () => campoPeso.parentElement.classList.remove("focus"));
 });
 
 
@@ -160,8 +167,9 @@ window.addEventListener("click", event => {
         }
     }
 
-    if(numChildrenClicked <= 0) {
+    if(numChildrenClicked < 1) {
         doseador.fecharSelect();
+        document.querySelector(".campo-de-farmaco").classList.remove("focus");
     }
 })
 

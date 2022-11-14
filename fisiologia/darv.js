@@ -1,3 +1,5 @@
+"use strict";
+
 class Darv {
     constructor(peso, arv){
         this.peso = peso;
@@ -107,7 +109,7 @@ class Darv {
 
         else if((this.arv==="pDTG-10mg") && (this.peso<20) 
         || (this.arv==="DTG-50mg") && (this.peso>=20)) {       
-            recomendacaoOutput.innerHTML = `<strong>Importante:</strong> Não é recomendado tomar o DTG ao mesmo tempo que as Vitaminas, Sulfato ferroso, Fenitoína ou Antiácidos, pois reduzem a concentração plasmática do DTG. Nestes casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma destes medicamentos.`; 
+            recomendacaoOutput.innerHTML = `<strong>Importante:</strong> Não é recomendado tomar o DTG ao mesmo tempo que as Vitaminas, Sulfato Ferroso, Fenitoína ou Antiácidos, pois reduzem a concentração plasmática do DTG. Nestes casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma destes medicamentos.`; 
         }
 
         // AZIDOTIMIDINA + LAMIVUDINA  
@@ -970,57 +972,65 @@ class Darv {
     }
 }
 
-function validarPeso() {
-    const msg = "O peso deve estar no intervalo de 3 à 45 kg.";
-    const output = document.querySelector("p.msg-de-validacao-de-peso");
-
-    if(peso.value != "") {
-        if ((peso.value < 3) || (peso.value > 45)) {
-            output.innerHTML = msg;
-            output.classList.add("on");
-            doseEposologiaOutput.innerHTML = "";
-            recomendacaoOutput.innerHTML = "";
-        } else {
+const objectoDarv = {
+    validarPeso() {
+        const msg = "O peso deve estar no intervalo de 3 à 45 kg.";
+        const output = document.querySelector("p.msg-de-validacao-de-peso");     
+        const omitirMsgDeValidacao = () => {
             output.innerHTML = "";
             output.classList.remove("on");
-            return true;
         }
-    } else {
-        output.innerHTML = "";
-        output.classList.remove("on");
+
+        if(peso.value != "") {
+            if ((peso.value < 3) || (peso.value > 45)) {
+                output.innerHTML = msg;
+                output.classList.add("on");
+                this.limparCamposDeSaida();
+                
+            } else {
+                omitirMsgDeValidacao();
+                return true;
+            }
+        } else {
+            omitirMsgDeValidacao();
+            this.limparCamposDeSaida();
+        }
+    },
+
+    instanciarClasse () {
+        if(this.validarPeso()) {
+            let arvSelecionado;
+    
+            for (const arv of arvs) {
+                if( arv.matches(".selected")) {
+                    arvSelecionado = arv.dataset.nome;
+                    if(arv.matches(".placeholder")) {
+                        return false;
+                    }
+                } 
+            }
+            const dose = new Darv(peso.value, arvSelecionado);
+            dose.calcularDose();
+    
+            // Adicionar Padding ao 'p.recomendacao'
+    
+            if(recomendacaoOutput.textContent.length > 0) {
+                recomendacaoOutput.classList.add("pad-10");
+                
+            } else {
+                recomendacaoOutput.classList.remove("pad-10");
+            }
+        }
+    },
+
+    limparCamposDeSaida() {
         doseEposologiaOutput.innerHTML = "";
         recomendacaoOutput.innerHTML = "";
+        recomendacaoOutput.classList.remove("pad-10");
     }
 }
 
-
-function instanciarClasse () {
-    if(validarPeso()) {
-        let arvSelecionado;
-
-        for (const arv of arvs) {
-            if( arv.matches(".selected")) {
-                arvSelecionado = arv.dataset.nome;
-                if(arv.matches(".placeholder")) {
-                    return false;
-                }
-            } 
-        }
-        const dose = new Darv(peso.value, arvSelecionado);
-        dose.calcularDose();
-
-        // Adicionar Padding ao 'p.recomendacao'
-
-        if(recomendacaoOutput.textContent.length > 0) {
-            recomendacaoOutput.classList.add("padding-10");
-            
-        } else {
-            recomendacaoOutput.classList.remove("padding-10");
-        }
-    }
-}
-var peso, arvs, campoDeDoseEposologia, recomendacaoOutput;
-
+var peso, arvs, doseEposologiaOutput, recomendacaoOutput;
 window.addEventListener("load", () => {
     peso = document.querySelector("input#peso");
     arvs = document.querySelectorAll("ul.select li");
@@ -1029,12 +1039,12 @@ window.addEventListener("load", () => {
     
     // Eventos
 
-    peso.addEventListener("input", () => instanciarClasse());
-    arvs.forEach ( arv => arv.addEventListener("click", () => instanciarClasse()));
+    peso.addEventListener("input", () => objectoDarv.instanciarClasse());
+    arvs.forEach ( arv => arv.addEventListener("click", () => objectoDarv.instanciarClasse()));
 
     abas_do_menu.forEach ( aba => {
         aba.addEventListener("click", () => {
-            instanciarClasse();
+            objectoDarv.instanciarClasse();
 
             // Para não apresentar a dose de outra aba, já que o optionDefault é o placeholder
 

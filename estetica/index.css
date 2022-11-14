@@ -319,10 +319,13 @@ div.doseador > div {
     display: flex;
     align-items: center;
     border-radius: 4px;
-    transition-duration: 400ms;
 }
 
-div.doseador > div.hover {
+div.doseador > div.campo-de-farmaco {
+    transition-duration: 600ms;
+}
+
+div.doseador > div.focus {
     border-color: var(--primary-color);
 }
 
@@ -503,6 +506,11 @@ ul.select.on div.caixa-de-pesquisa button,
 ul.select.on div.caixa-de-pesquisa input {
     display: block;
     background-color: var(--yt);
+}
+
+ul.select.on div.caixa-de-pesquisa button:hover {
+    background-color: var(--gray-light);
+    border-radius: 20px;
 }
 
 ul.select.on div.optgroup {
