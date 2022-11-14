@@ -183,12 +183,33 @@ header div._100vw {
     line-height: 2;
 }
 
-header div._100vw a#logotipo {
+header div.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div.linha a#logotipo {
     color: var(--primary-color);
     font-family: "Lobster", cursive, Arial, Helvetica, sans-serif;
     font-size: 22px;
 }
 
+header div.linha button.partilhar {
+    background-color: initial;
+    border-radius: 40px;
+    padding: 4px 8px;
+}
+
+header div.linha button.partilhar:active {
+    background-color: var(--placeholder-color);
+}
+
+@media screen and (min-width: 1024px) {
+    header div.linha button.partilhar {
+        display: none;
+    }
+}
 
 nav.menu-principal {
     width: 100%;
@@ -748,38 +769,16 @@ div.contentor-dos-cards a {
     height: 100%;
 }
 
-div.contentor-dos-cards a div:first-child {
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--gray-c);
-}
-
-@media screen and (max-width: 1023px) {
-    div.contentor-dos-cards a div:first-child {
-        background-size: 100%;
-    }
-}
-
-div.contentor-dos-cards a div.cdp {
-    background-image: url("../imagens/calculadora-de-doses.png");
-}
-
-div.contentor-dos-cards a div.trmhiv {
-    background: url("../imagens/totalizador-de-resumo-mensal-de-hiv.png") bottom left;
-}
-
-div.contentor-dos-cards a div.trmc {
-    background-image: url("../imagens/totalizador-de-resumo-mensal-de-consultas.png");
-}
-
-div.contentor-dos-cards a div.trmsaaj {
-    background-image: url("../imagens/totalizador-de-resumo-mensal-de-saaj.png");
+div.contentor-dos-cards a picture {
+    margin: 0;
 }
 
 section.propaganda a div.description {
-    padding: 0 10px 10px 10px;
+    padding: 10px;
     background-color: var(--yt);
     display: flex;
     flex-direction: column;
+    border-top: 1px solid var(--gray);
 }
 
 div.contentor-dos-cards div.description h5 {
@@ -798,11 +797,12 @@ div.description span.visitar {
     color: var(--yt);
     background-color: var(--btn-bgc);
     display: block;
-    padding: 2px;
+    padding: 3px;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 0;
-    width: 110px;
+    box-shadow: 0 0 8px var(--gray);
+    border: thin solid var(--yt-text-color);
 }
 
 div.description span.visitar:hover {

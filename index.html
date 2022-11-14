@@ -4,17 +4,17 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Doseador de Antirretrovirais - TARV PEDIÁTRICO</title>
+        <title>Doseador de Antirretrovirais - Tarv Pediátrico</title>
         <meta name="robots" content="index, follow"/>
-        <meta name="description" content="Calcula automaticamente a dose de acordo com o peso, inclusive a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o antirretroviral." /> 
+        <meta name="description" content="Calcula automaticamente a dose de acordo com o peso, a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o fármaco." /> 
         <meta name="keywords" content="Doseador de Antirretrovirais, Doseador de Arvs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose." />
         <meta name="author" content="Adérito Félix Quinamine" />
 
         <!-- PARTILHA NAS REDES SOCIAIS -->
         <meta property="og:url" content="https://www.quinamine.github.io/tarv-pediatrico/index.html"/>
         <meta property="og:title" content="Doseador de Antirretrovirais" />
-        <meta property="og:description" content="Calcula automaticamente a dose de acordo com o peso, inclusive a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o antirretroviral." />
-        <meta property="og:image" content="https://www.quinamine.github.io/tarv-pediatrico/imagens/doseador-de-arvs.png">
+        <meta property="og:description" content="Calcula automaticamente a dose de acordo com o peso,a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o fármaco." />
+        <meta property="og:image" content="https://www.quinamine.github.io/tarv-pediatrico/imagens/doseador-de-arvs.jpg">
        
         <!-- DESIGN -->
         <link rel="stylesheet" href="estetica/reset.css" />
@@ -40,6 +40,21 @@
            <div class="_100vw">
                 <div class="linha">
                     <a href="index.html" id="logotipo">Tarv Pediátrico</a>
+             
+                    <button class="partilhar">
+                        <svg style="width: 25px; height: 20px;">
+                            <circle r="2.5" cx="5" cy="50%" fill="none" stroke-width="2px" stroke="var(--primary-color)"></circle>
+    
+                            <circle r="2.5" cx="20" cy="5" fill="none" stroke-width="2px" stroke="var(--primary-color)"></circle>
+                            
+                            <circle r="2.5" cx="20" cy="15" fill="none" stroke-width="2px" stroke="var(--primary-color)"></circle>
+                            
+                            <line x1="7.5" x2="17.5" y1="9" y2="5" stroke-width="2px" stroke="var(--primary-color)"></line>
+    
+                            <line x1="7.5" x2="17.5" y1="11" y2="15" stroke-width="2px" stroke="var(--primary-color)"></line>
+                            
+                        </svg>
+                    </button>  
                 </div>                
            </div>
            <nav class="menu-principal">
@@ -79,8 +94,6 @@
                             </button>
                             <input type="search" id="src" placeholder="Pesquisar antirretrovirais" />
                         </div>
-
-                        <i class="fa-regular fa-arrow-left-long"></i>
                         <div class="optgroup arvs abc-3tc">
                             <h3>ABACAVIR + LAMIVUDINA</h3>
                             <li data-nome="ABC">ABC 60 mg Comp.</li>
@@ -197,9 +210,9 @@
             
             <article>
                 <section class="instrucoes-darv on">
-                    <h2>Instruções de utilização do Doseador de ARVs</h2>
+                    <h2>Instruções de utilização do Doseador de Antirretrovirais</h2>
 
-                    <p>O <b>Doseador de ARVs</b> ou abreviamente <b>DARV</b> é um serviço online gratuito que de forma automática calcula doses terapêuticas dos antirretrovirais para a população infanto-juvenil (crianças e jovens) em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</strong></p>
+                    <p>O <b>Doseador de ARVs</b> ou abreviamente <b>DARV</b> é um serviço online gratuito que, de forma automática, calcula doses terapêuticas dos antirretrovirais para a população infanto-juvenil (crianças e jovens) em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</strong></p>
 
                     <p>O DARV está basicamente estruturado da seguinte forma:</p>
 
@@ -257,7 +270,7 @@
                     <p>O "<b>&minus;</b>" deve ser interpretado como "<b>Não aplicável</b>". Existem três situações em que a dose aparece como "<b>&minus;</b>":</p>
 
                     <ol>
-                        <li><b>"&minus;" só na célula correspondente à Dose-noite</b> – neste caso significa que não há dose nocturna ou seja, o fármaco deve ser tomado só de manhã. Por exemplo, a Organização Mundial da Saúde (OMS) recomenda que o ABC/3TC seja administrado uma vez por dia (preferencialmente de manhã).</li>
+                        <li><b>"&minus;" só na célula correspondente à Dose-noite</b> – neste caso significa que não há dose nocturna ou seja, o fármaco deve ser tomado só de manhã. Por exemplo, a Organização Mundial de Saúde (OMS) recomenda que o ABC/3TC seja administrado uma vez por dia (preferencialmente de manhã).</li>
                         
                         <table>
                             <thead>
@@ -273,7 +286,7 @@
                             </tbody> 
                         </table>
                         
-                        <li><b>"&minus;" só na célula correspondente à Dose-manhã</b> – significa que não há dose matinal, o fármaco deve ser tomado somente a noite. Exemplo EFV 200 mg.     
+                        <li><b>"&minus;" só na célula correspondente à Dose-manhã</b> – significa que não há dose matinal, o fármaco deve ser tomado somente a noite. Exemplo: EFV 200 mg.     
                         </li>
 
                         <table>
@@ -376,7 +389,10 @@
                     <div class="col">
                         <a href="https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html" target="_blank">
                             
-                            <div class="cdp"></div>
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="" />
+                                <img src="imagens/calculadora-de-doses.png" alt="Calculadora de Doses Pediátricas" />
+                            </picture>
     
                             <div class="description">
                                 <h5>Calculadora de Doses Pediátricas</h5>
@@ -390,7 +406,10 @@
                     <div class="col">
                         <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html" target="_blank">
                             
-                            <div class="trmhiv"></div>
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="imagens/totalizador-de-resumo-mensal-de-hiv-desk.png" />
+                                <img src="imagens/totalizador-de-resumo-mensal-de-hiv.png" alt="Totalizador de Resumo Mensal de HIV/SIDA" />
+                            </picture>
 
                             <div class="description">
                                 <h5>Totalizador de Resumo Mensal de HIV/SIDA</h5>
@@ -404,9 +423,11 @@
                     <div class="col">
                         <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" target="_blank">
                             
-                            <div class="trmc"></div>
-                            <div class="description">
-                                
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="imagens/totalizador-de-resumo-mensal-de-consultas-desk.png" />
+                                <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas" />
+                            </picture>
+                            <div class="description">                               
                                 <h5>Totalizador de Resumo Mensal de Consultas</h5>
                                 <p>
                                     Serviço online gratuito que auxilia na elaboração do resumo mensal de consultas externas, através do cálculo automático dos subtotais e totais a partir dos dados inseridos pelo usuário (Profissional de Saúde).
@@ -418,7 +439,10 @@
                     <div class="col">
                         <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html" target="_blank">
                             
-                            <div class="trmsaaj"></div>
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="imagens/totalizador-de-resumo-mensal-de-saaj-desk.png" />
+                                <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ" />
+                            </picture>
                             <div class="description">
                                 <h5>Totalizador de Resumo Mensal de SAAJ</h5>
                                 <p>

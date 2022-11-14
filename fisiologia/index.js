@@ -76,6 +76,7 @@ const menu = {
         }
         aba.classList.add("current");
         titulo_do_doseador.textContent = aba.dataset.titulodaaba;
+        document.title = aba.dataset.titulodaaba;
     },
 
     mostrarFarmacosRelacionadosAaba(aba) {
@@ -153,13 +154,35 @@ window.addEventListener("load", () => {
 
     campoPeso.addEventListener("focusin", () => campoPeso.parentElement.classList.add("focus"));
     campoPeso.addEventListener("focusout", () => campoPeso.parentElement.classList.remove("focus"));
+
+    // PARTILHAR
+    let conteudo = {
+        title: "Doseador de Antirretrovirais",
+        text: "Calcula automaticamente a dose de acordo com o peso, a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas.",
+        url: "https://www.quinamine.github.io/tarv-pediatrico/index.html"
+    }
+
+    const btnPartilhar = document.querySelector("button.partilhar");
+    btnPartilhar.addEventListener("click", () => {
+        try {
+            navigator.share(conteudo)
+            .then(() => {
+                console.log("Endereço do Doseador partilhado com sucesso.");
+            })
+            .catch((erro) => {
+                console.log(`Não foi possível partilhar devido ao erro: ${erro}.`);
+            })
+        } catch (erro) {
+            console.log("O seu navegador não tem suporte ao método 'navigator.share()'.");
+        }
+    });
 });
 
 
 // EVENTO DE FECHAMENTO DO SELECT 
 window.addEventListener("click", event => {
    
-    const selectChildren = document.querySelectorAll("ul.select *");
+   const selectChildren = document.querySelectorAll("ul.select *");
     let numChildrenClicked = 0;
     for (const child of selectChildren) {
         if(child === event.target) {
@@ -171,6 +194,8 @@ window.addEventListener("click", event => {
         doseador.fecharSelect();
         document.querySelector(".campo-de-farmaco").classList.remove("focus");
     }
+
+
 })
 
 

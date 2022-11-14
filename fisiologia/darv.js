@@ -1047,12 +1047,8 @@ window.addEventListener("load", () => {
             objectoDarv.instanciarClasse();
 
             // Para não apresentar a dose de outra aba, já que o optionDefault é o placeholder
-
             if(aba.matches("[data-for=arvs]")) {
-                doseEposologiaOutput.innerHTML = "";
-                recomendacaoOutput.innerHTML = "";
-                
-               recomendacaoOutput.classList.remove("padding-10");
+                objectoDarv.limparCamposDeSaida();
             }
            
         })
