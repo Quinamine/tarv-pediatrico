@@ -14,7 +14,6 @@
     --black-alpha-5: rgba(0, 0, 0, .5);
     --btn-bgc: #d27832; 
     --btn-hover-bgc: var(--primary-color);
-    --important-text-bgc: #fff0d4;
     --gray: #888888;
     --gray-a: #aaaaaa;
     --gray-c: #cccccc;
@@ -44,8 +43,10 @@ body {
     font-size: 15px;
 }
 
-body.overflow-h {
-    overflow: hidden;
+@media screen and (max-width: 1023px) {
+    body.overflow-h {
+        overflow: hidden;
+    }
 }
 
 *::selection {
@@ -147,11 +148,12 @@ img {
 button, input {
     border: none;
     outline: none;
+    background-color: inherit;
 }
 
 .destaque {
-    background-color: var(--important-text-bgc);
-    border-left: 4px solid var(--primary-color);
+    background-color: var(--gray-light);
+    border-left: 4px solid var(--gray-dark);
     border-radius: 4px;
     padding: 5px 5px 5px 10px;
     font-style: italic;
@@ -195,12 +197,10 @@ header div.linha {
 
 header div.linha a#logotipo {
     color: var(--primary-color);
-    font-family: "Lobster", cursive, Arial, Helvetica, sans-serif;
     font-size: 22px;
 }
 
 header div.linha button.partilhar {
-    background-color: initial;
     border-radius: 40px;
     padding: 4px 8px;
 }
@@ -346,22 +346,40 @@ div.doseador > div {
     border-radius: 4px;
 }
 
-div.doseador > div.campo-de-farmaco {
+div.doseador div.campo-de-farmaco {
     transition-duration: 600ms;
+    max-height: 35px;
 }
 
-div.doseador > div.focus {
+div.doseador div.focus {
     border-color: var(--primary-color);
 }
 
-div.doseador > div.output {
+div.doseador div.campo-de-farmaco.pos-relative {
+    position: relative; /* Para não transbordar o button.btn-expandir-select no mobile */ 
+}
+
+div.campo-de-farmaco button.btn-expandir-select {
+    height: 35px;
+    padding: 0px 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+div.campo-de-farmaco button.btn-expandir-select svg:hover {
+    background-color: var(--gray-d);
+}
+
+div.doseador div.output {
     min-height: 84px;
     position: relative;
     padding: 20px 8px;
     flex-direction: column;
 }
 
-div.doseador > div.output h2 {
+div.doseador div.output h2 {
     margin: 0;
     position: absolute;
     top: -18px;
@@ -373,7 +391,7 @@ div.doseador > div.output h2 {
     color: var(--gray-dark);
 }
 
-div.doseador > div.output p.recomendacao {
+div.doseador div.output p.recomendacao {
     background-color: var(--gray-light);
     border-radius: 8px;
     margin: 0;
@@ -381,30 +399,29 @@ div.doseador > div.output p.recomendacao {
     width: 100%;
 }
 
-div.doseador > div.output 
-    p.recomendacao.pad-10 {
+div.doseador div.output p.recomendacao.pad-10 {
     padding: 10px;
 }
 
-div.doseador > div label {
+div.doseador label {
     margin-left: 8px;
     font-weight: bold;
     color: var(--gray);
 }
 
-div.doseador > div label.kg {
+div.doseador label.kg {
     color: inherit;
     font-weight: initial;
     margin-left: 0;
     margin-right: 8px;
 }
 
-div.doseador > div input, 
-div.doseador > div ul.select {
+div.doseador input, 
+div.doseador ul.select {
     flex: 1;
 }
 
-div.doseador > div input {
+div.doseador input {
     align-self: stretch;
     padding: 5px;
     font-size: 15px;
@@ -463,10 +480,26 @@ ul.select li.placeholder {
     color: var(--placeholder-color) !important;
 }
 
+ul.select li.placeholder span.desk {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    ul.select li.placeholder span.desk {
+        display: initial;
+    }
+
+    ul.select li.placeholder span.mobile {
+        display: none;
+    }
+}
+
 ul.select li.selected {
     display: initial;
     flex: 1;
     margin: 0;
+    padding-top: 6.5px;
+    padding-bottom: 6.5px;
 }
 
 @media screen and (max-width: 345px) {
@@ -504,10 +537,6 @@ ul.select div.caixa-de-pesquisa {
 ul.select div.caixa-de-pesquisa button, 
 ul.select div.caixa-de-pesquisa input {
     display: none;
-}
-
-ul.select div.caixa-de-pesquisa button {
-    background-color: inherit;
 }
 
 ul.select div.caixa-de-pesquisa input {
@@ -782,7 +811,13 @@ section.propaganda a div.description {
     background-color: var(--yt);
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--gray);
+    border-top: 1px solid var(--border-color);
+}
+
+@media screen and (min-width: 1024px) {
+    section.propaganda a div.description {
+        border-color: var(--gray);
+    }  
 }
 
 div.contentor-dos-cards div.description h5 {

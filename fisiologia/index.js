@@ -6,14 +6,18 @@ const doseador = {
         select.classList.add("on");
         select.querySelector("#src").focus();
 
-        if(window.innerWidth < 1024) {
-            document.querySelector("body").classList.add("overflow-h");
-        }
+        // Para mobile
+        document.querySelector("body").classList.add("overflow-h");
+        campoFarmaco.classList.remove("pos-relative");
+        window.innerWidth < 1024 && document.querySelector("a#logotipo").scrollIntoView();
     },
 
     fecharSelect() {
         select.classList.remove("on");
         document.querySelector("body").classList.remove("overflow-h");
+
+        // Para não transbordar o button.btn-expandir-select no mobile  
+        campoFarmaco.classList.add("pos-relative");
 
         // Para resetar o input.value e os resultados da pesquisa anterior
         const selectChildren = select.querySelectorAll("li.placeholder, div.optgroup.arvs h3, div.optgroup.arvs li");
@@ -81,7 +85,7 @@ const menu = {
         }
         aba.classList.add("current");
         titulo_do_doseador.textContent = aba.dataset.titulodaaba;
-        document.title = aba.dataset.titulodaaba;
+        document.title = aba.dataset.titulodaaba + " - Tarv Pediátrico";
     },
 
     mostrarFarmacosRelacionadosAaba(aba) {
@@ -110,12 +114,12 @@ const menu = {
 
         let optionDefault = document.querySelector(`[data-nome=${aba.dataset.optiondefault}]`);
         doseador.selecionarFarmaco(optionDefault);
-
     }
 }
 
 let abas_do_menu,
-select, selectSrc, selectOptions;
+campoFarmaco,
+select, selectSrc, selectOptions, expansoresDeSelect;
 window.addEventListener("load", () => {
     abas_do_menu = document.querySelectorAll(".menu-principal a");
     
@@ -131,12 +135,17 @@ window.addEventListener("load", () => {
     })
 
     // DOSEADOR 
-    const campoFarmaco = document.querySelector(".campo-de-farmaco");
+    campoFarmaco = document.querySelector("div.campo-de-farmaco");
     select = document.querySelector("ul.select");
     selectOptions = select.querySelectorAll("li");
     selectSrc = select.querySelector("input#src");
     const selectSrcBtn = select.querySelector("button.voltar");
-   
+    expansoresDeSelect = document.querySelectorAll(".btn-expandir-select, label.arv");
+
+    // Abrir lista de fármacos
+    expansoresDeSelect.forEach (expansor => {
+        expansor.addEventListener("click", () => doseador.abrirSelect());
+    })
 
     selectOptions.forEach ( option => {
         option.addEventListener("click", () => {
@@ -150,13 +159,14 @@ window.addEventListener("load", () => {
         });
     });
 
+    // Pesquisar fármacos
     selectSrc.addEventListener("input", () => doseador.pesquisarFarmaco(selectSrc.value));
 
+    // Fechar lista de fármacos
     selectSrcBtn.addEventListener("click", () => doseador.fecharSelect()); 
 
     // Adicionar borda laranja aos campos de peso e fármaco
     const campoPeso = document.querySelector("input#peso");
-
     campoPeso.addEventListener("focusin", () => campoPeso.parentElement.classList.add("focus"));
     campoPeso.addEventListener("focusout", () => campoPeso.parentElement.classList.remove("focus"));
 
@@ -184,10 +194,11 @@ window.addEventListener("load", () => {
 });
 
 
+
 // EVENTO DE FECHAMENTO DO SELECT 
 window.addEventListener("click", event => {
    
-    const selectChildren = document.querySelectorAll("ul.select *");
+    const selectChildren = campoFarmaco.querySelectorAll("*");
    
     let numChildrenClicked = 0;
     for (const child of selectChildren) {
@@ -196,13 +207,18 @@ window.addEventListener("click", event => {
         }
     }
 
-    if(numChildrenClicked < 1  && event.target !== select){
+    if(numChildrenClicked <= 0) {
         doseador.fecharSelect();
         document.querySelector(".campo-de-farmaco").classList.remove("focus");
     }
+});
 
-
-})
+window.addEventListener("scroll", () => {
+    if(window.innerWidth > 1023) {
+        doseador.fecharSelect();
+        document.querySelector(".campo-de-farmaco").classList.remove("focus");
+    }
+});
 
 
 
