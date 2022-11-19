@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Doseador de Antirretrovirais - Tarv Pediátrico</title>
         <meta name="robots" content="index, follow"/>
-        <meta name="description" content="Calcula automaticamente a dose de acordo com o peso, a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o fármaco." /> 
-        <meta name="keywords" content="Doseador de Antirretrovirais, Doseador de Arvs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose." />
+        <meta name="description" content="Calcula e retorna automaticamente a dose, a posologia e o número de comprimidos a dispensar dos antirretrovirais com base no peso inserido pelo usuário (Profissional de Saúde)." /> 
+        <meta name="keywords" content="Doseador de Antirretrovirais, Doseador de ARVs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose, Dosagem de Antirretrovirais, Dosagem de ARVs" />
         <meta name="author" content="Adérito Félix Quinamine" />
 
         <!-- PARTILHA NAS REDES SOCIAIS -->
         <meta property="og:url" content="https://www.quinamine.github.io/tarv-pediatrico/index.html"/>
         <meta property="og:title" content="Doseador de Antirretrovirais" />
-        <meta property="og:description" content="Calcula automaticamente a dose de acordo com o peso,a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas. O usuário só precisa inserir o peso e escolher o fármaco." />
+        <meta property="og:description" content="Calcula e retorna automaticamente a dose, a posologia e o número de comprimidos a dispensar dos antirretrovirais com base no peso inserido pelo usuário (Profissional de Saúde)." />
         <meta property="og:image" content="https://www.quinamine.github.io/tarv-pediatrico/imagens/doseador-de-arvs.jpg">
        
         <!-- DESIGN -->
@@ -76,119 +76,193 @@
                    
                     <ul class="select">
                         <li class="placeholder arvs selected" data-nome="placeholder">
-                            <span class="mobile">Toque</span> 
-                            <span class="desk">Clique</span> 
-                            aqui para  abrir a lista dos ARVs
+                            <span>
+                                <em class="mobile">Toque</em> 
+                                <em class="desk">Clique</em> 
+                                aqui para  abrir a lista dos ARVs
+                            </span>
                         </li>
 
                         <div class="caixa-de-pesquisa">
                             <button class="voltar">
                                 <svg style="width: 16px; height: 16px;">
-                                    <line x1="0%" x2="50%" y1="50%" y2="0" stroke-width="2px" stroke="#333"></line>
-                                    <line x1="0%" x2="50%" y1="50%" y2="100%" stroke-width="2px" stroke="#333"></line>
-                                    <line x1="-1" x2="100%" y1="50%" y2="50%" stroke-width="2px" stroke="#333"></line>
+                                    <line x1="0%" x2="50%" y1="50%" y2="0" stroke-width="2px" stroke="var(--gray)"></line>
+                                    <line x1="0%" x2="50%" y1="50%" y2="100%" stroke-width="2px" stroke="var(--gray)"></line>
+                                    <line x1="-1" x2="100%" y1="50%" y2="50%" stroke-width="2px" stroke="var(--gray)"></line>
                                 </svg>
                             </button>
                             <input type="search" id="src" placeholder="Pesquisar antirretrovirais" />
                         </div>
                         <div class="optgroup arvs abc-3tc">
                             <h3>ABACAVIR + LAMIVUDINA</h3>
-                            <li data-nome="ABC">ABC 60 mg Comp.</li>
-                            <li data-nome="ABC/3TC-60-30mg">ABC/3TC 60 mg/30 mg Comp.</li>
-                            <li data-nome="ABC/3TC-120-60mg">ABC/3TC 120 mg/60 mg Comp.</li>
-                            <li data-nome="ABC/3TC-600-300mg">ABC/3TC 600 mg/300 mg Comp.</li>
+                            <li data-nome="ABC">
+                                <span>ABC 60 mg Comp.</span>
+                            </li>
+                            <li data-nome="ABC/3TC-60-30mg">
+                                <span>ABC/3TC 60 mg/30 mg Comp.</span>
+                            </li>
+                            <li data-nome="ABC/3TC-120-60mg">
+                                <span>ABC/3TC 120 mg/60 mg Comp.</span>
+                            </li>
+                            <li data-nome="ABC/3TC-600-300mg">
+                                <span>ABC/3TC 600 mg/300 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs dtg">
                             <h3>DOLUTEGRAVIR</h3>
-                            <li data-nome="pDTG-10mg">pDTG 10 mg Comp.</li>
-                            <li data-nome="DTG-50mg">DTG 50 mg Comp.</li>
-                            <li data-nome="TDF/3TC/DTG">TDF/3TC/DTG 300/300/50 mg Comp.</li>
+                            <li data-nome="pDTG-10mg">
+                                <span>pDTG 10 mg Comp.</span>
+                            </li>
+                            <li data-nome="DTG-50mg">
+                                <span>DTG 50 mg Comp.</span>
+                            </li>
+                            <li data-nome="TDF/3TC/DTG">
+                                <span>TDF/3TC/DTG 300/300/50 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs lpv-r">
                             <h3>LOPINAVIR + RITONAVIR</h3>
-                            <li data-nome="LPV/r-40-10mg">LPV/r 40 mg/10 mg Cáps./Saquetas</li>
-                            <li data-nome="LPV/r-xpe">LPV/r 80 mg/20 mg/ml Xarope</li>
-                            <li data-nome="LPV/r-100-25mg">LPV/r 100 mg/25 mg Comp.</li>
-                            <li data-nome="LPV/r-200-50mg">LPV/r 200 mg/50 mg Comp.</li>
-                            <li data-nome="ABC/3TC-LPV/r">ABC/3TC/LPV/r 30/15/40/10 mg Comp.</li>
+                            <li data-nome="LPV/r-40-10mg">
+                                <span>LPV/r 40 mg/10 mg Cáps./Saquetas<span>
+                            </li>
+                            <li data-nome="LPV/r-xpe">
+                                <span>LPV/r 80 mg/20 mg/ml Xarope</span>
+                            </li>
+                            <li data-nome="LPV/r-100-25mg">
+                                <span>LPV/r 100 mg/25 mg Comp.</span>
+                            </li>
+                            <li data-nome="LPV/r-200-50mg">
+                                <span>LPV/r 200 mg/50 mg Comp.</span>
+                            </li>
+                            <li data-nome="ABC/3TC-LPV/r">
+                                <span>ABC/3TC/LPV/r 30/15/40/10 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs azt-3tc">
                             <h3>ZIDOVUDINA + LAMIVUDINA</h3>
-                            <li data-nome="AZT-xpe">AZT 10 mg/ml Xarope</li>
-                            <li data-nome="Duovir-ped">AZT/3TC 60 mg/30 mg Comp.</li>
-                            <li data-nome="Duovir-adult">AZT/3TC 300 mg/150 mg Comp.</li>
+                            <li data-nome="AZT-xpe">
+                                <span>AZT 10 mg/ml Xarope</span>
+                            </li>
+                            <li data-nome="Duovir-ped">
+                                <span>AZT/3TC 60 mg/30 mg Comp.</span>
+                            </li>
+                            <li data-nome="Duovir-adult">
+                                <span>AZT/3TC 300 mg/150 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs azt-3tc-nvp">
                             <h3>ZIDOVUDINA + LAMIVUDINA + NEVIRAPINA</h3>
-                            <li data-nome="DuovirN-ped">AZT/3TC/NVP 60/30/50 mg Comp.</li>
-                            <li data-nome="DuovirN-adult">AZT/3TC/NVP 300/150/200 mg Comp.</li>
+                            <li data-nome="DuovirN-ped">
+                                <span>AZT/3TC/NVP 60/30/50 mg Comp.</span>
+                            </li>
+                            <li data-nome="DuovirN-adult">
+                                <span>AZT/3TC/NVP 300/150/200 mg Comp.</span>
+                            </li>
                         </div>
                         
                         <div class="optgroup arvs tdf-3tc">
                             <h3>TENOFOVIR + LAMIVUDINA</h3>
-                            <li data-nome="TDF/3TC">TDF/3TC 300 mg/300 mg Comp.</li>
+                            <li data-nome="TDF/3TC">
+                                <span>TDF/3TC 300 mg/300 mg Comp.</span>
+                            </li>
                         </div>
                         
                         <div class="optgroup arvs tdf-3tc-efv">
                             <h3>TENOFOVIR + LAMIVUDINA + EFAVIRENZ</h3>
-                            <li data-nome="TDF/3TC/EFV-400">TDF/3TC/EFV 300/300/400 mg Comp.</li>
-                            <li data-nome="TDF/3TC/EFV-600">TDF/3TC/EFV 300/300/600 mg Comp.</li>
+                            <li data-nome="TDF/3TC/EFV-400">
+                                <span>TDF/3TC/EFV 300/300/400 mg Comp.</span>
+                            </li>
+                            <li data-nome="TDF/3TC/EFV-600">
+                                <span>TDF/3TC/EFV 300/300/600 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs efv">
                             <h3>EFAVIRENZ</h3>
-                            <li data-nome="EFV">EFV 200 mg Comp.</li>
+                            <li data-nome="EFV">
+                                <span>EFV 200 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs atv-r">
                             <h3>ATAZANAVIR + RITONAVIR</h3>
-                            <li data-nome="ATV/r">ATV/r 300 mg/100 mg Comp.</li>
+                            <li data-nome="ATV/r">
+                                <span>ATV/r 300 mg/100 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs rtv">
                             <h3>RITONAVIR</h3>
-                            <li data-nome="RTV-25">RTV 25 mg Comp.</li>
+                            <li data-nome="RTV-25">
+                                <span>RTV 25 mg Comp.</span>
+                            </li>
                             <li data-nome="RTV-100-superboosting" class="rtv">
-                                RTV 100 mg Comp. <sup>(para superboosting)</sup>
+                                <span>RTV 100 mg Comp. <sup>(para superboosting)</sup></span>
                             </li>
                             <li data-nome="RTV-100-3alinha" class="rtv">
-                                RTV 100 mg Comp. <sup>(na 3ª linha com DRV)</sup>
+                                <span>RTV 100 mg Comp. <sup>(na 3ª linha com DRV)</sup></span>
                             </li>
                         </div>
 
                         <div class="optgroup arvs ral">
                             <h3>RALTEGRAVIR</h3>
-                            <li data-nome="RAL-25">RAL 25 mg Comp.</li>
-                            <li data-nome="RAL-400">RAL 400 mg Comp.</li>
+                            <li data-nome="RAL-25">
+                                <span>RAL 25 mg Comp.</span>
+                            </li>
+                            <li data-nome="RAL-400">
+                                <span>RAL 400 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup arvs drv">
                             <h3>DARUNAVIR</h3>
-                            <li data-nome="drv-75">DRV 75 mg Comp.</li>
-                            <li data-nome="drv-150">DRV 150 mg Comp.</li>
-                            <li data-nome="drv-600">DRV 600 mg Comp.</li>
+                            <li data-nome="drv-75">
+                                <span>DRV 75 mg Comp.</span>
+                            </li>
+                            <li data-nome="drv-150">
+                                <span>DRV 150 mg Comp.</span>
+                            </li>
+                            <li data-nome="drv-600">
+                                <span>DRV 600 mg Comp.</span>
+                            </li>
                         </div>
 
                         <div class="optgroup ctz hide">
                             <h3>TRATAMENTO PROFILÁTICO COM COTRIMOXAZOL</h3>
-                            <li data-nome="CTZ-susp">Cotrimoxazol 240 mg/5 ml Susp.</li>
-                            <li data-nome="CTZ-cp">Cotrimoxazol 480 mg Comp.</li>
+                            <li data-nome="CTZ-susp">
+                                <span>Cotrimoxazol 240 mg/5 ml Susp.</span>
+                            </li>
+                            <li data-nome="CTZ-cp">
+                                <span>Cotrimoxazol 480 mg Comp.</span>
+                            </li>
                         </div>    
                             
                         <div class="optgroup anti-tb hide">
                             <h3>TRATAMENTO PREVENTIVO DE TUBERCULOSE</h3>
-                            <li data-nome="isoniazida-100">Isoniazida 100 mg Comp.</li>
-                            <li data-nome="isoniazida-300">Isoniazida 300 mg Comp.</li>
-                            <li data-nome="levofloxacina-100">Levofloxacina 100 mg Comp.</li>
-                            <li data-nome="levofloxacina-250">Levofloxacina 250 mg Comp.</li>
+                            <li data-nome="isoniazida-100">
+                                <span>Isoniazida 100 mg Comp.</span>
+                            </li>
+                            <li data-nome="isoniazida-300">
+                                <span>Isoniazida 300 mg Comp.</span>
+                            </li>
+                            <li data-nome="levofloxacina-100">
+                                <span>Levofloxacina 100 mg Comp.</span>
+                            </li>
+                            <li data-nome="levofloxacina-250">
+                                <span>Levofloxacina 250 mg Comp.</span>
+                            </li>
 
-                            <h3>PROFILAXIA DE NEUROPATICA PERIFÉRICA</h3>
-                            <li data-nome="piridoxina-25">Piridoxina 25 mg Comp.</li>
-                            <li data-nome="piridoxina-50">Piridoxina 50 mg Comp.</li>
+                            <h3>PROFILAXIA DE NEUROPATIA PERIFÉRICA</h3>
+                            <li data-nome="piridoxina-25">
+                                <span>Piridoxina 25 mg Comp.</span>
+                            </li>
+                            <li data-nome="piridoxina-50">
+                                <span>Piridoxina 50 mg Comp.</span>
+                            </li>
                         </div>
                        
                     </ul>
@@ -217,12 +291,12 @@
 
                     <p>O <b>Doseador de ARVs</b> ou abreviamente <b>DARV</b> é um serviço online gratuito que, de forma automática, calcula doses terapêuticas dos antirretrovirais para a população infanto-juvenil (crianças e jovens) em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</strong></p>
 
-                    <p>O DARV está basicamente estruturado da seguinte forma:</p>
+                    <p class="mb-15">O DARV está basicamente estruturado da seguinte forma:</p>
 
                     <ul>
-                        <li>Um campo de <b>Peso</b> para inserir o peso em kg da criança para a qual o Profissional de Saúde pretende calcular a dose;</li>
+                        <li>Um campo de <b>Peso</b>, para inserir o peso em quilograma da criança para a qual o Profissional de Saúde pretende calcular a dose;</li>
 
-                        <li>Um campo de <b>ARV</b> com a lista dos antirretrovirais. Aqui o usuário (Profissional de Saúde) escolhe o antirretroviral do qual pretende calcular a dose. 
+                        <li>Um campo de <b>ARV</b>, com a lista dos antirretrovirais. Aqui o usuário (Profissional de Saúde) escolhe o antirretroviral do qual pretende calcular a dose. 
 
                         </li>
 
@@ -233,7 +307,7 @@
 
                     <h3>Apresentação da dose</h3>
 
-                    <p>Normalmente a dose é apresentada numa mini-tabela com cinco (5) linhas e 9 colunas.</p>
+                    <p class="mb-15">Normalmente a dose é apresentada numa mini-tabela com cinco (5) linhas e 9 colunas.</p>
 
                     <ul>
                         <li>A 1ª linha possui duas colunas com os títulos <b>Dose-manhã</b> e <b>Dose-noite</b> respectivamente.</li>
@@ -249,7 +323,7 @@
 
                     <div class="exemplo">
 
-                        <p class="destaque ex"><b>Por exemplo:</b> Utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 14 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:</p>
+                        <p class="destaque ex mb-15"><b>Por exemplo:</b> Utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 14 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:</p>
 
                         <table>
                             <thead>
@@ -270,7 +344,7 @@
 
                     <h4>Situações em que a dose aparece como "<b>&minus;</b>"</h4>
 
-                    <p>O "<b>&minus;</b>" deve ser interpretado como "<b>Não aplicável</b>". Existem três situações em que a dose aparece como "<b>&minus;</b>":</p>
+                    <p class="mb-15">O "<b>&minus;</b>" deve ser interpretado como "<b>Não aplicável</b>". Existem três situações em que a dose aparece como "<b>&minus;</b>":</p>
 
                     <ol>
                         <li><b>"&minus;" só na célula correspondente à Dose-noite</b> – neste caso significa que não há dose nocturna ou seja, o fármaco deve ser tomado só de manhã. Por exemplo, a Organização Mundial de Saúde (OMS) recomenda que o ABC/3TC seja administrado uma vez por dia (preferencialmente de manhã).</li>
@@ -339,31 +413,29 @@
                 <section class="criterios-de-tpc">
                     <h2>Critérios de Tratamento Profilático com Cotrimoxazol</h2>
 
-                    <p>Iniciar o cotrimoxazol a:</p>
+                    <p class="mb-15">Iniciar o cotrimoxazol a:</p>
 
                     <ul>
                         <li>Crianças &lt; 5 anos independentemente do estadio clínico ou CD4.</li> 
-                        <li>Crianças &ge; 5 anos se CD4 &le; 500 cel/mm<span class="sup-parent"><sup>3</sup></span> ou estadio II, III ou IV.</li>
+                        <li>Crianças &ge; 5 anos se CD4 &le; 500 cel/mm³ ou estadio II, III ou IV.</li>
                     </ul>
 
-                    <p>Suspender o cotrimoxazol se:</p>
+                    <p class="mb-15">Suspender o cotrimoxazol se:</p>
                     <ul>
-                        <li>Idade &ge; 5 anos e CD4 &gt; 500 cel/mm<span class="sup-parent"><sup>3</sup></span> em 2 medições consecutivas com intervalo &ge; 6 meses.</li>
+                        <li>Idade &ge; 5 anos e CD4 &gt; 500 cel/mm³ em 2 medições consecutivas com intervalo &ge; 6 meses.</li>
                     </ul>
 
-                    <h3>Contraindicações</h3>
+                    <h2>Contraindicações</h2>
                     <ul>
-                        <li>Alergia às Sulfamidas (por exemplo, Cotrimoxazol, Fanzidar, Sulfadiazina);</li>
+                        <li>Alergia às Sulfamidas (ex.: cotrimoxazol, fanzidar, sulfadiazina);</li>
 
-                       
-
-                        <li>Anemia (Hb &lt; 8.0) ou Neutropenia (neutrófilos &lt; 1500 cels/mm<span class="sup-parent"><sup>3</sup></span>).
+                        <li>Anemia (Hb &lt; 8.0) ou Neutropenia (neutrófilos &lt; 1500 cels/mm³).
 
                         <span class="destaque">
                             Estes valores apresentam variação de acordo com a idade, o sexo e o local onde se vive. O tipo do Aparelho laboratorial também pode contribuir na variação destes valores, pelo que o Clínico deve observar os valores de referência da sua Unidade Sanitária.</li>
                         </span>
 
-                        <li>Doente que tomou Fansidar há menos de 30 dias.</li> 
+                        <li>Doente que tomou fansidar há menos de 30 dias.</li> 
 
                     </ul>
                 </section>
@@ -371,7 +443,7 @@
                 <section class="criterios-de-tpt">
                     <h2>Critérios de Tratamento Profilático com Isoniazida</h2>
 
-                    <p>Depois de excluir a tuberculose activa, iniciar profilaxia com Isoniazida a:</p>
+                    <p class="mb-15">Depois de excluir a tuberculose activa, iniciar profilaxia com isoniazida a:</p>
 
                     <ul>
                         <li>Todas as crianças com idade &ge; 1 ano.</li> 
@@ -393,14 +465,14 @@
                         <a href="https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html" target="_blank">
                             
                             <picture>
-                                <source media="(min-width: 1024px)" srcset="" />
+                                <source media="(min-width: 1024px)" srcset="imagens/calculadora-de-doses-desk.png" />
                                 <img src="imagens/calculadora-de-doses.png" alt="Calculadora de Doses Pediátricas" />
                             </picture>
     
                             <div class="description">
                                 <h5>Calculadora de Doses Pediátricas</h5>
                                 <p>
-                                    Calcula automaticamente doses terapêuticas dos medicamentos mais usuais na prática clínica com base no Formulário Nacional de Medicamentos, bastando o usuário inserir o peso e escolher o fármaco do qual pretende calcular a dose.
+                                    Serviço online gratuito que com base no peso, doseia automaticamente alguns dos medicamentos mais usuais na prática clínica para pacientes pediátricos. Tem como referência o Formulário Nacional de Medicamentos - 5ª Edição, 2007.
                                 </p>
                                 <span class="visitar">Acessar &raquo;</span> 
                             </div>
@@ -463,7 +535,10 @@
         <footer>
             <div class="linha">
                 <p>
-                    Desenvolvido por: <a href="quinamine.github.io/aderito-felix-quinamine/index.html" target="_blank">Adérito Félix Quinamine</a> &copy;&nbsp;Tarv&nbsp;Pediátrico -&nbsp;Disponível&nbsp;desde&nbsp;<time datetime="2021-09-18">09/09/2021</time>. Última&nbsp;actualização:&nbsp;<time datetime="2021-09-18">08/10/2022.</time>
+                    Desenvolvido por: <a href="quinamine.github.io/aderito-felix-quinamine/index.html" target="_blank">Adérito Félix Quinamine</a> &copy;&nbsp;Tarv&nbsp;Pediátrico -&nbsp;Todos&nbsp;os&nbsp;direitos&nbsp;reservados
+                </p>
+                <p>
+                    Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: <time datetime="2022-11-19">19/11/2022</time>.
                 </p>
             </div>
         </footer>

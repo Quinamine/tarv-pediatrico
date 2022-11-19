@@ -42,7 +42,7 @@ const doseador = {
         
         // PESQUISA DIRECTAMENTE PELO NOME DO FÁRMACO
         for (const farmaco of farmacos) {
-            let farmacoInnerText = farmaco.textContent.toLowerCase();
+            let farmacoInnerText = farmaco.querySelector("span").textContent.toLowerCase();
  
             if(!farmacoInnerText.includes(queryToLowerCase)) {
                 farmaco.classList.add("hide");
@@ -118,8 +118,7 @@ const menu = {
 }
 
 let abas_do_menu,
-campoFarmaco,
-select, selectSrc, selectOptions, expansoresDeSelect;
+campoFarmaco, select, selectSrc, selectOptions, expansoresDeSelect;
 window.addEventListener("load", () => {
     abas_do_menu = document.querySelectorAll(".menu-principal a");
     
@@ -132,7 +131,7 @@ window.addEventListener("load", () => {
             // Para resetar o input.value e os resultados da pesquisa da aba do Doseador
             menu.fecharSelect();
         })
-    })
+    });
 
     // DOSEADOR 
     campoFarmaco = document.querySelector("div.campo-de-farmaco");
@@ -173,7 +172,7 @@ window.addEventListener("load", () => {
     // PARTILHAR
     let conteudo = {
         title: "Doseador de Antirretrovirais",
-        text: "Calcula automaticamente a dose de acordo com o peso, a posologia e o número de comprimidos a dispensar dos antirretrovirais e dos fármacos usados na profilaxia contra infecções oportunistas.",
+        text: "Calcula e retorna automaticamente a dose, a posologia e o número de comprimidos a dispensar dos antirretrovirais com base no peso inserido pelo usuário (Profissional de Saúde).",
         url: "https://www.quinamine.github.io/tarv-pediatrico/index.html"
     }
 
@@ -213,12 +212,14 @@ window.addEventListener("click", event => {
     }
 });
 
-window.addEventListener("scroll", () => {
-    if(window.innerWidth > 1023) {
-        doseador.fecharSelect();
-        document.querySelector(".campo-de-farmaco").classList.remove("focus");
-    }
-});
+window.onload = () => {
+    window.addEventListener("scroll", () => {
+        if(window.innerWidth > 1023) {
+            doseador.fecharSelect();
+            document.querySelector(".campo-de-farmaco").classList.remove("focus");
+        }
+    });
+}
 
 
 
