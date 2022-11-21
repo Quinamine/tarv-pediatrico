@@ -169,7 +169,7 @@ window.addEventListener("load", () => {
     // PARTILHAR
     let conteudo = {
         title: "Doseador de Antirretrovirais",
-        text: "Calcula e retorna automaticamente a dose, a posologia e o número de comprimidos a dispensar dos antirretrovirais com base no peso inserido pelo usuário (Profissional de Saúde).",
+        text: "O Doseador de Antirretrovirais é um serviço online gratuito que calcula e retorna automaticamente a dose, a posologia e o número de comprimidos a dispensar dos antirretrovirais com base no peso inserido pelo usuário (Profissional de Saúde).",
         url: "https://www.quinamine.github.io/tarv-pediatrico/index.html"
     }
 
