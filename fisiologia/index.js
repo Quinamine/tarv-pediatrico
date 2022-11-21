@@ -9,7 +9,7 @@ const doseador = {
         // Para mobile
         document.querySelector("body").classList.add("overflow-h");
         campoFarmaco.classList.remove("pos-relative");
-        window.innerWidth < 1024 && document.querySelector("a#logotipo").scrollIntoView();
+        window.innerWidth < 1024 && document.querySelector("body").scrollIntoView();
     },
 
     fecharSelect() {
@@ -127,9 +127,6 @@ window.addEventListener("load", () => {
         aba.addEventListener("click", () => {
             menu.mostrarArtigoRelacionadoAaba(aba);
             menu.mostrarFarmacosRelacionadosAaba(aba);
-
-            // Para resetar o input.value e os resultados da pesquisa da aba do Doseador
-            menu.fecharSelect();
         })
     });
 
@@ -192,24 +189,16 @@ window.addEventListener("load", () => {
     });
 });
 
-
-
 // EVENTO DE FECHAMENTO DO SELECT 
 window.addEventListener("click", event => {
+	
+	const tagsQueNaoFechamOselect = campoFarmaco.querySelectorAll("*");
    
-    const selectChildren = campoFarmaco.querySelectorAll("*");
-   
-    let numChildrenClicked = 0;
-    for (const child of selectChildren) {
-        if(child === event.target) {
-            numChildrenClicked++;
-        }
+	for (const tag of tagsQueNaoFechamOselect) {
+        if (event.target === tag) return false;
     }
-
-    if(numChildrenClicked <= 0) {
-        doseador.fecharSelect();
-        document.querySelector(".campo-de-farmaco").classList.remove("focus");
-    }
+	doseador.fecharSelect();
+	document.querySelector(".campo-de-farmaco").classList.remove("focus");
 });
 
 window.onload = () => {
