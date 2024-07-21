@@ -5,7 +5,6 @@
     --cor-de-borda: #dddddd;
     --cor-de-link: #1558bc;
     --cor-de-texto: #333333;
-    --cor-de-realce-de-fundo: #fdf7e7;
     --cor-do-rodape: #555;
     --cor-de-risco: #dd0000;
     --yt: #ffffff;
@@ -27,6 +26,7 @@
     --purple: rgb(116, 116, 235);
     --orange: #f5d589;
     --orange--light: #faecc6;
+    --orange-too-light: #fdf7e7;
     --greenyellow:greenyellow;
     --brown: brown;
     --reference-bgc: var(--black--alpha-8);
@@ -501,6 +501,7 @@ main {
 
 .artigo__lista {
     padding-left: 4%;
+    padding-right: 4%;
     margin-left: 15px;
 }
 
@@ -529,20 +530,6 @@ main {
     max-width: 690px;
 }
 
-.artigo__box-content--destaque {
-    background-color: var(--cor-de-realce-de-fundo);
-    border: 1px solid var(--orange);
-    max-width: 690px;
-}
-
-.artigo__box-content--destaque__titulo {
-    font-weight: bold;
-    background-color: var(--orange--light);
-    border-bottom: 1px solid var(--orange);
-    padding: 8px 8px 8px 4%;
-    margin-bottom: 20px;
-}
-
 .artigo li {
     margin-bottom: 15px;
     padding-left: 3px;
@@ -567,34 +554,119 @@ main {
 }
 
 table {
-    width: 290px;table-layout: fixed;
     border-collapse: collapse;
     margin-bottom: 20px;
     background-color: var(--gray--light);
 }
 
+.tabela-de-dose {
+    min-width: 290px;
+    table-layout: fixed;
+}
+
 @media screen and (max-width: 1023px) {
-    table {
+    .tabela-de-dose {
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-table * {
+.tabela-de-dose * {
     line-height: 1.8;
     
 }
 
-table tr {
+.tabela-de-dose tr {
     text-align: center;
     border-bottom: 1px solid var(--gray--c);
 }
 
-.table__row-title {
+.tabela-de-dose__tr-de-titulo {
     background-color: var(--gray--d);
     border-top: 1px solid var(--gray--c);
     font-weight: 700;
 }
+
+.tabela-personalizada {
+    background-color: var(--orange-too-light);
+    border: 1px solid var(--orange);
+    border-top: transparent;
+    max-width: 690px;
+}
+
+@media screen and (max-width: 358px) {
+    .tabela-personalizada--font-small {
+        font-size: 14px;
+    }
+}
+
+.tabela-personalizada tr * {
+    line-height: 1.5;
+    padding: 4px;
+}
+
+.tabela-personalizada__titulo {
+    font-weight: bold;
+    background-color: var(--orange--light);
+    border-bottom: 1px solid var(--orange);
+    border-top: 1px solid var(--orange);
+    padding: 8px 8px 8px 4%;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.tabela-personalizada__titulo--pos-sticky {
+    position: sticky;
+    top: -21px;
+}
+
+.tabela-personalizada--txt-xy-center td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+}
+
+.seccao-estadiamento__select {
+    outline: none;
+    padding: 4px;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    border: 1px solid var(--gray--d);
+}
+
+.tabela-regimes-para-inicio-tarv__tfoot td {
+    text-align: left;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.tabela-regimes-para-inicio-tarv__tfoot td span {
+    display: block;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .seccao-com-pos-fixed {
+        width: 700px;
+        height: 90vh;
+        padding: 20px;
+        background-color: var(--yt);
+        position: fixed;
+        top: calc(50vh - 90vh / 2);
+        right: calc(50vw - 700px / 2);
+        overflow-y: auto;
+        z-index: 999;
+        display: none;
+    }
+}
+
+.seccao-com-pos-fixed.--open {
+    display: block;
+}
+
+
 
 /* PROPAGANDA */
 .seccao-propaganda {
@@ -748,4 +820,20 @@ table tr {
     .hide-on-desktop {
         display: none;
     }
+}
+
+.--border-t {
+    border-top: 1px solid var(--orange);
+}
+
+.--border-r {
+    border-right: 1px solid var(--orange);
+}
+
+.--border-b {
+    border-bottom: 1px solid var(--orange);
+}
+
+.--border-l {
+    border-left: 1px solid var(--orange);
 }
