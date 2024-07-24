@@ -6,12 +6,12 @@
         <meta content="width=device-width,initial-scale=1" name=viewport>
         <title>Doseador de Antirretrovirais - Tarv Pediátrico</title>
         <meta content="index, follow" name=robots>
-        <meta content="Serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. É baseado na Tabela de Dosagem de ARVs do Tríptico Pediátrico versão 2022 actualmente (2024) vigente no SNS em Moçambique." name=description>
-        <meta content="Doseador de Antirretrovirais, Doseador de ARVs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose, Dosagem de Antirretrovirais, Dosagem de ARVs, Tríptico Pediátrico versão 2022 para manejo de infecção por HIV/SIDA" name=keywords>
+        <meta content="Serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. É baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico versão 2022 actualmente (2024) vigente no SNS em Moçambique." name=description>
+        <meta content="Doseador de Antirretrovirais, Doseador de ARVs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose, Dosagem de Antirretrovirais, Dosagem de ARVs, Políptico Pediátrico versão 2022 para manejo de infecção por HIV/SIDA" name=keywords>
         <meta content="Adérito Félix Quinamine" name=author>
         <meta content=https://quinamine.github.io/tarv-pediatrico/index.html property=og:url>
         <meta content="Doseador de Antirretrovirais" property=og:title>
-        <meta content="Serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. É baseado na Tabela de Dosagem de ARVs do Tríptico Pediátrico versão 2022 actualmente (2024) vigente no SNS em Moçambique." property=og:description>
+        <meta content="Serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. É baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico versão 2022 actualmente (2024) vigente no SNS em Moçambique." property=og:description>
         <meta content=https://quinamine.github.io/tarv-pediatrico/imagens/doseador-de-arvs.jpg property=og:image>
         <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
         <link href=design/reset.css rel=stylesheet>
@@ -29,289 +29,273 @@
         </script>
         <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Doseador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
     </head>
-    <body>
+    <body id="body">
         <header>
-            <div class="header__row-fullscreen-width">
+            <div class="header__row">
                 <div class="layout-row">
-                    <a href=index.html id=logotipo>Tarv Pediátrico</a>
-                    <div class=menu-mobile>
-                        <div class=menu-mobile__dot></div>
-                        <div class=menu-mobile__dot></div>
-                        <div class=menu-mobile__dot></div>
+                    <a href=index.html id=logo>Tarv Pediátrico</a>
+                    <div class=meatballs-menu>
+                        <div class=meatballs-menu__dot></div>
+                        <div class=meatballs-menu__dot></div>
+                        <div class=meatballs-menu__dot></div>
                     </div>
                 </div>
             </div>
-            <div role="navigation" class="layout-row layout-row--no-space-between-n-padding header__menu"> 
-                <button class="header__menu__btn header__menu__btn--current" title="Doseador de Antirretrovirais">DARV</button>
-                <button class="header__menu__btn" title="Tratamento Profilático com Cotrimoxazol">TPC</button>
-                <button class="header__menu__btn" title="Tratamento Preventivo de Tuberculose">TPT</button>
+            <div role="navigation" class="layout-row layout-row--no-space-between-n-padding header__main-menu"> 
+                <button class="header__main-menu__btn header__main-menu__btn--current" title="doser de Antirretrovirais">DARV</button>
+                <button class="header__main-menu__btn" title="Tratamento Profilático com Cotrimoxazol">TPC</button>
+                <button class="header__main-menu__btn" title="Tratamento Preventivo de Tuberculose">TPT</button>
             </div>
         </header>
-        <main>
-            <div class=doseador>
-                <h1 class="doseador__titulo">Doseador de Antirretrovirais</h1>
-                <div class="doseador__seccao doseador__seccao--peso doseador__seccao">
-                    <label class=peso for=peso>Peso:</label>
-                    <input id=peso placeholder="Digite o peso da criança" type=number max=45 min=3>
-                    <label class=doseador__label-kg for=peso>kg</label>
+        <main id="main">
+            <div class=doser>
+                <h1 class="doser__title">Doseador de Antirretrovirais</h1>
+                <div class="doser__section doser__section--weight">
+                    <label class=doser__label for=input-weight>Peso:</label>
+                    <input type=number max=45 min=3 placeholder="Digite aqui o peso da criança" id=input-weight class="doser__input">
+                    <label class="doser__label doser__label--kg" for=input-weight>kg</label>
                 </div>
-                <p class=doseador__p-validacao-de-peso></p>
-                <div class="doseador__seccao doseador__seccao--farmaco doseador__seccao">
-                    <label class=arv for=farmaco>ARV: </label>
-                    <ul class="doseador__select">
-                        <li data-nome=placeholder class="arvs doseador__select__placeholder selected">
-                            <span><em class=hide-on-desktop>Toque</em>
-                                <em class=hide-on-mobile>Clique</em> aqui para abrir a lista dos ARVs
-                            </span>
+                <p class=doser__weight-validation-output></p>
+                <div class="doser__section doser__section--drug">
+                    <label class=doser__label for=farmaco>ARV: </label>
+                    <ul class="doser__select">
+                        <li data-nome =placeholder class="doser__select__option doser__select__placeholder --selected">
+                            <span class=hide-on-desktop>Toque</span>
+                            <span class=hide-on-mobile>Clique</span> aqui para selecionar um ARV
                         </li>
-                        <div class="doseador__select__box-search">
-                            <button class=doseador__box-search__btn-voltar>
+                        <div class="doser__select__searching-box">
+                            <button class=doser__searching-box__btn--close-select>
                                 <svg style="width: 16px; height:16px">
                                     <line stroke=var(--gray) stroke-width=2px x1=0% x2=50% y1=50% y2=0></line>
                                     <line stroke=var(--gray) stroke-width=2px x1=0% x2=50% y1=50% y2=100%></line>
                                     <line stroke=var(--gray) stroke-width=2px x1=-1 x2=100% y1=50% y2=50%></line>
                                 </svg>
                             </button>
-                            <input type=search placeholder="Filtrar por nome ou sigla de ARV" id=src class="doseador__select__input-search">
+                            <input type=search placeholder="Filtrar ARV por nome ou sigla" id=input-src class="doser__select__input--search">
                         </div>
-                        <div class="doseador__select__optgroup arvs abc-3tc">
-                            <h3>ABACAVIR + LAMIVUDINA</h3>
-                            <li data-nome=ABC>
-                                <span>ABC 60 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs abc-3tc">
+                            <h3 class="doser__optgroup__title">ABACAVIR + LAMIVUDINA</h3>
+                            <li class="doser__select__option" data-nome =ABC>
+                                ABC 60 mg Comp.
                             </li>
-                            <li data-nome=ABC/3TC-60-30mg>
-                                <span>ABC/3TC 60 mg/30 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =ABC/3TC-60-30mg>
+                                ABC/3TC 60 mg/30 mg Comp.
                             </li>
-                            <li data-nome=ABC/3TC-120-60mg>
-                                <span>ABC/3TC 120 mg/60 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =ABC/3TC-120-60mg>
+                                ABC/3TC 120 mg/60 mg Comp.
                             </li>
-                            <li data-nome=ABC/3TC-600-300mg>
-                                <span>ABC/3TC 600 mg/300 mg Comp.</span>
-                            </li>
-                        </div>
-                        <div class="doseador__select__optgroup arvs dtg">
-                            <h3>DOLUTEGRAVIR</h3>
-                            <li data-nome=pDTG-10mg>
-                                <span>pDTG 10 mg Comp.</span>
-                            </li>
-                            <li data-nome=DTG-50mg>
-                                <span>DTG 50 mg Comp.</span>
-                            </li>
-                            <li data-nome=TDF/3TC/DTG>
-                                <span>TDF/3TC/DTG 300/300/50 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =ABC/3TC-600-300mg>
+                                ABC/3TC 600 mg/300 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs lpv-r">
-                            <h3>LOPINAVIR + RITONAVIR</h3>
-                            <li data-nome=LPV/r-40-10mg>
-                                <span>LPV/r 40 mg/10 mg Cáps./Saquetas<>
+                        <div class="doser__select__optgroup arvs dtg">
+                            <h3 class="doser__optgroup__title">DOLUTEGRAVIR</h3>
+                            <li class="doser__select__option" data-nome =pDTG-10mg>
+                                pDTG 10 mg Comp.
                             </li>
-                            <li data-nome=LPV/r-xpe>
-                                <span>LPV/r 80 mg/20 mg/ml Xarope</span>
+                            <li class="doser__select__option" data-nome =DTG-50mg>
+                                DTG 50 mg Comp.
                             </li>
-                            <li data-nome=LPV/r-100-25mg>
-                                <span>LPV/r 100 mg/25 mg Comp.</span>
-                            </li>
-                            <li data-nome=LPV/r-200-50mg>
-                                <span>LPV/r 200 mg/50 mg Comp.</span>
-                            </li>
-                            <li data-nome=ABC/3TC-LPV/r>
-                                <span>ABC/3TC/LPV/r 30/15/40/10 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =TDF/3TC/DTG>
+                                TDF/3TC/DTG 300/300/50 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs azt-3tc">
-                            <h3>ZIDOVUDINA + LAMIVUDINA</h3>
-                            <li data-nome=AZT-xpe>
-                                <span>AZT 10 mg/ml Xarope</span>
+                        <div class="doser__select__optgroup arvs lpv-r">
+                            <h3 class="doser__optgroup__title">LOPINAVIR + RITONAVIR</h3>
+                            <li class="doser__select__option" data-nome =LPV/r-40-10mg>
+                                LPV/r 40 mg/10 mg Cáps./Saquetas
                             </li>
-                            <li data-nome=Duovir-ped>
-                                <span>AZT/3TC 60 mg/30 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =LPV/r-xpe>
+                                LPV/r 80 mg/20 mg/ml Xarope
                             </li>
-                            <li data-nome=Duovir-adult>
-                                <span>AZT/3TC 300 mg/150 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =LPV/r-100-25mg>
+                                LPV/r 100 mg/25 mg Comp.
                             </li>
-                        </div>
-                        <div class="doseador__select__optgroup arvs azt-3tc-nvp">
-                            <h3>ZIDOVUDINA + LAMIVUDINA + NEVIRAPINA</h3>
-                            <li data-nome=DuovirN-ped>
-                                <span>AZT/3TC/NVP 60/30/50 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =LPV/r-200-50mg>
+                                LPV/r 200 mg/50 mg Comp.
                             </li>
-                            <li data-nome=DuovirN-adult>
-                                <span>AZT/3TC/NVP 300/150/200 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =ABC/3TC-LPV/r>
+                                ABC/3TC/LPV/r 30/15/40/10 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs tdf-3tc">
-                            <h3>TENOFOVIR + LAMIVUDINA</h3>
-                            <li data-nome=TDF/3TC>
-                                <span>TDF/3TC 300 mg/300 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs azt-3tc">
+                            <h3 class="doser__optgroup__title">ZIDOVUDINA + LAMIVUDINA</h3>
+                            <li class="doser__select__option" data-nome =AZT-xpe>
+                                AZT 10 mg/ml Xarope
+                            </li>
+                            <li class="doser__select__option" data-nome =Duovir-ped>
+                                AZT/3TC 60 mg/30 mg Comp.
+                            </li>
+                            <li class="doser__select__option" data-nome =Duovir-adult>
+                                AZT/3TC 300 mg/150 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs tdf-3tc-efv">
-                            <h3>TENOFOVIR + LAMIVUDINA + EFAVIRENZ</h3>
-                            <li data-nome=TDF/3TC/EFV-400>
-                                <span>TDF/3TC/EFV 300/300/400 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs azt-3tc-nvp">
+                            <h3 class="doser__optgroup__title">ZIDOVUDINA + LAMIVUDINA + NEVIRAPINA</h3>
+                            <li class="doser__select__option" data-nome =DuovirN-ped>
+                                AZT/3TC/NVP 60/30/50 mg Comp.
                             </li>
-                            <li data-nome=TDF/3TC/EFV-600>
-                                <span>TDF/3TC/EFV 300/300/600 mg Comp.</span>
-                            </li>
-                        </div>
-                        <div class="doseador__select__optgroup arvs efv">
-                            <h3>EFAVIRENZ</h3>
-                            <li data-nome=EFV>
-                                <span>EFV 200 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =DuovirN-adult>
+                                AZT/3TC/NVP 300/150/200 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs atv-r">
-                            <h3>ATAZANAVIR + RITONAVIR</h3>
-                            <li data-nome=ATV/r>
-                                <span>ATV/r 300 mg/100 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs tdf-3tc">
+                            <h3 class="doser__optgroup__title">TENOFOVIR + LAMIVUDINA</h3>
+                            <li class="doser__select__option" data-nome =TDF/3TC>
+                                TDF/3TC 300 mg/300 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs rtv">
-                            <h3>RITONAVIR</h3>
-                            <li data-nome=RTV-25>
-                                <span>RTV 25 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs tdf-3tc-efv">
+                            <h3 class="doser__optgroup__title">TENOFOVIR + LAMIVUDINA + EFAVIRENZ</h3>
+                            <li class="doser__select__option" data-nome =TDF/3TC/EFV-400>
+                                TDF/3TC/EFV 300/300/400 mg Comp.
                             </li>
-                            <li data-nome=RTV-100-superboosting>
-                                <span class="doseador__select__option-ritonavir">RTV 100 mg Comp. <sup>(para&nbsp;superboosting)</sup></span>
-                            </li>
-                            <li data-nome=RTV-100-3alinha>
-                                <span class="doseador__select__option-ritonavir">RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</sup></span>
+                            <li class="doser__select__option" data-nome =TDF/3TC/EFV-600>
+                                TDF/3TC/EFV 300/300/600 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs ral">
-                            <h3>RALTEGRAVIR</h3>
-                            <li data-nome=RAL-25>
-                                <span>RAL 25 mg Comp.</span>
-                            </li>
-                            <li data-nome=RAL-400>
-                                <span>RAL 400 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs efv">
+                            <h3 class="doser__optgroup__title">EFAVIRENZ</h3>
+                            <li class="doser__select__option" data-nome =EFV>
+                                EFV 200 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup arvs drv">
-                            <h3>DARUNAVIR</h3>
-                            <li data-nome=drv-75>
-                                <span>DRV 75 mg Comp.</span>
-                            </li>
-                            <li data-nome=drv-150>
-                                <span>DRV 150 mg Comp.</span>
-                            </li>
-                            <li data-nome=drv-600>
-                                <span>DRV 600 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs atv-r">
+                            <h3 class="doser__optgroup__title">ATAZANAVIR + RITONAVIR</h3>
+                            <li class="doser__select__option" data-nome =ATV/r>
+                                ATV/r 300 mg/100 mg Comp.
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup ctz hide">
-                            <h3>TRATAMENTO PROFILÁTICO COM COTRIMOXAZOL</h3>
-                            <li data-nome=CTZ-susp>
-                                <span>Cotrimoxazol 240 mg/5 ml Susp.</span>
+                        <div class="doser__select__optgroup arvs rtv">
+                            <h3 class="doser__optgroup__title">RITONAVIR</h3>
+                            <li class="doser__select__option" data-nome =RTV-25>
+                                RTV 25 mg Comp.
                             </li>
-                            <li data-nome=CTZ-cp>
-                                <span>Cotrimoxazol 480 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =RTV-100-superboosting>
+                                <span class="doser__select__option--rtv">RTV 100 mg Comp. <sup>(para&nbsp;superboosting)</sup>
+                            </li>
+                            <li class="doser__select__option" data-nome =RTV-100-3alinha>
+                                <span class="doser__select__option--rtv">RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</sup>
                             </li>
                         </div>
-                        <div class="doseador__select__optgroup anti-tb hide">
-                            <h3>TRATAMENTO PREVENTIVO DE TUBERCULOSE</h3>
-                            <li data-nome=isoniazida-100>
-                                <span>Isoniazida 100 mg Comp.</span>
+                        <div class="doser__select__optgroup arvs ral">
+                            <h3 class="doser__optgroup__title">RALTEGRAVIR</h3>
+                            <li class="doser__select__option" data-nome =RAL-25>
+                                RAL 25 mg Comp.
                             </li>
-                            <li data-nome=isoniazida-300>
-                                <span>Isoniazida 300 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =RAL-400>
+                                RAL 400 mg Comp.
                             </li>
-                            <li data-nome=levofloxacina-100>
-                                <span>Levofloxacina 100 mg Comp.</span>
+                        </div>
+                        <div class="doser__select__optgroup arvs drv">
+                            <h3 class="doser__optgroup__title">DARUNAVIR</h3>
+                            <li class="doser__select__option" data-nome =drv-75>
+                                DRV 75 mg Comp.
                             </li>
-                            <li data-nome=levofloxacina-250>
-                                <span>Levofloxacina 250 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =drv-150>
+                                DRV 150 mg Comp.
                             </li>
-                            <h3>PROFILAXIA DE NEUROPATIA PERIFÉRICA</h3>
-                            <li data-nome=piridoxina-25>
-                                <span>Piridoxina 25 mg Comp.</span>
+                            <li class="doser__select__option" data-nome =drv-600>
+                                DRV 600 mg Comp.
                             </li>
-                            <li data-nome=piridoxina-50>
-                                <span>Piridoxina 50 mg Comp.</span>
+                        </div>
+                        <div class="doser__select__optgroup ctz hide">
+                            <h3 class="doser__optgroup__title">TRATAMENTO PROFILÁTICO COM COTRIMOXAZOL</h3>
+                            <li class="doser__select__option" data-nome =CTZ-susp>
+                                Cotrimoxazol 240 mg/5 ml Susp.
+                            </li>
+                            <li class="doser__select__option" data-nome =CTZ-cp>
+                                Cotrimoxazol 480 mg Comp.
+                            </li>
+                        </div>
+                        <div class="doser__select__optgroup anti-tb hide">
+                            <h3 class="doser__optgroup__title">TRATAMENTO PREVENTIVO DE TUBERCULOSE <sup>sensível</sup></h3>
+                            <li class="doser__select__option" data-nome =isoniazida-100>
+                                Isoniazida 100 mg Comp.
+                            </li>
+                            <li class="doser__select__option" data-nome =isoniazida-300>
+                                Isoniazida 300 mg Comp.
+                            </li>
+                            <h3 class="doser__optgroup__title">TRATAMENTO PREVENTIVO DE TUBERCULOSE <sup>MR</sup></h3>
+                            <li class="doser__select__option" data-nome =levofloxacina-100>
+                                Levofloxacina 100 mg Comp.
+                            </li>
+                            <li class="doser__select__option" data-nome =levofloxacina-250>
+                                Levofloxacina 250 mg Comp.
                             </li>
                         </div>
                     </ul>
-                    <button class=doseador__btn-expandir-select>
+                    <button class=doser__btn--expand-select>
                         <svg style=width:10px;height:6px>
                             <line stroke=#555555 stroke-width=1px x1=0 x2=50% y1=0 y2=100%></line>
                             <line stroke=#555555 stroke-width=1px x1=50% x2=100% y1=100% y2=0></line>
                         </svg>
                     </button>
                 </div>
-                <div class="doseador__seccao doseador__seccao--output">
-                    <h2 class="doseador__seccao__titulo">Dose, Posologia e Quantidade</h2>
+                <div class="doser__section doser__section--output">
+                    <h2 class="doser__section__title">Dose, Posologia e Quantidade</h2>
                     <div class=dose></div>
                 </div>
-                <div class="doseador__seccao doseador__seccao--output">
-                    <h2 class="doseador__seccao__titulo">Notas e Precauções</h2>
-                    <p class=doseador__seccao__p-recomedacao></p>
+                <div class="doser__section doser__section--output">
+                    <h2 class="doser__section__title">Notas e Precauções</h2>
+                    <p class=doser__section__note-text></p>
                 </div>
             </div>
-            <article class="artigo">
-                <section class="seccao-instrucoes-darv on" id=sobre>
-                    <h2 class="artigo__titulo artigo__titulo--nivel-1">Instruções de utilização do Doseador de Antirretrovirais</h2>
-                    <p>
-                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Tríptico Pediátrico versão 2022 actualmente (2024) vigente no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
+            <article class="article">
+                <section class="article__section article__section--darv" id=sobre>
+                    <h2 class="article__title article__title--level-1">Instruções de utilização do doser de Antirretrovirais</h2>
+                    <p class="article__p">
+                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico -  <a href="ficheiros/poliptico_pediatrico_16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, actualmente (2024) vigente no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
                     </p>   
-                    <figure class="artigo__moldura">
+                    <figure class="article__frame">
                         <img src="imagens/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
-                        <figcaption class="artigo__moldura__legenda">Trecho da Tabela de Dosagem de Arvs do Tríptico Pediátrico versão 2022 - Fonte do DARV.</figcaption>
+                        <figcaption class="article__frame__figcaption">Trecho da Tabela de Dosagem de Arvs do Políptico Pediátrico para Manejo de infecção por HIV na criança e adolescente, versão 2022 - Fonte do DARV.</figcaption>
                     </figure>
-                    <p>O DARV está basicamente estruturado da seguinte forma:</p>
-                    <ul class="artigo__lista artigo__lista--ul">
+                    <p class="article__p">O DARV está basicamente estruturado da seguinte forma:</p>
+                    <ul class="article__list article__list--ul">
                         <li> Um campo com o rótulo <b>Peso</b>, para inserir o peso em quilograma(s) da criança para a qual você pretende calcular a dose;</li>
-
-                        <li><b>ARV</b>, campo de seleção com todos os ARVs da Tabela de Dosagem de ARVs do <a href="ficheiros/triptico_pediatrico_16-2-2022-finalissima.pdf">Tríptico Pediátrico versão 2022</a>. <span class="hide-on-mobile">Clique</span><span class="hide-on-desktop">Toque</span> no campo para abrir a lista dos ARVs e em seguida, selecione o ARV do qual pretende calcular a dose.</li>
-
+                        <li><b>ARV</b>, campo de seleção com todos os ARVs da Tabela de Dosagem de ARVs do <a href="ficheiros/poliptico_pediatrico_16-2-2022-finalissima.pdf" download="Políptico-Pediátrico-para-Manejo-de-HIV">Políptico Pediátrico, versão 2022</a>. <span class="hide-on-mobile">Clique</span><span class="hide-on-desktop">Toque</span> no campo para abrir a lista dos ARVs e em seguida, selecione o ARV do qual pretende calcular a dose.</li>
                         <li><b>Dose, Posologia e Quantidade:</b> secção de saída em que são mostradas automaticamente a dose, posologia e quantidade de comprimidos a dispensar do antirretroviral (ARV) selecionado de acordo com o peso inserido;</li>
-
-                        <li><b>Notas e Precauções:</b> secção de saída em que são mostradas recomendações, interações medicamentosas, entre outras informações pertinentes relacionadas ao ARV selecionado.</li>
+                        <li><b>Notas e Precauções:</b> secção de saída em que são mostradas recomendações, interações medicamentosas, entre outras informações pertinentes acerca do ARV selecionado.</li>
                     </ul>
-
-                    <h3 class="artigo__titulo artigo__titulo--nivel-2">Apresentação da dose</h3>
-
-                    <p>Normalmente a dose é apresentada numa mini-tabela com quatro (4) linhas e 8 colunas.</p>
-
-                    <ul class="artigo__lista artigo__lista--ul">
+                    <h3 class="article__title article__title--level-2">Apresentação da dose</h3>
+                    <p class="article__p">Normalmente a dose é apresentada numa mini-tabela com quatro (4) linhas e 8 colunas.</p>
+                    <ul class="article__list article__list--ul">
                         <li>A 1ª linha possui duas células com os títulos <b>Dose-manhã</b> e <b>Dose-noite</b> respectivamente.</li>
                         <li>Na 2ª linha, na primeira célula (da esquerda), é mostrada a dose do ARV que deve ser tomada ou administrada de manhã e na segunda, a dose nocturna.</li>
-
                         <li>Na 4ª linha, a primeira célula mostra o número exacto de comprimidos a fornecer ao paciente para 30 dias (Dispensa Mensal) e a segunda célula, para 90 dias (Dispensa Trimestral).</li>
-
                         <li>As duas células da 3ª linha são títulos da 4ª linha, <b>Dispensa Mensal</b> e <b>Dispensa Trimestral</b> respectivamente.</li>
                     </ul>
-                    <p class="artigo__p--destaque">
+                    <p class="article__p article__p--highlight">
                         Por exemplo, utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 16 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:
                     </p>
-                    <table class="tabela-de-dose">
-                        <thead>
-                            <tr class="tabela-de-dose__tr-de-titulo">
-                                <th>Dose-manhã</th> <th>Dose-noite</th>
+                    <table class="table table--grayscale table--layout-fixed">
+                        <thead class="table__header table__header--bg-color-grayscale">
+                            <tr class="--border-t">
+                                <th class="table__cell">Dose-manhã</th> <th class="table__cell">Dose-noite</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>2.5 cp(s)</td> <td>-</td>
+                            <tr class="--border-t">
+                                <td class="table__cell">2.5 cp(s)</td> <td class="table__cell">-</td>
                             </tr>
-                            <tr class="tabela-de-dose__tr-de-titulo">
-                                <td>Dispensa mensal</td> <td>Dispensa trimestral</td>
+                            <tr class="table__header table__header--bg-color-grayscale --border-t">
+                                <td class="table__cell">Dispensa mensal</td> <td class="table__cell">Dispensa trimestral</td>
                             </tr>
-                            <tr>
-                                <td>75 cp(s)</td> <td>225 cp(s)</td>
+                            <tr class="--border-b --border-t">
+                                <td class="table__cell">75 cp(s)</td> <td class="table__cell">225 cp(s)</td>
                             </tr>                   
                         </tbody>
                     </table>
-                    <p class="artigo__p--destaque">
+                    <p class="article__p article__p--highlight">
                         <b>Interpretação:</b>
                         Neste caso significa que diariamente o paciente deve tomar 2.5 comprimidos de manhã e devem ser fornecidos ao paciente 75 comprimidos (se a dispensa for mensal) ou 225 comprimidos (em caso de dispensa trimestral).
                     </p>
-                    <h3 class="artigo__titulo artigo__titulo--nivel-2">
+                    <h3 class="article__title article__title--level-2">
                         Situações em que a dose aparece como&nbsp;"<b>−</b>"
                     </h3>
-                    <p>Existem três situações em que a dose aparece como "<b>−</b>":
-
-                    <ol class="artigo__lista artigo__lista--ol">
+                    <p class="article__p">Existem três situações em que a dose aparece como "<b>−</b>":
+                    <ol class="article__list article__list--ol">
                         <li>
                             <b>"−" só na célula correspondente à Dose-noite</b> – neste caso significa que não há dose nocturna, ou seja, o fármaco deve ser tomado <em>APENAS de manhã</em>.
                         </li>
@@ -323,64 +307,50 @@
                         </li>
                     </ol>
                 </section>
-                <section class=seccao-tpc>
-                    <h2 class="artigo__titulo artigo__titulo--nivel-1">Critérios de Tratamento Profilático com Cotrimoxazol</h2>
-                    <p><b>Iniciar o Cotrimoxazol a</b>:</p>
-                    <ul class="artigo__lista artigo__lista--ul">
+                <section class="article__section article__section--tpc">
+                    <h2 class="article__title article__title--level-1">Critérios de Tratamento Profilático com Cotrimoxazol</h2>
+                    <p class="article__p"><b>Iniciar o Cotrimoxazol a</b>:</p>
+                    <ul class="article__list article__list--ul">
                         <li>Crianças &lt; 5 anos independentemente do estadio clínico ou CD4;
                         <li>Crianças ≥ 5 anos se CD4 ≤ 350 cel/mm³ ou estadio II, III ou IV.
                     </ul>
-
-                    <p><b>Suspender o Cotrimoxazol se</b>:</p>
-                    <ul class="artigo__lista artigo__lista--ul">
+                    <p class="article__p"><b>Suspender o Cotrimoxazol se</b>:</p>
+                    <ul class="article__list article__list--ul">
                         <li>Idade ≥ 5 anos e CD4 > 350 cel/mm³ em 2 medições consecutivas com intervalo ≥ 6 meses.
                     </ul>
-
-                    <p><b>Monitoria do CD4</b>:</p>
-                    <ul class="artigo__lista artigo__lista--ul">
+                    <p class="article__p"><b>Monitoria do CD4</b>:</p>
+                    <ul class="article__list article__list--ul">
                         <li>&lt; 5 anos: Não faz monitoria rotineira do CD4.
-                        <li>&ge; 5 anos: Pedir CD4 anualmente até atingir CD4 ≥ 350 cel/mm3.
+                        <li>&ge; 5 anos: Pedir CD4 anualmente até atingir CD4 ≥ 350 cel/mm<sup>3</sup>.
                     </ul>
-
-                    <h3 class="artigo__titulo artigo__titulo--nivel-2">Contraindicações ao Tratamento Profilático com Cotrimoxazol</h3>
-                    <ul class="artigo__lista artigo__lista--ul">
+                    <h3 class="article__title article__title--level-2">Contraindicações ao Tratamento Profilático com Cotrimoxazol</h3>
+                    <ul class="article__list article__list--ul">
                         <li>Alergia às Sulfamidas (ex.: Cotrimoxazol, Fanzidar, Sulfadiazina);
                         <li>Anemia (Hb &lt; 8.0) ou Neutropenia;
                         <li>Doente que tomou Fansidar há menos de 30 dias.
                     </ul>
                 </section>
-                <section class=seccao-tpt>
-                    <h2 class="artigo__titulo artigo__titulo--nivel-1">Critérios de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> com Isoniazida ou 3<b>HP</b> (Isoniazida + Rifapentina)</h2>
-
-                    <p>Depois de excluir a tuberculose activa, iniciar <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> a:</p>
-
-                    <ul class="artigo__lista artigo__lista--ul">
+                <section class="article__section article__section--tpt">
+                    <h2 class="article__title article__title--level-1">Critérios de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> com Isoniazida ou 3<b>HP</b> (Isoniazida + Rifapentina)</h2>
+                    <p class="article__p">Depois de excluir a tuberculose activa, iniciar <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> a:</p>
+                    <ul class="article__list article__list--ul">
                         <li>Todas as crianças com idade ≥ 1 ano;</li>
                         <li>Toda criança &lt; 1 ano com história de contacto com TB (somente em caso de contacto);</li>
                         <li>Crianças &lt; 1 ano na consulta TARV iniciam TPT quando atingem idade de 12 meses.</li>
                     </ul>
-
-                    <h3 class="artigo__titulo artigo__titulo--nivel-2">Escolha do regime preferencial de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> (TB sensível) para crianças HIV+ </h3>
-
-                    <p><b>Oferecer Profilaxia com Isoniazida (TPT&nbsp;-&nbsp;INH) a:</b></p>
-
-                    <ul class="artigo__lista artigo__lista--ul">
-                        <li>Crianças &lt; 2 anos e Peso &lt; 10 kg;</li>
-                        <li>Crianças &ge; 2 anos e Peso &lt; 10 kg;</li>
-                        <li>Crianças em Regime de TARV contendo Lopinavir (LPV/r), Atazanavir (ATV/r), Darunavir (DRV/r) ou Nevirapina (NVP).</li>
+                    <h3 class="article__title article__title--level-2">Escolha do regime preferencial de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> (TB sensível) para crianças HIV+ </h3>
+                    <p class="article__p"><b>Oferecer Profilaxia com Isoniazida (TPT&nbsp;-&nbsp;INH) a:</b></p>
+                    <ul class="article__list article__list--ul">
+                        <li>Crianças &lt; 2 anos e Peso &lt; 10 kg <strong>OU</strong> Crianças &ge; 2 anos e Peso &lt; 10 kg;;</li>
+                        <li>Crianças &ge; 2 anos <strong>E</strong> Peso &ge; 10 kg <strong>E</strong> em regime de TARV contendo Lopinavir (LPV/r), Atazanavir (ATV/r), Darunavir (DRV/r) ou Nevirapina (NVP).</li>
                     </ul>
-
-                    <p><b>Oferecer Profilaxia com 3HP a:</b></p>
-
-                    <ul class="artigo__lista artigo__lista--ul">
-                        <li>Crianças &ge; 2 anos e Peso &ge; 10 kg;</li>
-                        <li>Crianças em Regime de TARV contendo Dolutegravir (DTG).</li>
+                    <p class="article__p"><b>Oferecer Profilaxia com 3HP a:</b></p>
+                    <ul class="article__list article__list--ul">
+                        <li>Crianças &ge; 2 anos <strong>E</strong> Peso &ge; 10 kg <strong>E</strong> em regime de TARV contendo Dolutegravir (DTG).</li>
                     </ul>
-
-                    <div class="tabela-personalizada">
-                        <h3 class="tabela-personalizada__titulo">Considerações importantes</h3>
-
-                        <ul class="artigo__lista artigo__lista--padding-r artigo__lista--ul">
+                    <div class="table">
+                        <h3 class="table__header --border-b">Considerações importantes</h3>
+                        <ul class="article__list article__list--padding-r article__list--ul">
                             <li>O Tratamento Preventivo com Isoniazida (TPI) tem a duração de 6 meses.</li>
                             <li>A profilaxia com 3HP é feita uma vez/semana durante 12 semanas (3 meses).</li>
                             <li>Toda criança com contra-indicação ao 3HP deve fazer profilaxia com Isoniazida.</li>
@@ -388,26 +358,27 @@
                         </ul>
                     </div>
                 </section>
-                <section class="seccao-estadiamento seccao-com-pos-fixed">
-                    <h2 class="artigo__titulo artigo__titulo--nivel-1">Estadiamento clínico pediátrico (OMS)</h2>
-                    <select class="seccao-estadiamento__select">
+                <section class="article__section article__section--estadiamento article__section--fixed">
+                    <h2 class="article__title article__title--level-1">Estadiamento clínico pediátrico (OMS)</h2>
+                    <span>Filtrar estadio:</span>
+                    <select class="article__section__select">
                         <option value="Todos">Todos</option>
                         <option value="Estadio I">Estadio I</option>
                         <option value="Estadio II">Estadio II</option>
                         <option value="Estadio III">Estadio III</option>
                         <option value="Estadio IV">Estadio IV</option>
                     </select>
-                    <div class="tabela-estadiamento tabela-personalizada">
-                        <div class="tabela-estadiamento__estadio-i">
-                            <h3 class="tabela-personalizada__titulo tabela-personalizada__titulo--pos-sticky">Estadio I</h3>
-                            <ul class="artigo__lista artigo__lista--ul">
+                    <div class="table --border">
+                        <div class="estadio-i">
+                            <h3 class="table__header table__header--pos-sticky --border-b">Estadio I</h3>
+                            <ul class="article__list article__list--ul">
                                 <li>Assintomático</li> 
                                 <li>Linfadenopatia generalizada persistente (LGP)</li>
                             </ul>
                         </div>
-                        <div class="tabela-estadiamento__estadio-ii">
-                            <h3 class="tabela-personalizada__titulo tabela-personalizada__titulo--pos-sticky">Estadio II</h3>
-                            <ul class="artigo__lista artigo__lista--ul">
+                        <div class="estadio-ii">
+                            <h3 class="table__header table__header--pos-sticky --border-t --border-b">Estadio II</h3>
+                            <ul class="article__list article__list--ul">
                                 <li>Hepatoesplenomegalia persistente inexplicada</li>
                                 <li>Molusco contagioso extenso</li>
                                 <li>Prurigo</li>
@@ -421,9 +392,9 @@
                                 <li>Infecções recorrentes das vias respiratórias superiores</li> 
                             </ul>
                         </div>
-                        <div class="tabela-estadiamento__estadio-iii">
-                            <h3 class="tabela-personalizada__titulo tabela-personalizada__titulo--pos-sticky">Estadio III</h3>
-                            <ul class="artigo__lista artigo__lista--ul">
+                        <div class="estadio-iii">
+                            <h3 class="table__header table__header--pos-sticky --border-t --border-b">Estadio III</h3>
+                            <ul class="article__list article__list--ul">
                                 <li>Malnutrição moderada inexplicada</li>
                                 <li>Pneumonia bacteriana grave de repetição (&gt;&nbsp;2 episódios nos últimos 6 meses)</li>
                                 <li>Diarreia persistente inexplicada (&gt;&nbsp;14 dias)</li>
@@ -434,12 +405,12 @@
                                 <li>Doença pulmonar crônica associada ao HIV (inclui Bronquiectasias)</li>
                                 <li>Leucoplasia oral pilosa</li>
                                 <li>TB ganglionar e TB pulmonar</li>
-                                <li>Anemia (&lt; 8g/dL) ou Neutropenia (&lt;&nbsp;500/mm3) ou Trombocitopénia crônica  (&lt;&nbsp;50.000/ mm<sup>3</sup>) inexplicadas</li> 
+                                <li>Anemia (&lt; 8g/dL) ou Neutropenia (&lt;&nbsp;500/mm<sup>3</sup>) ou Trombocitopénia crônica  (&lt;&nbsp;50.000/ mm<sup>3</sup>) inexplicadas</li> 
                             </ul>
                         </div>
-                        <div class="tabela-estadiamento__estadio-iv">
-                            <h3 class="tabela-personalizada__titulo tabela-personalizada__titulo--pos-sticky">Estadio IV</h3>
-                            <ul class="artigo__lista artigo__lista--ul">
+                        <div class="estadio-iv">
+                            <h3 class="table__header table__header--pos-sticky --border-t --border-b">Estadio IV</h3>
+                            <ul class="article__list article__list--ul">
                                 <li>Malnutrição grave, ou perda de peso severa inexplicada</li>
                                 <li>Toxoplasmose do SNC</li>
                                 <li>Pneumonia por Pneumocistis Jiroveci (PPJ)</li>
@@ -462,236 +433,397 @@
                             </ul>
                         </div>
                     </div>
+                    <button class="article__section__btn--close">&times;</button>
                 </section>
-                <section class="seccao-regimes-para-inicio-tarv">
-                    <h2 class="artigo__titulo artigo__titulo--nivel-1">Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios) incluindo crianças com Tratamento anti-tuberculose (TAT)</h2>
-
-                    <table class="tabela-personalizada tabela-personalizada--font-small tabela-personalizada--txt-xy-center">
-                        <thead>
-                            <tr class="tabela-personalizada__titulo">
-                                <th>Peso (kg)</th>
-                                <th class="--border-l">Crianças em TARV  (incluíndo crianças  com TB MR)*</th>
-                                <th class="--border-l">Crianças com TB/HIV (em TAT com regime contendo Rifampicina)**</th>
-                                <th class="--border-l">Regime de TARV após terminar o tratamento da TB</th>
+                <section class="article__section article__section--regimes-para-inicio article__section--fixed">
+                    <h2 class="article__title article__title--level-1">Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios) incluindo crianças em Tratamento anti-tuberculose (TAT)</h2>
+                    <span class="article__section__bibliografia"><strong>Fonte:</strong> Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, Tabela 18.</span>
+                    <table class="table table--font-small">
+                        <thead class="table__header --border-b">
+                            <tr>
+                                <th class="table__cell">Peso (kg)</th>
+                                <th class="table__cell --border-l">Crianças em TARV  (incluíndo crianças  com TB MR)*</th>
+                                <th class="table__cell --border-l">Crianças com TB/HIV (em TAT com regime contendo Rifampicina)**</th>
+                                <th class="table__cell --border-l">Regime de TARV após terminar o tratamento da TB</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>3-19.9 kg</td>
-                                <td class="--border-l">ABC/3TC (120/60) <br> + <br> DTG 10 mg </td>
-                                <td class="--border-l">ABC/3TC (120/60) + <br> DTG 10 mg <br> + <br> Dose adicional de DTG 10 mg a noite </td>
-                                <td rowspan="4" class="--border-l">Manter o regime e suspender a dose adicional de DTG 10 mg ou DTG 50 mg, duas semanas após o término do tratamento para TB.</td>
+                                <td class="table__cell">3-19.9 kg</td>
+                                <td class="table__cell --border-l">ABC/3TC (120/60) <br> + <br> DTG 10 mg </td>
+                                <td class="table__cell --border-l">ABC/3TC (120/60) + <br> DTG 10 mg <br> + <br> Dose adicional de DTG 10 mg a noite </td>
+                                <td rowspan="4" class="table__cell --border-l">Manter o regime e suspender a dose adicional de DTG duas semanas após o término do tratamento para TB.</td>
                             </tr>
                             <tr class="--border-t">
-                                <td>20–24.9 kg</td>
-                                <td class="--border-l">ABC/3TC (120/60) <br> + <br> DTG 50 mg</td>
-                                <td class="--border-l">ABC/3TC (120/60) + <br> DTG 50 mg <br> + <br> Dose adicional de DTG 50 mg a noite </td>
+                                <td class="table__cell">20–24.9 kg</td>
+                                <td class="table__cell --border-l">ABC/3TC (120/60) <br> + <br> DTG 50 mg</td>
+                                <td class="table__cell --border-l">ABC/3TC (120/60) + <br> DTG 50 mg <br> + <br> Dose adicional de DTG 50 mg a noite </td>
                             </tr>
                             <tr class="--border-t">
-                                <td>25–29.9 kg</td>
-                                <td class="--border-l">ABC/3TC (600/300) <br> + <br> DTG 50 mg</td>
-                                <td class="--border-l">ABC/3TC (600/300) + <br> DTG 50 mg <br> + <br> Dose adicional de DTG 50 mg a noite </td>
+                                <td class="table__cell">25–29.9 kg</td>
+                                <td class="table__cell --border-l">ABC/3TC (600/300) <br> + <br> DTG 50 mg</td>
+                                <td class="table__cell --border-l">ABC/3TC (600/300) + <br> DTG 50 mg <br> + <br> Dose adicional de DTG 50 mg a noite </td>
                             </tr>
                             <tr class="--border-t">
-                                <td>&ge; 30 kg</td>
-                                <td class="--border-l">TDF/3TC/DTG <br> 300/300/50mg</td>
-                                <td class="--border-l">TDF/3TC/DTG 300/300/50mg <br> + <br> Dose adicional de DTG 50 mg a noite </td>
+                                <td class="table__cell">&ge; 30 kg</td>
+                                <td class="table__cell --border-l">TDF/3TC/DTG <br> 300/300/50 mg</td>
+                                <td class="table__cell --border-l">TDF/3TC/DTG 300/300/50 mg <br> + <br> Dose adicional de DTG 50 mg a noite </td>
                             </tr>
                         </tbody>
-                        <tfoot class="tabela-regimes-para-inicio-tarv__tfoot">
-                            <tr class="tabela-personalizada__titulo">
-                                <td colspan="4" class="tabela-personalizada__titulo">Observações</td>
-                            </tr>
-                            <tr class="--border-t">
-                                <td colspan="4">
-                                    <span>* Pacientes co-infectados com TB/HIV em TAT com regime para TB multirresistente (não contendo Rifampicina) não é necessário oferecer a dose adicional de DTG.</span>
+                        <tfoot class="table__footer --border-t">
+                            <tr>
+                                <td colspan="4" class="table__cell table__cell--padding-diff table__cell--text-align-left">
+                                    <span class="table__footer__span table__footer__span--margin-b">* Pacientes co-infectados com TB/HIV em TAT com regime para TB multirresistente (não contendo Rifampicina) não é necessário oferecer a dose adicional de DTG.</span>
 
-                                    <span>** DTG deve ser administrado com intervalo de 12 em 12 horas.</span>
+                                    <span class="table__footer__span">** DTG deve ser administrado com intervalo de 12 em 12 horas.</span>
                                 </td>
                             </tr>
                         </tfoot>
                     </table>
+                    <button class="article__section__btn--close">&times;</button>
                 </section>
-                <section class="seccao-regimes-alternativos">
-                    <h2 class="artigo__titulo artigo__titulo--nivel-1">Regimes alternativos em caso de intolerância aos ARVs</h2>
-                    <table class="tabela-personalizada tabela-personalizada--txt-xy-center">
-                        <thead>
-                            <tr class="tabela-personalizada__titulo">
-                                <th class="--border-r">ARV que causa intolerância</th>
-                                <th>ARV alternativo</th>
+                <section class="article__section article__section--regimes-alternativos article__section--fixed">
+                    <h2 class="article__title article__title--level-1">Regimes alternativos em caso de intolerância aos ARVs</h2>
+                    <span class="article__section__bibliografia"><strong>Fonte:</strong> Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, Tabela 20.</span>
+                    <table class="table table--layout-fixed">
+                        <thead class="table__header --border-b">
+                            <tr>
+                                <th class="table__cell --border-r">ARV que causa intolerância</th>
+                                <th class="table__cell">ARV alternativo</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="--border-b">
-                                <td rowspan="2" class="--border-r">AZT/3TC</td>
-                                <td>&lt; 30 kg: ABC </td>
+                                <td rowspan="2" class="table__cell --border-r">AZT/3TC</td>
+                                <td class="table__cell">&lt; 30 kg: ABC </td>
+                            </tr>
+                            <tr class="table__cell --border-b">
+                                <td class="table__cell">&ge; 30 kg: ABC ou TDF</td>
                             </tr>
                             <tr class="--border-b">
-                                <td>&ge; 30kg: ABC ou TDF</td>
+                                <td rowspan="2" class="table__cell --border-r">ABC/3TC</td>
+                                <td class="table__cell">&lt; 30 kg: AZT  </td>
+                            </tr>
+                            <tr class="table__cell --border-b">
+                                <td class="table__cell">&ge; 30 kg: TDF ou AZT</td>
                             </tr>
                             <tr class="--border-b">
-                                <td rowspan="2" class="--border-r">ABC/3TC</td>
-                                <td>&lt; 30kg: AZT  </td>
+                                <td class="table__cell --border-r">TDF/3TC</td>
+                                <td class="table__cell">ABC ou AZT</td>
                             </tr>
                             <tr class="--border-b">
-                                <td>&ge; 30kg: TDF ou AZT</td>
+                                <td class="table__cell --border-r">ATV/r ou LPV/r</td>
+                                <td class="table__cell">DTG (pDTG ou DTG 50 mg)</td>
                             </tr>
                             <tr class="--border-b">
-                                <td class="--border-r">TDF/3TC</td>
-                                <td>ABC ou AZT</td>
+                                <td class="table__cell --border-r">pDTG</td>
+                                <td class="table__cell">LPV/r</td>
                             </tr>
                             <tr class="--border-b">
-                                <td class="--border-r">ATV/r ou LPV/r</td>
-                                <td>DTG (pDTG ou DTG 50 mg)</td>
+                                <td rowspan="2" class="table__cell --border-r">DTG</td>
+                                <td class="table__cell">&lt; 25 kg: LPV/r</td>
                             </tr>
-                            <tr class="--border-b">
-                                <td class="--border-r">pDTG</td>
-                                <td>LPV/r</td>
-                            </tr>
-                            <tr class="--border-b">
-                                <td rowspan="2" class="--border-r">DTG</td>
-                                <td>&lt; 25 kg: LPV/r</td>
-                            </tr>
-                            <tr class="--border-b">
-                                <td>&ge; 25kg: ATV/r</td>
+                            <tr class="table__cell --border-b">
+                                <td class="table__cell">&ge; 25 kg: ATV/r</td>
                             </tr>
                         </tbody>
                     </table>
+                    <button class="article__section__btn--close">&times;</button>
+                </section>
+                <section class="article__section article__section--desnutricao article__section--fixed">
+                    <span style="font-size: 12px; line-height: 1.2;">Toque num conteúdo para abreviar a sua localização.</span>
+                    <div class="article__section__table-of-contents table table--grayscale">
+                        <h3 class="table__header table__header--bg-color-grayscale">Conteúdos desta secção</h3>
+                        <ul class="article__list article__list--ul">
+                            <li><a href="#desnutricao-classificacao" class="article__table-of-contents__link">Classificação da Desnutrição Aguda</a></li>
+                            <li><a href="#desnutricao-conduta" class="article__table-of-contents__link">Conduta em caso de Desnutrição Aguda</a></li>
+                            <li><a href="#dam-conduta" class="article__table-of-contents__link">Tipo e quantidade de saquetas de ATPU e ASPU para tratamento da DAM por idade</a></li>
+                            <li><a href="#dag-conduta" class="article__table-of-contents__link">Dosagem de ATPU para tratamento da DAG</a></li>
+                        </ul>
+                    </div>
+                    <h2 class="article__title article__title--level-1" id="desnutricao-classificacao">Classificação da Desnutrição Aguda</h2>
+                    <span class="article__section__bibliografia"><strong>Fonte:</strong> Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, Tabela 5.</span>
+                    <table class="table">
+                        <thead class="table__header --border-b">
+                            <tr>
+                                <th class="table__cell --border-r">Indicadores Nutricionais</th>
+                                <th class="table__cell --border-r">P/E ou IMC para idade</th>
+                                <th class="table__cell --border-r">Perímetro Braquial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">Desnutrição Aguda Grave (DAG)</td>
+                                <td class="table__cell --border-r">&lt; - 3 DP</td>
+                                <td class="table__cell">
+                                    <ul class="article__list article__list--ul">
+                                        <li>6 - 59 meses: &lt; 11.5 cm</li>
+                                        <li>5 - 10 anos: &lt; 13 cm</li>
+                                        <li>11 - 14 anos: &lt; 16 cm</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">Desnutrição Aguda Moderada (DAM)</td>
+                                <td class="table__cell --border-r">&ge; - 3 DP e &lt; -2 DP</td>
+                                <td class="table__cell">
+                                    <ul class="article__list article__list--ul">
+                                        <li>6 - 59 meses: ≥ 11.5 cm e &lt; 12.5 cm</li>
+                                        <li>5 - 10 anos: ≥ 13 cm e &lt; 14.5 cm</li>
+                                        <li>11 - 14 anos: ≥ 16 cm e &lt; 18.5 cm</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="article__title article__title--level-1" id="desnutricao-conduta">Conduta em caso de Desnutrição Aguda</h2>
+                    <span class="article__section__bibliografia"><strong>Fonte:</strong> Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, Tabela 6.</span>
+                    <table class="table">
+                        <thead class="table__header --border-b">
+                            <tr>
+                                <th colspan="2" class="table__cell --border-r">Conduta em caso de Desnutrição Aguda  em crianças</th>
+                                <th class="table__cell --border-r">Critérios para Alta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">DAG com complicações (HIV +/-)</td>
+                                <td class="table__cell --border-r"><b>Fase 1:</b> Internamento F75/ F100 <br> <b>Fase 2:</b> ATPU em ambulatório</td>
+                                <td rowspan="3" class="table__cell --border-l">P/E ou IMC/Idade ≥ -1 DP em 2 pesagens sucessivas <br> ou <br> PB em duas avaliações sucessivas: 
+                                    <ul class="article__list article__list--ul">
+                                        <li>6-59 meses: &ge; 12.5 cm</li>
+                                        <li>5-10 anos: &ge; 14.5 cm </li>
+                                        <li>11-14 anos: &ge; 18.5 cm</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">DAG sem complicações (&ge; 6 meses, HIV +/-)</td>
+                                <td class="table__cell">ATPU em ambulatório</td>
+                            </tr>
+                            <tr>
+                                <td class="table__cell --border-r">DAM (&ge; 6 meses, HIV +/-)</td>
+                                <td class="table__cell">CSB ou ASPU em ambulatório</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="table__footer --border-t">
+                            <td colspan="3" class="table__cell table__cell--padding-diff table__cell--text-align-left">
+                                <span class="table__footer__span"><strong>Nota:</strong> Após a alta, continuar o controlo regular por mais 3 meses para assegurar que a criança mantém o P/E ou IMC ≥ -1 DP.</span>
+                            </td>
+                        </tfoot>
+                    </table>
+                    <h2 class="article__title article__title--level-1" id="dam-conduta">Tipo e quantidade de saquetas de ATPU e ASPU para tratamento da DAM por idade</h2>
+                    <span class="article__section__bibliografia"><strong>Fonte:</strong> Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, Tabela 7.</span>
+                    <table class="table">
+                        <thead class="table__header --border-b">
+                            <tr>
+                                <th colspan="2" class="--border-r">Quantidade de ASPU para tratamento da DAM/idade</th>
+                                <th colspan="2" class="--border-r">Quantidade de ATPU para tratamento da DAM/ idade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">Idade</td>
+                                <td class="table__cell --border-r">Nº de Saquetas ASPU/dia</td>
+                                <td class="table__cell --border-r">Idade</td>
+                                <td class="table__cell">Nº de Saquetas ATPU/dia </td>
+                            </tr>
+                            <tr class="table__cell --border-b">
+                                <td class="table__cell --border-r">6 - 59 meses</td>
+                                <td class="table__cell --border-r">1 saqueta/dia</td>
+                                <td class="table__cell --border-r">6 - 11 meses</td>
+                                <td class="table__cell">1 saqueta/dia</td>
+                            </tr>
+                            <tr>
+                                <td class="table__cell --border-r">&ge; 5 anos</td>
+                                <td class="table__cell --border-r">2 saquetas/dia</td>
+                                <td class="table__cell --border-r">&ge; 12 meses</td>
+                                <td class="table__cell">2 saquetas/dia</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="table__footer --border-t">
+                            <td colspan="4" class="table__cell table__cell--padding-diff table__cell--text-align-left">
+                                <span class="table__footer__span"><strong>Nota:</strong> O ASPU é a 1ª opção para tratamento da DAM e deve ser administrado as crianças &ge; 6 meses. Em caso de limitação do stock de ASPU, priorizar a prescrição para crianças &lt; 5 anos e nesse caso, reservar o MAE (CSB Plus/Super Cereal) para crianças &ge; de 5 anos, adolescentes e adultos. O ATPU só pode ser utilizado como alternativa somente na ausência do ASPU e MAE.</span>
+                            </td>
+                        </tfoot>
+                    </table>
+                    <h2 class="article__title article__title--level-1" id="dag-conduta">Dosagem de ATPU para tratamento da DAG
+                    </h2>
+                    <span class="article__section__bibliografia"><strong>Fonte:</strong> Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, Tabela 8.</span>
+                    <table class="table table--layout-fixed">
+                        <thead class="table__header --border-b">
+                            <tr>
+                                <th class="table__cell --border-r">Peso (Kg)</th>
+                                <th class="table__cell --border-r">Total de saquetas de ATPU para 24 horas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">4.0 - 4.9</td>
+                                <td class="table__cell">2</td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">5.0 - 6.4</td>
+                                <td class="table__cell">2.5</td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">6.5 - 8.0</td>
+                                <td class="table__cell">3</td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">8.1 - 9.0</td>
+                                <td class="table__cell">3.5</td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">9.1 - 10.0</td>
+                                <td class="table__cell">4</td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">10.1 - 11.4</td>
+                                <td class="table__cell">4.5</td>
+                            </tr>
+                            <tr class="--border-b">
+                                <td class="table__cell --border-r">&ge; 11.5</td>
+                                <td class="table__cell">5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="article__section__btn--close">&times;</button>
                 </section>
             </article>
         </main>
-        <section class="seccao-propaganda">
-            <div class="seccao-propaganda__row">
-                <h4 class="seccao-propaganda__titulo">Talvez se interesse também por:</h4>
-                <div class="seccao-propaganda__container-de-cards">
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/calculadora-de-doses.png" alt="Calculadora de Doses Pediátricas">
+        <section class="advertising">
+            <div class="advertising__row">
+                <h4 class="advertising__row__title">Talvez se interesse também por:</h4>
+                <div class="advertising__row__container-of-cards">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/calculadora-de-doses.png" alt="Calculadora de Doses Pediátricas" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Calculadora de Doses Pediátricas</h5>
-                            <p class="seccao-propaganda__card__description">Doseia automaticamente, de acordo com o peso inserido pelo usuário, alguns dos fármacos mais usuais.</p>
-                            <a href="https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Calculadora de Doses Pediátricas</h5>
+                            <p class="advertising__card__description">Doseia automaticamente, de acordo com o peso inserido pelo usuário, alguns dos fármacos mais usuais.</p>
+                            <a href="https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-hiv.png" alt="Totalizador de Resumo Mensal de HIV/SIDA">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-hiv.png" alt="Totalizador de Resumo Mensal de HIV/SIDA" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de HIV/SIDA</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de HIV/SIDA.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de HIV/SIDA</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de HIV/SIDA.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-tuberculose.png" alt="Totalizador de Resumo Mensal de Tuberculose">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-tuberculose.png" alt="Totalizador de Resumo Mensal de Tuberculose" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de Tuberculose</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de rastreio, notificação de casos de TB e TB/HIV.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-tuberculose/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Tuberculose</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de rastreio, notificação de casos de TB e TB/HIV.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-tuberculose/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-ats.png" alt="Totalizador de Resumo Mensal de ATS">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-ats.png" alt="Totalizador de Resumo Mensal de ATS" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de ATS</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Aconselhamento e Testagem em Saúde">ATS</abbr>.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ats/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de ATS</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Aconselhamento e Testagem em Saúde">ATS</abbr>.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ats/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de Consultas</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de consultas externas.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Consultas</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de consultas externas.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-ccd.png" alt="Totalizador de Resumo Mensal de CCD">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-ccd.png" alt="Totalizador de Resumo Mensal de CCD" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de CCD</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Consulta da Criança Doente">CCD</abbr>.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de CCD</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Consulta da Criança Doente">CCD</abbr>.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-malaria.png" alt="Totalizador de Resumo Mensal de Malária">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-malaria.png" alt="Totalizador de Resumo Mensal de Malária" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de Malária</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de Malária.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-malaria/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Malária</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de Malária.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-malaria/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de SAAJ</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Serviço Amigodo Adolescente e Jovem">SAAJ</abbr>.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de SAAJ</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Serviço Amigodo Adolescente e Jovem">SAAJ</abbr>.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-prn-i.png" alt="Totalizador de Resumo Mensal de PRN 1">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-prn-i.png" alt="Totalizador de Resumo Mensal de PRN 1" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de PRN 1</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Programa de Reabilitação Nutricional para crianças dos 6 meses aos 14 anos">PRN 1</abbr>.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de PRN 1</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Programa de Reabilitação Nutricional para crianças dos 6 meses aos 14 anos">PRN 1</abbr>.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-mensal-de-prn-ii.png" alt="Totalizador de Resumo Mensal de PRN 2">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-prn-ii.png" alt="Totalizador de Resumo Mensal de PRN 2" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Mensal de PRN 2</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Programa de Reabilitação Nutricional para Pacientes &ge; 15 Anos">PRN 2</abbr>.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Mensal de PRN 2</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de <abbr title="Programa de Reabilitação Nutricional para Pacientes &ge; 15 Anos">PRN 2</abbr>.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-resumo-trimestral-de-apss-e-pp.png" alt="Totalizador de Resumo Trimestral de APSS/PP">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-resumo-trimestral-de-apss-e-pp.png" alt="Totalizador de Resumo Trimestral de APSS/PP" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Resumo Trimestral de APSS/PP</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo trimestral de <abbr title="Apoio Psicossocial e Prevenção Positiva">APSS/PP</abbr>.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-trimestral-de-apss-e-pp/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Resumo Trimestral de APSS/PP</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo trimestral de <abbr title="Apoio Psicossocial e Prevenção Positiva">APSS/PP</abbr>.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-trimestral-de-apss-e-pp/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/totalizador-de-mapa-resumo-mensal-de-caixa.png" alt="Totalizador de Mapa Resumo Mensal de Caixa">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/totalizador-de-mapa-resumo-mensal-de-caixa.png" alt="Totalizador de Mapa Resumo Mensal de Caixa" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Totalizador de Mapa Resumo Mensal de Caixa</h5>
-                            <p class="seccao-propaganda__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o mapa resumo mensal de caixa.</p>
-                            <a href="https://quinamine.github.io/totalizador-de-mapa-resumo-mensal-de-caixa/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Totalizador de Mapa Resumo Mensal de Caixa</h5>
+                            <p class="advertising__card__description">Totaliza automaticamente, com base nos dados inseridos pelo usuário, o mapa resumo mensal de caixa.</p>
+                            <a href="https://quinamine.github.io/totalizador-de-mapa-resumo-mensal-de-caixa/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
-                    <div class="seccao-propaganda__card">
-                        <figure class="seccao-propaganda__card__moldura">
-                            <img src="imagens/requisicao-balancete.png" alt="Requisição/Balancete">
+                    <div class="advertising__card">
+                        <figure class="advertising__card__frame">
+                            <img src="imagens/requisicao-balancete.png" alt="Requisição/Balancete" class="advertising__card__img">
                         </figure>
-                        <div class="seccao-propaganda__card__container-of-description">
-                            <h5 class="seccao-propaganda__card__title">Requisição/Balancete</h5>
-                            <p class="seccao-propaganda__card__description">Calcula automaticamente o Stock Teórico Fim do Período, Diferença entre stock teórico e stock físico e Quantidade a Requisitar com base nos dados de controlo da ficha de stock e inventário preenchidos pelo usuário..</p>
-                            <a href="https://quinamine.github.io/requisicao-balancete/index.html" class="seccao-propaganda__card__link-acessar">Acessar &raquo;</a>
+                        <div class="advertising__card__container-of-description">
+                            <h5 class="advertising__card__title">Requisição/Balancete</h5>
+                            <p class="advertising__card__description">Calcula automaticamente o Stock Teórico Fim do Período, Diferença entre stock teórico e stock físico e Quantidade a Requisitar com base nos dados de controlo da ficha de stock e inventário preenchidos pelo usuário..</p>
+                            <a href="https://quinamine.github.io/requisicao-balancete/index.html" class="advertising__card__link">Acessar &raquo;</a>
                         </div>
                     </div>
                 </div>
