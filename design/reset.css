@@ -113,6 +113,6 @@ h1, h2, h3, h4, h5, h6, span {
 }
 
 ::selection {
-    background-color: var(--cor-de-realce-de-fundo);
+    background-color: var(--black);
     color: var(--main-color)
 }
