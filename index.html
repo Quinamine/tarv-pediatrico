@@ -16,8 +16,8 @@
         <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
         <link href=design/reset.css rel=stylesheet>
         <link href=design/layout.css rel=stylesheet>
-        <script src=fisiologia/index.js></script>
-        <script src=fisiologia/darv.js></script>
+        <script src=physiology/multifunctions.js></script>
+        <script src=physiology/script.js></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-YBM46MLS6W" async></script>
         <script>
             function gtag() {
@@ -34,10 +34,33 @@
             <div class="header__row">
                 <div class="layout-row">
                     <a href=index.html id=logo>Tarv Pediátrico</a>
-                    <div class=meatballs-menu>
-                        <div class=meatballs-menu__dot></div>
-                        <div class=meatballs-menu__dot></div>
-                        <div class=meatballs-menu__dot></div>
+                    <div class="meatballs-menu menu-3dot-target">
+                        <div class="meatballs-menu__dot menu-3dot-target"></div>
+                        <div class="meatballs-menu__dot menu-3dot-target"></div>
+                        <div class="meatballs-menu__dot menu-3dot-target"></div>
+                    </div>
+                    <div class="meatballs-menu-content">
+                        <ul class="meatballs-menu-content__list">
+                            <li>
+                                <button class="meatballs-menu-content__target meatballs-menu-content__target--border-radius-t" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button>
+                            </li>
+                            <li>
+                                <button class="meatballs-menu-content__target" data-article="article__section--regimes-alternativos">Regimes de ARVs alternativos</button>
+                            </li>
+                            <li>
+                                <button class="meatballs-menu-content__target" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button>
+                            </li>
+                            <li>
+                                <button class="meatballs-menu-content__target" data-article="article__section--desnutricao">Manejo da desnutrição aguda</button>
+                            </li>
+                            
+                            <li>
+                                <a href="ficheiros/poliptico_pediatrico_16-2-2022-finalissima.pdf" download class="meatballs-menu-content__target">Baixar políptico pediátrico</a>
+                            </li>
+                            <li>
+                                <a href="" class="meatballs-menu-content__target meatballs-menu-content__target--border-radius-b">Partilhar Tarv Pediátrico</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -244,7 +267,7 @@
 
             </div>
             <article class="article">
-                <section class="article__section article__section--darv" id=sobre>
+                <section class="article__section article__section--darv --open" id=sobre>
                     <h2 class="article__title article__title--level-1">Instruções de utilização do Doseador de Antirretrovirais</h2>
                     <p class="article__p">
                         O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico -  <a href="ficheiros/poliptico_pediatrico_16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, actualmente (2024) vigente no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
@@ -363,22 +386,22 @@
                 <section class="article__section article__section--estadiamento article__section--fixed">
                     <h2 class="article__title article__title--level-1">Estadiamento clínico pediátrico (OMS)</h2>
                     <span>Filtrar estadio:</span>
-                    <select class="article__section__select">
-                        <option value="Todos">Todos</option>
-                        <option value="Estadio I">Estadio I</option>
-                        <option value="Estadio II">Estadio II</option>
-                        <option value="Estadio III">Estadio III</option>
-                        <option value="Estadio IV">Estadio IV</option>
+                    <select class="article__staging__select">
+                        <option value="todos">Todos</option>
+                        <option value="estadio-i">Estadio I</option>
+                        <option value="estadio-ii">Estadio II</option>
+                        <option value="estadio-iii">Estadio III</option>
+                        <option value="estadio-iv">Estadio IV</option>
                     </select>
                     <div class="table --border">
-                        <div class="estadio-i">
+                        <div class="estadio estadio-i">
                             <h3 class="table__header table__header--pos-sticky --border-b">Estadio I</h3>
                             <ul class="article__list article__list--ul">
                                 <li>Assintomático</li> 
                                 <li>Linfadenopatia generalizada persistente (LGP)</li>
                             </ul>
                         </div>
-                        <div class="estadio-ii">
+                        <div class="estadio estadio-ii">
                             <h3 class="table__header table__header--pos-sticky --border-t --border-b">Estadio II</h3>
                             <ul class="article__list article__list--ul">
                                 <li>Hepatoesplenomegalia persistente inexplicada</li>
@@ -394,7 +417,7 @@
                                 <li>Infecções recorrentes das vias respiratórias superiores</li> 
                             </ul>
                         </div>
-                        <div class="estadio-iii">
+                        <div class="estadio estadio-iii">
                             <h3 class="table__header table__header--pos-sticky --border-t --border-b">Estadio III</h3>
                             <ul class="article__list article__list--ul">
                                 <li>Malnutrição moderada inexplicada</li>
@@ -410,7 +433,7 @@
                                 <li>Anemia (&lt; 8g/dL) ou Neutropenia (&lt;&nbsp;500/mm<sup>3</sup>) ou Trombocitopénia crônica  (&lt;&nbsp;50.000/ mm<sup>3</sup>) inexplicadas</li> 
                             </ul>
                         </div>
-                        <div class="estadio-iv">
+                        <div class="estadio estadio-iv">
                             <h3 class="table__header table__header--pos-sticky --border-t --border-b">Estadio IV</h3>
                             <ul class="article__list article__list--ul">
                                 <li>Malnutrição grave, ou perda de peso severa inexplicada</li>
@@ -437,7 +460,7 @@
                     </div>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
-                <section class="article__section article__section--regimes-para-inicio article__section--fixed">
+                <section class="article__section article__section--regimes-para-inicios-tarv article__section--fixed">
                     <h2 class="article__title article__title--level-1">Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios) incluindo crianças em Tratamento anti-tuberculose (TAT)</h2>
                     <table class="table table--font-small">
                         <thead class="table__header --border-b">
@@ -533,7 +556,7 @@
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--desnutricao article__section--fixed">
-                    <p style="font-size: 12px; line-height: 1.2;">Toque num conteúdo para abreviar a sua localização.</p>
+                    <p style="font-size: 12px;">Toque num conteúdo para abreviar a sua localização.</p>
                     <div class="article__section__table-of-contents table table--grayscale">
                         <h3 class="table__header table__header--bg-color-grayscale">Conteúdos desta secção</h3>
                         <ul class="article__list article__list--ul">
@@ -845,33 +868,33 @@
         <footer class="footer --no-print">
             <div class="layout-row layout-row--flex-direction-col">
                 <div class="footer__bibliography-sources">
-                    <h5 class="footer__bibliography-sources__title">Fonte(s) bibliográfica(s):</h5>
-                    <p class="footer__p footer__p--text-align-l footer__p--highlight"><a href="ficheiros/poliptico_pediatrico_16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> (Políptico Pediátrico):</p>
+                    <h5 class="footer__bibliography-sources__title">Fonte bibliográfica:</h5>
+                    <p class="footer__p footer__p--text-align-l footer__p--highlight"><a href="ficheiros/poliptico_pediatrico_16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> (Políptico Pediátrico), especificamente:</p>
                     <ul class="footer__bibliography-sources__list">
-                        <li>Dosagem de ARVs - Tabela 22</li>
-                        <li>Dosagem e critérios para tratamento profiláctico com cotrimoxazol - Tabela 10</li>
-                        <li>Escolha do regime preferencial de TPT para crianças HIV+ (TB sensível) - Algorítmo 11</li>
-                        <li>Critérios para fazer a TPT para crianças HIV+ com INH ou 3HP - Tabela 11</li>
-                        <li>Dosagem de tratamento preventivo com Isoniazida - Tabela 12</li>
-                        <li>Dosagem para tratamento profiláctico com 3HP  (Isoniazida + Rifapentina) - Tabela 13</li>
-                        <li>Dosagem de tratamento profilático com Levofloxacina para contactos de TB-MR - Tabela 14</li>
-                        <li>Estadiamento clínico pediátrico (OMS) - Tabela 4</li>
-                        <li>Classificação da Desnutrição Aguda - Tabela 5</li>
-                        <li>Conduta em caso de Desnutrição Aguda - Tabela 6</li>
-                        <li>Tipo e quantidade de saquetas de ATPU e ASPU para tratamento da DAM por idade - Tabela 7</li>
-                        <li>Dosagem de ATPU para tratamento da DAG - Tabela 8</li>
-                        <li>Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios e as que transitaram para regime com DTG) incluindo crianças em TAT - Tabela 18</li>
-                        <li>Regimes alternativos em caso de intolerância aos ARVs - Tabela 20</li>
+                        <li>Dosagem de ARVs - Tabela 22;</li>
+                        <li>Dosagem e critérios para tratamento profiláctico com cotrimoxazol - Tabela 10;</li>
+                        <li>Escolha do regime preferencial de TPT para crianças HIV+ (TB sensível) - Algorítmo 11;</li>
+                        <li>Critérios para fazer a TPT para crianças HIV+ com INH ou 3HP - Tabela 11;</li>
+                        <li>Dosagem de tratamento preventivo com Isoniazida - Tabela 12;</li>
+                        <li>Dosagem para tratamento profiláctico com 3HP  (Isoniazida + Rifapentina) - Tabela 13;</li>
+                        <li>Dosagem de tratamento profilático com Levofloxacina para contactos de TB-MR - Tabela 14;</li>
+                        <li>Estadiamento clínico pediátrico (OMS) - Tabela 4;</li>
+                        <li>Classificação da Desnutrição Aguda - Tabela 5;</li>
+                        <li>Conduta em caso de Desnutrição Aguda - Tabela 6;</li>
+                        <li>Tipo e quantidade de saquetas de ATPU e ASPU para tratamento da DAM por idade - Tabela 7;</li>
+                        <li>Dosagem de ATPU para tratamento da DAG - Tabela 8;</li>
+                        <li>Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios e as que transitaram para regime com DTG) incluindo crianças em TAT - Tabela 18;</li>
+                        <li>Regimes alternativos em caso de intolerância aos ARVs - Tabela 20.</li>
                     </ul>
                 </div>
                 <p class="footer__p footer__p--created-by">
-                    Desenvolvido por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> ©&nbsp;<span class="footer__current-year">2024</span>&nbsp;Tarv&nbsp;Pediátrico - Todos os direitos reservados
+                    Desenvolvido por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> ©&nbsp;<span class="footer__current-year">2024</span>&nbsp;Tarv&nbsp;Pediátrico - Todos os direitos reservados.
                 </p>
                 <a href=#root class=footer__link-back-to-top>Rolar para o topo</a>
                 <p class="footer__p footer__p--available-since">Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: Julho/2024.</p>
             </div>
         </footer>
-        <div class="desfoque"></div>
+        <div class="blurringDiv"></div>
     </body>
 </html>
     
