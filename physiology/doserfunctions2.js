@@ -71,19 +71,21 @@ class Darv {
             note = '*Esta dosagem é prevista para uso <strong>APENAS</strong> na ausência de comprimidos de DRV de 75 ou 150 mg.</strong>'
         } else if(this.medicine === "rtv-100-3alinha" && this.weight < 14) {
             note = 'O <strong>RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</strong> recomenda-se a partir de 10 kg.'
-        } else if(this.medicine === "ctz-susp" && this.weight > 25) {
+        } else if(this.medicine === "ctz-susp" && this.weight >= 25) {
             note = 'Para peso &ge; 25 kg, use <strong>Cotrimoxazol 480 mg Comp.</strong>'
         } else if(this.medicine === "inh-300" && this.weight < 25) {
-            note = 'Para peso &ge; 25 kg, use <strong>Isoniazida 100 mg Comp.</strong>'
+            note = 'Para peso &lt; 25 kg, use <strong>Isoniazida 100 mg Comp.</strong>'
         } else if(this.medicine.includes("3hp") && this.weight < 10) {
             note = '<strong>Oferecer profilaxia com Isoniazida (TPT - INH).</strong>'
         } else if(this.medicine=== "3hp-100/150" && this.weight >= 30) {
-            note = 'Para peso &ge; 30 kg, recomenda-se <strong>Isoniazida/Rifapentina 300 mg/300 mg Comp. (3HP em <span title="Dose Fixa Combinada">DFC<span>)</strong> ou, na ausência desse, <strong>Isoniazida 300 mg e Rifapentina 150 mg Comp. (3HP não DFC).</strong>'
+            note = 'Para peso &ge; 30 kg, recomenda-se <strong>Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup></strong> ou, na ausência desse, <strong>Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong>'
         } else if(this.medicine=== "3hp-300/150" && this.weight >= 16 && this.weight < 24) {
             note = '*Caso tenha apenas comprimidos de Isoniazida 300 mg disponível, <strong>a dosagem é de 1.5 comprimidos por semana.</strong>'
         } else if(this.medicine=== "3hp-300/150" && this.weight >= 30) {
             note = 'Prefira usar <strong>Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup></strong> (menor quantidade de comprimidos).'
-        } else if(this.medicine === "levofloxacina-100" && this.weight >= 16 && this.weight < 26) {
+        } else if(this.medicine=== "3hp-300/300-dfc" && this.weight < 30) {
+            note = 'Para peso &lt; 30 kg, recomenda-se <strong>Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong> ou <strong>Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong>'
+        }  else if(this.medicine === "levofloxacina-100" && this.weight >= 16 && this.weight < 26) {
             note = '*Crianças com peso &ge; 16 kg que consigam engolir comprimidos inteiros, passar para comprimidos de 250 mg. <br/> Se o caso fonte tiver resistência comprovada a Fluroquinolonas, não deve ser oferecido TPT.</strong>'
         } else if(this.medicine === "levofloxacina-100" && this.weight >= 26) {
             note = 'Para peso &ge; 26 kg, recomenda-se <strong>Levofloxacina 250 mg Comp.</strong>'
@@ -581,7 +583,7 @@ class Darv {
         return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
         <thead class="table__header table__header--bg-color-grayscale">
             <tr class="--border-t">
-                <th colspan="2" class="table__cell">Isoniazida/Rifapentina 300 mg/300 mg Comp. - 3HP em DFC</sup></th>
+                <th colspan="2" class="table__cell">Isoniazida/Rifapentina 300 mg/300 mg Comp. (3HP em DFC)</sup></th>
             </tr>
         </thead>
         <tbody>
@@ -592,7 +594,7 @@ class Darv {
                 <td class="table__cell">Dispensa mensal</td> <td class="table__cell">Dispensa trimestral</td>
             </tr>
             <tr class="--border-b --border-t">
-                <td class="table__cell">${dM}</td> <td class="table__cell">${dT}</td>
+                <td class="table__cell">${dM} cp(s)</td> <td class="table__cell">${dT} cp(s)</td>
             </tr>                   
         </tbody>
         </table>` 
@@ -631,7 +633,6 @@ class Darv {
         </table>` 
     }
 }
-
 
 let alertaDePesoMinimo, doseOutput, notasOutput;
 function inicializarVariaveis() {

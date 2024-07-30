@@ -1,9 +1,5 @@
 "use strict"
 
-
-
-
-
 window.addEventListener("load", () => {
     const doserSelect = document.querySelector(".doser__select")
     const selectOpeners = document.querySelectorAll(".doser__select__option, .select-opener");

@@ -4,22 +4,22 @@
         <meta charset=UTF-8>
         <meta content="IE=edge" http-equiv=X-UA-Compatible>
         <meta content="width=device-width,initial-scale=1" name=viewport>
-        <title>Doseador de Antirretrovirais - Tarv Pediátrico</title>
+        <title>Tarv Pediátrico</title>
         <meta content="index, follow" name=robots>
-        <meta content="Serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. É baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico versão 2022 actualmente (2024) vigente no SNS em Moçambique." name=description>
-        <meta content="Doseador de Antirretrovirais, Doseador de ARVs, Calculadora de doses de Antirretrovirais, Tratamento Antirretroviral, Tratamento Profilático com Cotrimoxazol, Tratamento Preventivo de Tuberculose, Dosagem de Antirretrovirais, Dosagem de ARVs, Políptico Pediátrico versão 2022 para manejo de infecção por HIV/SIDA" name=keywords>
+        <meta content="Serviço online gratuito com um Doseador de Antirretrovirais (de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento), Doseador de Cotrimoxazol para tratamento profilático (TPC) e Doseador de fármacos preventivos de tuberculose (TPT com Isoniazida, 3HP e Levofloxacina). O serviço é baseado no Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique." name=description>
+        <meta content="Tratamento Antirretroviral, Tarv Pediátrico, Doseador de Antirretrovirais, Doseador de ARVs, Tratamento Profilático com Cotrimoxazol, TPC, Tratamento Preventivo de Tuberculose, TPT, Abacavir + Lamivudina, Dolutegravir, Tenofovir + Lamivudina, Lopinavir + Ritonavir, Zidovudina + Lamivudina, Tenofovir + Lamivudina, Tenofovir + Lamivudina + Efavirenz, Atazanavir + Ritonavir, Darunavir, ABC+3TC, DTG, TDF+3TC, TDF+3TC+DTG, TDF+3TC+EFV, LPV/r, AZT+3TC, EFV, RTV, DRV, Cotrimoxazol, Isoniazida, Rifapentina, CTZ, INH, 3HP" name=keywords>
         <meta content="Adérito Félix Quinamine" name=author>
         <meta content=https://quinamine.github.io/tarv-pediatrico/index.html property=og:url>
-        <meta content="Doseador de Antirretrovirais" property=og:title>
-        <meta content="Serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. É baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico versão 2022 actualmente (2024) vigente no SNS em Moçambique." property=og:description>
+        <meta content="Tarv Pediátrico" property=og:title>
+        <meta content="Serviço online gratuito com um Doseador de Antirretrovirais (de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento), Doseador de Cotrimoxazol para tratamento profilático (TPC) e Doseador de fármacos preventivos de tuberculose (TPT com Isoniazida, 3HP e Levofloxacina). O serviço é baseado no Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique." property=og:description>
         <meta content=https://quinamine.github.io/tarv-pediatrico/images/doseador-de-arvs.jpg property=og:image>
         <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
         <link href=design/reset.css rel=stylesheet>
         <link href=design/layout.css rel=stylesheet>
         <script src=physiology/multifunctions.js></script>
         <script src=physiology/menu.js></script>
-        <script src=physiology/doser.js></script>
-        <script src=physiology/doseador.js></script>
+        <script src=physiology/doserfunctions1.js></script>
+        <script src=physiology/doserfunctions2.js></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-YBM46MLS6W" async></script>
         <script>
             function gtag() {
@@ -55,21 +55,23 @@
                             <li>
                                 <button class="meatballs-menu-expanded__option" data-article="article__section--desnutricao">Manejo da desnutrição aguda</button>
                             </li>
-                            
                             <li>
                                 <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="meatballs-menu-expanded__option">Baixar políptico pediátrico</a>
                             </li>
                             <li>
-                                <a href="" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Partilhar Tarv Pediátrico</a>
+                                <a href="" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar Tarv Pediátrico</a>
+                            </li>
+                            <li>
+                                <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Sobre o Desenvolvedor</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div role="navigation" class="layout-row layout-row--no-space-between-n-padding header__main-menu"> 
-                <button title="Doseador de Antirretrovirais" class="header__main-menu__btn header__main-menu__btn--current" data-article="article__section--darv" data-optgroup="doser__select__optgroup--arvs">DARV</button>
-                <button title="Tratamento Profilático com CTZ" class="header__main-menu__btn header__main-menu__btn--from-middle" data-article="article__section--tpc" data-optgroup="doser__select__optgroup--ctz">TPC</button>
-                <button title="Tratamento Preventivo de TB" class="header__main-menu__btn" data-article="article__section--tpt" data-optgroup="doser__select__optgroup--anti-tbs">TPT</button>
+                <button title="Doseador de Antirretrovirais" class="header__main-menu__btn header__main-menu__btn--current" data-article="article__section--darv" data-optgroup="doser__select__optgroup--arvs" data-bibliography="Tabela 22">DARV</button>
+                <button title="Tratamento Profilático com CTZ" class="header__main-menu__btn header__main-menu__btn--from-middle" data-article="article__section--tpc" data-optgroup="doser__select__optgroup--ctz" data-bibliography="Tabela 10">TPC</button>
+                <button title="Tratamento Preventivo de TB" class="header__main-menu__btn" data-article="article__section--tpt" data-optgroup="doser__select__optgroup--anti-tbs" data-bibliography="Tabelas 12, 13 e 14">TPT</button>
             </div>
         </header>
         <main id="main">
@@ -238,14 +240,13 @@
                     <h2 class="doser__section__title">Notas e Precauções</h2>
                     <p class=doser__section__note></p>
                 </div>
-                <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Fonte:</strong> Políptico Pediátrico - <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 22.</p>
-
+                <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Fonte:</strong> Políptico Pediátrico - <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, <span class="bibliography-source__table-number">Tabela 22</span>.</p>
             </div>
             <article class="article">
                 <section class="article__section article__section--main article__section--darv --open">
                     <h2 class="article__title article__title--level-1">Visão geral sobre o Doseador de Antirretrovirais</h2>
                     <p class="article__p">
-                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico -  <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, actualmente (2024) vigente no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
+                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico -  <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-07-30">30/07/2024</time>), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
                     </p>   
                     <figure class="article__frame">
                         <img src="images/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
@@ -263,7 +264,7 @@
                     <ul class="article__list article__list--ul">
                         <li>A 1ª linha possui duas células com os títulos <b>Dose-manhã</b> e <b>Dose-noite</b> respectivamente.</li>
                         <li>Na 2ª linha, na primeira célula (da esquerda), é mostrada a dose do ARV que deve ser tomada ou administrada de manhã e na segunda, a dose nocturna.</li>
-                        <li>Na 4ª linha, a primeira célula mostra o número exacto de comprimidos a fornecer ao paciente para 30 dias (Dispensa Mensal) e a segunda célula, para 90 dias (Dispensa Trimestral).</li>
+                        <li>Na 4ª linha, a primeira célula mostra o número exacto de comprimidos a fornecer ao paciente para 30 dias (Dispensa mensal) e a segunda célula, para 90 dias (Dispensa trimestral).</li>
                         <li>As duas células da 3ª linha são títulos da 4ª linha, <b>Dispensa mensal</b> e <b>Dispensa trimestral</b> respectivamente.</li>
                     </ul>
                     <p class="article__p article__p--highlight">
@@ -422,7 +423,7 @@
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--regimes-para-inicios-tarv article__section--fixed">
-                    <h2 class="article__title article__title--level-1">Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios) incluindo crianças em Tratamento anti-tuberculose (TAT)</h2>
+                    <h2 class="article__title article__title--level-1">Regimes recomendados para TARV em crianças dos 0 – 14 anos (Novos inícios e as que transitaram para regime com DTG) incluindo crianças em Tratamento anti-tuberculose (TAT)</h2>
                     <table class="table table--font-small table--no-margin-b">
                         <thead class="table__header --border-b">
                             <tr>

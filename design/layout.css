@@ -32,11 +32,14 @@
     --brown: brown;
     --layout-width: 1200px;
 }
+
 @media screen and (min-width: 1024px) {
     :root {
         --border-color: var(--gray--a);
     }
 }
+
+
 #body {
     font-family: Arial,Helvetica,sans-serif;
     cursor: default;
@@ -49,6 +52,7 @@
 #body.--overflow-h {
     overflow: hidden;
 }
+
 #main {
     flex: 1;
 }
@@ -138,6 +142,7 @@
     max-height: 41px;
     display: flex;
     align-items: center;
+    text-align: left;
     padding: 12px 18px;
     color: var(--yt);
     font-size: 15px;
@@ -692,6 +697,7 @@
 .article__staging__select:hover {
     border: 1px solid var(--orange);
 }
+
 /* PROPAGANDA */
 .advertising {
     width: 100%;

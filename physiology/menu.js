@@ -62,6 +62,7 @@ function listenEvents() {
             const doserTitle = document.querySelector(".doser__title");
             const doserOptgroups = document.querySelectorAll(".doser__select__optgroup");
             const relatedOptgroup = document.querySelectorAll(`.${btn.dataset.optgroup}`);
+            const relatedBibliography = document.querySelector(".bibliography-source__table-number");
 
             for (let i = 0; i < mainArticles.length; i++) {
                 mainArticles[i].classList.remove("--open");
@@ -75,6 +76,7 @@ function listenEvents() {
             btn.classList.add("header__main-menu__btn--current");
             doserTitle.textContent = btn.title;
             document.title = btn.title;
+            relatedBibliography.textContent = btn.dataset.bibliography;
             menu.openArticle(relatedArticle);
             for (const optgroup of relatedOptgroup) {
                 optgroup.classList.remove("--display-none");
@@ -105,7 +107,28 @@ function listenEvents() {
 
         });
     });
+
+    // Partilhar
+    let data = {
+        title: "Tarv Pediátrico",
+        text: "Serviço online gratuito com um Doseador de Antirretrovirais (de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento), Doseador de Cotrimoxazol para TPC e Doseador de fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). O serviço é baseado no Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique.",
+        url: "https://quinamine.github.io/tarv-pediatrico/index.html"
+    }
+
+    let btnShare = document.querySelector(".meatballs-menu-expanded__option--share");
+    btnShare.addEventListener("click", () => {
+        try {
+            navigator.share(data).then( () => {
+                console.log("Partilha bem sucedida.");
+            }).catch(error => {
+                console.log(`Não foi possível partilhar o Tarv Pediáco devido ao erro: ${error}.`);
+            })
+        } catch (error) {
+            console.log('O seu navegador n\xe3o tem suporte ao m\xe9todo "navigator.share()".');
+        }
+    });
 };
+
 
 window.addEventListener("load", () => {
     initVariables();
