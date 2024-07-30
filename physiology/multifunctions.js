@@ -24,6 +24,10 @@ function filterStage(selectedStageClassName) {
     }
 }
 
+function formatString(string) {
+    return string.replaceAll(/\W/g, "").toLowerCase();
+}
+
 let blurringDiv;
 window.addEventListener("load", () => {
     blurringDiv = document.querySelector(".blurringDiv");
