@@ -1,14 +1,11 @@
 "use strict"
-
 class Darv {
     constructor(weight, medicine) {
         this.weight = weight;
         this.medicine = medicine;
     }
-
     getFormaFarmaceutica() {
         let formaFarmaceutica;
-
         if(this.medicine.includes("susp")) {
             formaFarmaceutica = "ml";
         } else if(this.medicine.includes("saquetas")) {
@@ -16,13 +13,10 @@ class Darv {
         } else {
             formaFarmaceutica = "cp(s)";
         }
-
         return formaFarmaceutica;
     }
-
     getNotasEprecaucoes() {
         let note;
-
         if(this.medicine === "abc/3tc-120/60mg" && this.weight >= 25) {
             note = 'Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong>';
         } else if(this.medicine === "abc/3tc-600/300mg" && this.weight < 25) {
@@ -85,25 +79,22 @@ class Darv {
             note = 'Prefira usar <strong>Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup></strong> (menor quantidade de comprimidos).'
         } else if(this.medicine=== "3hp-300/300-dfc" && this.weight < 30) {
             note = 'Para peso &lt; 30 kg, recomenda-se <strong>Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong> ou <strong>Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong>'
-        }  else if(this.medicine === "levofloxacina-100" && this.weight >= 16 && this.weight < 26) {
+        }  else if(this.medicine === "lfx-100" && this.weight >= 16 && this.weight < 26) {
             note = '*Crianças com peso &ge; 16 kg que consigam engolir comprimidos inteiros, passar para comprimidos de 250 mg. <br/> Se o caso fonte tiver resistência comprovada a Fluroquinolonas, não deve ser oferecido TPT.</strong>'
-        } else if(this.medicine === "levofloxacina-100" && this.weight >= 26) {
+        } else if(this.medicine === "lfx-100" && this.weight >= 26) {
             note = 'Para peso &ge; 26 kg, recomenda-se <strong>Levofloxacina 250 mg Comp.</strong>'
-        } else if(this.medicine === "levofloxacina-250" && this.weight < 4) {
+        } else if(this.medicine === "lfx-250" && this.weight < 4) {
             note = 'Para peso &lt; 4 kg, use <strong>Levofloxacina 100 mg Comp.</strong>'
-        } else if(this.medicine === "levofloxacina-250" && this.weight >= 4 || this.medicine === "levofloxacina-100" && this.weight < 16) {
+        } else if(this.medicine === "lfx-250" && this.weight >= 4 || this.medicine === "lfx-100" && this.weight < 16) {
             note = 'Se o caso fonte tiver resistência comprovada a Fluroquinolonas, não deve ser oferecido TPT.'
         } else {
             note = "";
         }
-
         return note;
     }
-
     determinarDose() {
         let dosemanha, dosenoite = "-";
         let weight = this.weight;
-
         if(this.medicine === "abc/3tc-120/60mg") {
             if(weight < 6) {
                 dosemanha = 1;
@@ -418,7 +409,7 @@ class Darv {
                 dose = 3;
                 return this.printDoseDe3hpDFC(dose);
             }
-        } else if(this.medicine === "levofloxacina-100") {
+        } else if(this.medicine === "lfx-100") {
             if(weight < 4) {
                 dosemanha = 0.5;
                 dosenoite = "-";
@@ -450,7 +441,7 @@ class Darv {
                 dosemanha = "-";
                 dosenoite = "-";
             }
-        } else if(this.medicine === "levofloxacina-250") {
+        } else if(this.medicine === "lfx-250") {
             if(weight < 4) {
                 dosemanha = "-";
                 dosenoite = "-";
@@ -476,26 +467,21 @@ class Darv {
         }
         return this.printDose(dosemanha, dosenoite)
     }
-
     printDose(doseManha, doseNoite) {
         let doseM = doseManha;
         let doseN = doseNoite;
-
         // Eliminar asterisco das doses com legenda
         if(typeof doseM === "string" && doseM.includes("*")) {
             doseM = Number(doseM.split("*")[0]);
         }
-
         if(typeof doseN === "string" && doseN.includes("*")) {
             doseN = Number(doseN.split("*")[0]);
         }
-
         // Calcular quantidade de cps ou frascos por fornecer
         let dM, dT;
         let ffDoseM = this.getFormaFarmaceutica();
         let ffDoseN = this.getFormaFarmaceutica();
         let ffCpsAaviar = this.getFormaFarmaceutica();
-
         if(typeof doseM === "number" && typeof doseN === "number") {
             dM = (doseM + doseN) * 30;
             dT = (doseM + doseN) * 90;
@@ -528,7 +514,6 @@ class Darv {
         } else if(doseManha === "-" && doseNoite === "-"){
             return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
         }
-        
         return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
             <thead class="table__header table__header--bg-color-grayscale">
                 <tr class="--border-t">
@@ -547,15 +532,12 @@ class Darv {
                 </tr>                   
             </tbody>
         </table>`
-
     }
-
     printDoseDe3hpNaoDFC(inh, doseInh, rifapentina, doseRifapentina) {
         let dMinh = doseInh * 4;
         let dTinh = doseInh * 12;
         let dMRif = doseRifapentina * 4;
         let dTRif = doseRifapentina * 12;
-
         return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
         <thead class="table__header table__header--bg-color-grayscale">
             <tr class="--border-t">
@@ -576,7 +558,6 @@ class Darv {
         </tbody>
         </table>` 
     }
-
     printDoseDe3hpDFC(dose) {
         let dM = dose * 4;
         let dT = dose * 12;
@@ -599,7 +580,6 @@ class Darv {
         </tbody>
         </table>` 
     }
-
     printDoseDe3hpDelicado(inh, doseInh, rifapentina, doseRifapentina) {
         let dMinh300 = 1 * 4;
         let dTinh300 = 1 * 12;
@@ -607,7 +587,6 @@ class Darv {
         let dTinh100 = 2 * 12;
         let dMRif = doseRifapentina * 4;
         let dTRif = doseRifapentina * 12;
-
         return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
         <thead class="table__header table__header--bg-color-grayscale">
             <tr class="--border-t">
@@ -633,28 +612,22 @@ class Darv {
         </table>` 
     }
 }
-
 let alertaDePesoMinimo, doseOutput, notasOutput;
 function inicializarVariaveis() {
     alertaDePesoMinimo = document.querySelector(".doser__min-weight-alert");
     doseOutput = document.querySelector(".doser__section__dose");
     notasOutput = document.querySelector(".doser__section__note");
 }
-
 function limparDoseEnotas() {
     doseOutput.textContent = "";
     notasOutput.textContent = "";
 }
-
 function limparAlertaSobrePesoMinimo() {
     alertaDePesoMinimo.textContent = "";
     alertaDePesoMinimo.classList.remove("--open");
 }
-
 function instanciarDarv() {
     const peso = document.querySelector(".doser__input--weight").value;
-   
-
     if(peso !== "" && peso < 3) {
         alertaDePesoMinimo.textContent = "O peso não deve ser menor que 3.";
         alertaDePesoMinimo.classList.add("--open");
@@ -662,16 +635,13 @@ function instanciarDarv() {
     } else if(peso !== "" && peso >= 3) {
         limparAlertaSobrePesoMinimo();
         limparDoseEnotas();
-
         const farmacos = document.querySelectorAll(".doser__select__option");
         let farmacoSelecionado;
-
         for (const farmaco of farmacos) {
             if(farmaco.matches(".--selected")) {
                 farmacoSelecionado = farmaco;
             }
         }
-
         // Se não for option de placeholder
         if(farmacoSelecionado.dataset.farmaco) {
             farmacoSelecionado = farmacoSelecionado.dataset.farmaco;
@@ -684,13 +654,11 @@ function instanciarDarv() {
         limparDoseEnotas();
     }
 }
-
 window.addEventListener("load", () => {
     inicializarVariaveis();
     // Input && Click Events Targets
     const inputEventTarget = document.querySelector(".doser__input--weight");
     const clickEventTargets = document.querySelectorAll(".doser__select__option, .header__main-menu__btn");
-
     inputEventTarget.addEventListener("input", instanciarDarv);
     clickEventTargets.forEach( target => {
         target.addEventListener("click", instanciarDarv);

@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
         })
     });
 
-    // Filtrar ARV
+
     const inputSearch = document.querySelector(".doser__select__input--search");
     
     const medicines = document.querySelectorAll(".doser__select__optgroup--arvs .doser__select__option");
