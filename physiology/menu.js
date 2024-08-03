@@ -14,6 +14,18 @@ const menu = {
     closeArticle(article) {
         article.classList.remove("--open");
     },
+    filtrarEstadioClinicoOMS(classNameDoEstadioSelecionado) {
+        const estadios = document.querySelectorAll(".estadio");
+        for (const estadio of estadios) {
+            if(classNameDoEstadioSelecionado === "todos") {
+                estadio.classList.remove("--display-none");
+            } else {
+                estadio.classList.add("--display-none");
+                let estadioSelecionado = document.querySelector(`.${classNameDoEstadioSelecionado}`);
+                estadioSelecionado.classList.remove("--display-none");
+            }
+        }
+    },
     showCurrentTabDoser(currentTab) {
         // Change Doser and Document Title
         const doserTitle = document.querySelector(".doser__title");
@@ -43,7 +55,7 @@ const menu = {
         }
         // Select currentTab default medicine
         const labelForSelect = document.querySelector(".doser__label--medicine");
-        const inputSearchingInnerSelect = document.querySelector(".doser__select__searching-box");
+        const inputTypeSearchIntoSelect = document.querySelector(".doser__select__searching-box");
         
         let options = document.querySelectorAll(".doser__select__option");
         for (const option of options) {
@@ -52,17 +64,17 @@ const menu = {
         let defaultOption;
         if(currentTab.title === "Doseador de Antirretrovirais") {
             defaultOption = document.querySelector(".doser__select__option--placeholder");
-            inputSearchingInnerSelect.classList.remove("--display-none");
+            inputTypeSearchIntoSelect.classList.remove("--display-none");
             labelForSelect.textContent = "ARV:";    
         } else {
             defaultOption = document.querySelectorAll(`.${currentTab.dataset.optgroup} li`)[0];
-            inputSearchingInnerSelect.classList.add("--display-none");
+            inputTypeSearchIntoSelect.classList.add("--display-none");
             labelForSelect.textContent = "Fármaco:"; 
         }
         defaultOption.classList.add("--selected");
     }
 };
-function listenEvents() {
+function listenToEvents() {
     // Open & close meatBalls-menu by clicking the menu
     const meatBallsMenu = document.querySelector(".meatballs-menu");
     meatBallsMenu.addEventListener("click", menu.openOrCloseMeatBalls);
@@ -78,8 +90,8 @@ function listenEvents() {
         option.addEventListener("click", () => {
             const relatedArticle = document.querySelector(`.${option.dataset.article}`);
             menu.openArticle(relatedArticle);
-            document.body.classList.add("--overflow-h");
-            blurBackground();
+            document.body.classList.add("--overflow-h"); // Add Overflow: hidden to the body
+            document.querySelector(".blurringDiv").classList.add("on"); // Blur bg-color
         });
     });
     // Close meatBalls-menu articles
@@ -87,8 +99,8 @@ function listenEvents() {
     btnsMenuArticleClosers.forEach( btn => {
         btn.addEventListener("click", () => {
             menu.closeArticle(btn.parentElement);
-            document.body.classList.remove("--overflow-h");
-            lightBackground();
+            document.body.classList.remove("--overflow-h"); // Remove Overflow: hidden from the body
+            document.querySelector(".blurringDiv").classList.remove("on"); // Light bg-color
         });
     });
     // Open main-menu-tabs;
@@ -96,6 +108,12 @@ function listenEvents() {
     menuTabs.forEach( tab => {
         tab.addEventListener("click", () => menu.showCurrentTabDoser(tab));
     });
+    // Filter VIH Clinical Stage
+    const selectDeEstadios = document.querySelector(".article__staging__select");
+    selectDeEstadios.addEventListener("change", () => {
+        let classNameDoEstadioSelecionado = selectDeEstadios.options[selectDeEstadios.selectedIndex].value;
+        menu.filtrarEstadioClinicoOMS(classNameDoEstadioSelecionado);
+    })
     // Share
     let data = {
         title: "Tarv Pediátrico",
@@ -108,11 +126,11 @@ function listenEvents() {
             navigator.share(data).then( () => {
                 console.log("Partilha bem sucedida.");
             }).catch(error => {
-                console.log(`Não foi possível partilhar o Tarv Pediáco devido ao erro: ${error}.`);
+                console.log(`Não foi possível partilhar o Tarv Pediátrico devido ao erro: ${error}.`);
             })
         } catch (error) {
-            console.log('O seu navegador n\xe3o tem suporte ao m\xe9todo "navigator.share()".');
+            console.log('O seu navegador não tem suporte ao método "navigator.share()".');
         }
     });
 };
-window.addEventListener("load", listenEvents);
+window.addEventListener("load", listenToEvents);
