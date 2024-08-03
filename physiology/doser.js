@@ -92,16 +92,16 @@ class Doser {
             note = 'Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong>';
         } else if(this.medicine === "abc/3tc-600/300mg" && this.weight < 25) {
             note = 'Para peso &lt; 25 kg, use <strong>ABC/3TC 120 mg/60 mg Comp.</strong>'
-        } else if(this.medicine === "pdispensaTrimestralg-10mg" && this.weight >= 20 && this.weight < 25) {
-            note = '*Esta dosagem é prevista para uso <strong>APENAS</strong> na ausência de comprimidos de dispensaTrimestralG 50 mg. Para peso &ge; 20 kg, recomenda-se <strong>dispensaTrimestralG 50 mg Comp.</strong>'
-        } else if(this.medicine === "pdispensaTrimestralg-10mg" && this.weight >= 25) {
-            note = 'Para peso &ge; 20 kg, recomenda-se <strong>dispensaTrimestralG 50 mg Comp.</strong>'
-        } else if(this.medicine === "dispensaTrimestralg-50mg" && this.weight < 20) {
-            note = 'Para peso &lt; 20 kg, use <strong>pdispensaTrimestralG 10 mg Comp.</strong>'
-        }  else if(this.medicine === "pdispensaTrimestralg-10mg" && this.weight < 20 || this.medicine === "dispensaTrimestralg-50mg" && this.weight >= 20) {
-            note = '<b>(1)</b> Não é recomendado tomar o dispensaTrimestralG ao mesmo tempo que as vitaminas, sal ferroso, fenitoína ou antiácidos, pois reduzem  a concentração plasmática do dispensaTrimestralG. Nestes casos, recomenda-se tomar o dispensaTrimestralG no mínimo 2 horas antes ou 6 horas depois da toma desses medicamentos. <b>(2)</b> Pacientes que estiverem a usar a Rifampicina (RIF) devem ajustar a dose de dispensaTrimestralG (dispensaTrimestralG 12/12 horas)</b> durante o tempo que recebem RIF e por mais 2 semanas. Depois passam a tomar o dispensaTrimestralG apenas 1 vez/dia.'
-        } else if(this.medicine === "tdf/3tc/dispensaTrimestralg" && this.weight < 30) {
-            note = 'O <b>TDF/3TC/dispensaTrimestralG 300/300/50 mg Comp.</b> não é recomendado para crianças com peso &lt;  30 kg.'
+        } else if(this.medicine === "pdtg-10mg" && this.weight >= 20 && this.weight < 25) {
+            note = '*Esta dosagem é prevista para uso <strong>APENAS</strong> na ausência de comprimidos de DTG 50 mg. Para peso &ge; 20 kg, recomenda-se <strong>DTG 50 mg Comp.</strong>'
+        } else if(this.medicine === "pdtg-10mg" && this.weight >= 25) {
+            note = 'Para peso &ge; 20 kg, recomenda-se <strong>DTG 50 mg Comp.</strong>'
+        } else if(this.medicine === "dtg-50mg" && this.weight < 20) {
+            note = 'Para peso &lt; 20 kg, use <strong>pDTG 10 mg Comp.</strong>'
+        }  else if(this.medicine === "pdtg-10mg" && this.weight < 20 || this.medicine === "dtg-50mg" && this.weight >= 20) {
+            note = '<b>(1)</b> Não é recomendado tomar o DTG ao mesmo tempo que as vitaminas, sal ferroso, fenitoína ou antiácidos, pois reduzem  a concentração plasmática do DTG. Nestes casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma desses medicamentos. <b>(2)</b> Pacientes que estiverem a usar a Rifampicina (RIF) devem ajustar a dose de DTG (DTG 12/12 horas)</b> durante o tempo que recebem RIF e por mais 2 semanas. Depois passam a tomar o DTG apenas 1 vez/dia.'
+        } else if(this.medicine === "tdf/3tc/dtg" && this.weight < 30) {
+            note = 'O <b>TDF/3TC/DTG 300/300/50 mg Comp.</b> não é recomendado para crianças com peso &lt;  30 kg.'
         } else if(this.medicine === "lpv/r-40/10mg-saquetas" && this.weight >= 20) {
             note = 'Para peso &ge; 20 kg, use <strong>LPV/r 100 mg/25 mg Comp.</strong> ou <strong>LPV/r 200 mg/50 mg Comp.</strong>'
         } else if(this.medicine === "lpv/r-100/25mg" && this.weight < 10) {
@@ -182,7 +182,7 @@ class Doser {
             }
         } else if(this.medicine === "abc/3tc-600/300mg") {
             weight < 25 ? doseManha = "-" : doseManha = 1;
-        } else if(this.medicine === "pdispensaTrimestralg-10mg") {
+        } else if(this.medicine === "pdtg-10mg") {
             if(weight < 6) {
                 doseManha = 0.5;
             } else if(weight < 10) {
@@ -196,7 +196,7 @@ class Doser {
             } else {
                 doseManha = "-";
             }
-        } else if(this.medicine === "dispensaTrimestralg-50mg") {
+        } else if(this.medicine === "dtg-50mg") {
             if(weight < 20) {
                 doseManha = "-";
             } else {
@@ -696,7 +696,7 @@ class Doser {
     }
 }
 function instantiateDoser() {
-    const weight = document.querySelector(".doser__input--weight").value;
+    let weight = document.querySelector(".doser__input--weight").value;
     if(weight !== "" && weight < 3) {
         doserGeneralFunctions.showMinWeightAlert();
         doserGeneralFunctions.clearDoseAndNotes();

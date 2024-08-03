@@ -898,3 +898,20 @@
 .--display-none {
     display: none !important;
 }
+
+/* Nota de actualizacao */
+.alerta-de-actualizacao {
+    position: fixed;
+    background: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 0 4px #aaa;
+    top: calc(50vh - 58px / 2);
+    z-index: 10000000;
+    left: calc(50vw - 277.44px / 2);
+}
+
+body {
+    overflow: hidden;
+}
