@@ -657,7 +657,7 @@ class Doser {
         </thead>
         <tbody>
             <tr class="--border-t">
-                <td class="table__cell">${doseDeINH} cp(s)/semana</td> 
+                <td class="table__cell">${doseDeINH}</td> 
                 <td class="table__cell">${doseDeRifapentina} cp(s)/semana</td>
             </tr>
             <tr class="table__header table__header--bg-color-grayscale --border-t">
@@ -734,19 +734,19 @@ function instantiateDoser() {
 }
 function listenToDoserEvents() {
      // Highlight focused input
-     const weightInput = document.querySelector(".doser__input--weight");
-     weightInput.addEventListener("focusin", () => doserGeneralFunctions.highlightFocusedInput(weightInput.parentElement));
+     const inputForWeight = document.querySelector(".doser__input--weight");
+     inputForWeight.addEventListener("focusin", () => doserGeneralFunctions.highlightFocusedInput(inputForWeight.parentElement));
      // Remove highlight from the input
-     weightInput.addEventListener("focusout", () => doserGeneralFunctions.removehighlightFromFocusedInput(weightInput.parentElement));
+     inputForWeight.addEventListener("focusout", () => doserGeneralFunctions.removehighlightFromFocusedInput(inputForWeight.parentElement));
     // Toggle select (Open or Close);
     const selectOpeners = document.querySelectorAll(".doser__select__option, .select-opener");
     selectOpeners.forEach(opener => {
         opener.addEventListener("click", doserGeneralFunctions.openOrCloseSelect);
     });
     // Close select 
-    const selectCloser = document.querySelector(".doser__select__btn--close");
-    selectCloser.addEventListener("click", doserGeneralFunctions.closeSelect);
-
+    const btnSelectCloser = document.querySelector(".doser__select__btn--close");
+    btnSelectCloser.addEventListener("click", doserGeneralFunctions.closeSelect);
+    // Close select by clicking anywhere 
     window.addEventListener("click", event => {
         !event.target.matches(".doser__select *, .select-opener") && doserGeneralFunctions.closeSelect();
     });
@@ -759,7 +759,7 @@ function listenToDoserEvents() {
     const inputTypeSearch = document.querySelector(".doser__select__input--search");
     inputTypeSearch.addEventListener("input", () => doserGeneralFunctions.filterAnOption(inputTypeSearch.value));
     // Determine doses
-    weightInput.addEventListener("input", instantiateDoser);
+    inputForWeight.addEventListener("input", instantiateDoser);
     const medicinesAndMenuTabs = document.querySelectorAll(".doser__select__option, .header__main-menu__btn");
     medicinesAndMenuTabs.forEach( target => {
         target.addEventListener("click", instantiateDoser);
