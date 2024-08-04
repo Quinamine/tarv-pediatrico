@@ -30,7 +30,6 @@ const menu = {
         // Change Doser and Document Title
         const doserTitle = document.querySelector(".doser__title");
         doserTitle.textContent = currentTab.title;
-        document.title = currentTab.title;
         // Change doser bibliography
         const bibliography = document.querySelector(".bibliography-source__table-number");
         bibliography.textContent = currentTab.dataset.bibliography;
@@ -73,7 +72,7 @@ const menu = {
         }
         defaultOption.classList.add("--selected");
     }
-};
+}
 function listenToEvents() {
     // Open & close meatBalls-menu by clicking the menu
     const meatBallsMenu = document.querySelector(".meatballs-menu");
@@ -82,16 +81,18 @@ function listenToEvents() {
     window.addEventListener("click", event => {
         if(!event.target.matches(".meatballs-menu, .meatballs-menu__dot")) {
             menu.closeMeatBalls();
-        };
+        }
     });
     // Open meatBalls-menu articles
     const meatBallsMenuOptions = document.querySelectorAll(".meatballs-menu-expanded__option");
     meatBallsMenuOptions.forEach( option => {
         option.addEventListener("click", () => {
-            const relatedArticle = document.querySelector(`.${option.dataset.article}`);
-            menu.openArticle(relatedArticle);
-            document.body.classList.add("--overflow-h"); // Add Overflow: hidden to the body
-            document.querySelector(".blurringDiv").classList.add("on"); // Blur bg-color
+            if(option.dataset.article) {
+                const relatedArticle = document.querySelector(`.${option.dataset.article}`);
+                menu.openArticle(relatedArticle);
+                document.body.classList.add("--overflow-h"); // Add Overflow: hidden to the body
+                document.querySelector(".blurringDiv").classList.add("on"); // Blur bg-color
+            }
         });
     });
     // Close meatBalls-menu articles
@@ -113,7 +114,7 @@ function listenToEvents() {
     selectDeEstadios.addEventListener("change", () => {
         let classNameDoEstadioSelecionado = selectDeEstadios.options[selectDeEstadios.selectedIndex].value;
         menu.filtrarEstadioClinicoOMS(classNameDoEstadioSelecionado);
-    })
+    });
     // Share
     let data = {
         title: "Tarv Pediátrico",
@@ -127,7 +128,7 @@ function listenToEvents() {
                 console.log("Partilha bem sucedida.");
             }).catch(error => {
                 console.log(`Não foi possível partilhar o Tarv Pediátrico devido ao erro: ${error}.`);
-            })
+            });
         } catch (error) {
             console.log('O seu navegador não tem suporte ao método "navigator.share()".');
         }

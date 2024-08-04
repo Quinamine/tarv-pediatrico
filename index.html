@@ -30,9 +30,6 @@
         <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Doseador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
     </head>
     <body id="body">
-        <div class="alerta-de-actualizacao">
-            <p>Em actualização. Até breve!</p>
-        </div>
         <header>
             <div class="header__row">
                 <div class="layout-row">
@@ -60,7 +57,10 @@
                                 <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="meatballs-menu-expanded__option">Baixar políptico pediátrico</a>
                             </li>
                             <li>
-                                <a href="" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar Tarv Pediátrico</a>
+                                <button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar Tarv Pediátrico</button>
+                            </li>
+                            <li>
+                                <a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Acessar TAT Pediátrico</a>
                             </li>
                             <li>
                                 <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Sobre o Desenvolvedor</a>
@@ -239,7 +239,7 @@
                 </div>
                 <div class="doser__section doser__section--output">
                     <h2 class="doser__section__title">Notas e Precauções</h2>
-                    <p class=doser__section__note></p>
+                    <p class="doser__section__note doser__section__note--no-padding"></p>
                 </div>
                 <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Fonte:</strong> Políptico Pediátrico - <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, <span class="bibliography-source__table-number">Tabela 22</span>.</p>
             </div>
@@ -247,7 +247,7 @@
                 <section class="article__section article__section--main article__section--darv --open">
                     <h2 class="article__title article__title--level-1">Visão geral sobre o Doseador de Antirretrovirais</h2>
                     <p class="article__p">
-                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico -  <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-07-30">30/07/2024</time>), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
+                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento. <strong>Esse é baseado na Tabela de Dosagem de ARVs do Políptico Pediátrico -  <a href="project-source/poliptico-pediatrico-16-2-2022-finalissima.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-08-03">03/08/2024</time>), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
                     </p>   
                     <figure class="article__frame">
                         <img src="images/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
@@ -318,18 +318,18 @@
                     </ul>
                 </section>
                 <section class="article__section article__section--main article__section--tpt">
-                    <h2 class="article__title article__title--level-1">Critérios de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> com Isoniazida ou 3<b>HP</b> (Isoniazida + Rifapentina)</h2>
+                    <h2 class="article__title article__title--level-1">Critérios para fazer a TPT para crianças HIV+ com INH ou 3HP</h2>
                     <p class="article__p">Depois de excluir a tuberculose activa, iniciar <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> a:</p>
                     <ul class="article__list article__list--ul">
-                        <li>Todas as crianças com idade ≥ 1 ano;</li>
-                        <li>Toda criança &lt; 1 ano com história de contacto com TB (somente em caso de contacto);</li>
+                        <li>Criança com idade ≥ 1 ano;</li>
+                        <li>Toda criança &lt; 1 ano, só em caso de contacto com TB;</li>
                         <li>Crianças &lt; 1 ano na consulta TARV iniciam TPT quando atingem idade de 12 meses.</li>
                     </ul>
                     <h3 class="article__title article__title--level-2">Escolha do regime preferencial de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> (TB sensível) para crianças HIV+ </h3>
                     <p class="article__p"><b>Oferecer Profilaxia com Isoniazida (TPT&nbsp;-&nbsp;INH) a:</b></p>
                     <ul class="article__list article__list--ul">
-                        <li>Crianças &lt; 2 anos e Peso &lt; 10 kg <strong>OU</strong> Crianças &ge; 2 anos e Peso &lt; 10 kg;</li>
-                        <li>Crianças &ge; 2 anos <strong>E</strong> Peso &ge; 10 kg <strong>E</strong> em regime de TARV contendo Lopinavir (LPV/r), Atazanavir (ATV/r), Darunavir (DRV/r) ou Nevirapina (NVP).</li>
+                        <li>Criança &lt; 2 anos e Peso &lt; 10 kg <strong>OU</strong> Criança &ge; 2 anos e Peso &lt; 10 kg;</li>
+                        <li>Criança &ge; 2 anos <strong>E</strong> Peso &ge; 10 kg <strong>E</strong> em regime de TARV contendo Lopinavir (LPV/r), Atazanavir (ATV/r), Darunavir (DRV/r) ou Nevirapina (NVP).</li>
                     </ul>
                     <p class="article__p"><b>Oferecer Profilaxia com 3HP a:</b></p>
                     <ul class="article__list article__list--ul">
@@ -851,13 +851,13 @@
                     </ul>
                 </div>
                 <p class="footer__p footer__p--created-by">
-                    Desenvolvido por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> ©&nbsp;<span class="footer__current-year">2024</span>&nbsp;Tarv&nbsp;Pediátrico - Todos os direitos reservados.
+                    Desenvolvido por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> ©&nbsp;2024&nbsp;Tarv&nbsp;Pediátrico - Todos os direitos reservados.
                 </p>
                 <a href="#root" class="footer__link-back-to-top">Rolar para o topo</a>
-                <p class="footer__p footer__p--available-since">Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: Julho/2024.</p>
+                <p class="footer__p footer__p--available-since">Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: Agosto/2024.</p>
             </div>
         </footer>
-        <div class="blurringDiv on"></div>
+        <div class="blurringDiv"></div>
     </body>
 </html>
     

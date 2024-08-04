@@ -317,6 +317,9 @@
     background: var(--gray--light);
     line-height: 1.5;
 }
+.doser__section__note--no-padding {
+    padding: 0;
+}
 .doser__btn--expand-select {
     height: 35px;
     padding: 0 8px;
@@ -526,7 +529,6 @@
 .article__p--highlight {
     padding: 15px;
     background-color: var(--gray--light);
-    color: var(--gray--5);
     border-radius: 6px;
     position: relative;
     max-width: 690px;
@@ -897,21 +899,4 @@
 }
 .--display-none {
     display: none !important;
-}
-
-/* Nota de actualizacao */
-.alerta-de-actualizacao {
-    position: fixed;
-    background: #fff;
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 0 0 4px #aaa;
-    top: calc(50vh - 58px / 2);
-    z-index: 10000000;
-    left: calc(50vw - 277.44px / 2);
-}
-
-body {
-    overflow: hidden;
 }
