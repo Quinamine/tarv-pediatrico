@@ -33,7 +33,7 @@ const menu = {
         // Change doser bibliography
         const bibliography = document.querySelector(".bibliography-source__table-number");
         bibliography.textContent = currentTab.dataset.bibliography;
-        // Show current tab article
+        // Show current tab article and highlight current btn menu
         const articles = document.querySelectorAll(".article__section--main");
         const mainMenuTabs = document.querySelectorAll(".header__main-menu__btn");
         const currentTabArticle = document.querySelector(`.${currentTab.dataset.article}`);
@@ -52,7 +52,7 @@ const menu = {
         for (const medicine of currenTabMedicines) {
             medicine.classList.remove("--display-none");
         }
-        // Select currentTab default medicine
+        // Select currentTab default medicine, change label textcontent for select, hide inputTypeSearch when it's not ARV tab
         const labelForSelect = document.querySelector(".doser__label--medicine");
         const inputTypeSearchIntoSelect = document.querySelector(".doser__select__searching-box");
         
@@ -118,7 +118,7 @@ function listenToEvents() {
     // Share
     let data = {
         title: "Tarv Pediátrico",
-        text: "O Tarv Pediátrico é um serviço online gratuito com um Doseador de Antirretrovirais (de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas dos antirretrovirais para crianças e adolescentes em cuidados e tratamento), Doseador de Cotrimoxazol para tratamento profilático (TPC) e Doseador de fármacos preventivos de tuberculose (TPT com Isoniazida, 3HP e Levofloxacina). O serviço é baseado no Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique.",
+        text: "O Tarv Pediátrico é um serviço online gratuito com um Doseador de ARVs (de acordo com o peso inserido pelo usuário, determina automaticamente doses terapêuticas de antirretrovirais para crianças e adolescentes em cuidados e tratamento), Doseador de Cotrimoxazol para tratamento profilático (TPC) e Doseador de fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). O serviço é baseado no Políptico Pediátrico - Manejo de infecção por HIV na criança e adolescente, versão 2022, actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique.",
         url: "https://quinamine.github.io/tarv-pediatrico/index.html"
     }
     let btnShare = document.querySelector(".meatballs-menu-expanded__option--share");

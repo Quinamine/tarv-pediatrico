@@ -49,6 +49,11 @@
 #body.--overflow-h {
     overflow: hidden;
 }
+@media screen and (max-width: 1023px) {
+    #body.--overflow-hide-on-mobile {
+        overflow: hidden;
+    }
+}
 #main {
     flex: 1;
 }
@@ -167,7 +172,7 @@
     font-size: 15px;
     padding: 6.76px;
     background-color: var(--gray--e);
-    transition-duration: .4s;
+    transition-duration: .10s;
 }
 .header__main-menu__btn--current {
     flex: 1;
@@ -801,6 +806,7 @@
     flex-direction: column;
     position: relative;
 }
+
 .footer__bibliography-sources {
     align-self: flex-start;
     max-width: 620px;
@@ -810,6 +816,7 @@
     font-size: 15px;
     font-weight: 700;
     color: var(--yt);
+    margin-bottom: 12.5px;
 }
 .footer__bibliography-sources__list {
     padding-left: 15px;
@@ -825,11 +832,9 @@
     line-height: 1.5;
     padding: 15px 0;
 }
-.footer__p--text-align-l {
-    text-align: left;
-}
-.footer__p--highlight {
+.footer__bibliography-sources__link {
     color: var(--yt);
+    font-weight: 700;
 }
 .footer__p--created-by {
     width: 100%;
@@ -862,10 +867,6 @@
     z-index: 888;
 }
 /* CSS REUTILIZÁVEL */
-.element--underline {
-    text-decoration: underline;
-    color: inherit;
-}
 .hide-on-mobile {
     display: none;
 }

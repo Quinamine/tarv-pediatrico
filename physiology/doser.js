@@ -11,20 +11,16 @@ const doserGeneralFunctions = {
         doserSelect.classList.toggle("--open");
         const selectOfMedicines = document.querySelector(".doser__section--medicines");
         doserGeneralFunctions.highlightFocusedInput(selectOfMedicines);
+        const body = document.querySelector("#body");
+        body.classList.toggle("--overflow-hide-on-mobile");
     },
     closeSelect() {
         const doserSelect = document.querySelector(".doser__select");
         doserSelect.classList.remove("--open");
-        // Clear input-search of select
-        const inputTypeSearchIntoSelect =  document.querySelector(".doser__select__input--search")
-        inputTypeSearchIntoSelect.value = "";
-        // Show hidden options
-        const optGroupAndOptions = document.querySelectorAll(".doser__optgroup__title, .doser__select__option");
-        for (const opt of optGroupAndOptions) {
-            opt.classList.remove("--display-none");
-        }
         const selectOfMedicines = document.querySelector(".doser__section--medicines");
         doserGeneralFunctions.removehighlightFromFocusedInput(selectOfMedicines);
+        const body = document.querySelector("#body");
+        body.classList.remove("--overflow-hide-on-mobile");
     },
     selectAnOption(optionToSelect) {
         const options = document.querySelectorAll(".doser__select__option");
@@ -104,7 +100,7 @@ class Doser {
         } else if(this.medicine === "dtg-50mg" && this.weight < 20) {
             note = 'Para peso &lt; 20 kg, use <strong>pDTG 10 mg Comp.</strong>'
         }  else if(this.medicine === "pDtg-10mg" && this.weight < 20 || this.medicine === "dtg-50mg" && this.weight >= 20) {
-            note = '<b>(1)</b> Não é recomendado tomar o DTG ao mesmo tempo que as vitaminas, sal ferroso, fenitoína ou antiácidos, pois reduzem  a concentração plasmática do DTG. Nestes casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma desses medicamentos. <b>(2)</b> Pacientes que estiverem a usar a Rifampicina (RIF) devem ajustar a dose de DTG (DTG 12/12 horas)</b> durante o tempo que recebem RIF e por mais 2 semanas. Depois passam a tomar o DTG apenas 1 vez/dia.'
+            note = '<b>(1)</b> Não é recomendado tomar o DTG ao mesmo tempo que as vitaminas, sal ferroso, fenitoína ou antiácidos, pois reduzem  a concentração plasmática do DTG. Nestes casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma destes medicamentos. <b>(2)</b> Pacientes que estiverem a usar a Rifampicina (RIF) devem ajustar a dose de DTG (DTG 12/12 horas)</b> durante o tempo que recebem RIF e por mais 2 semanas. Depois passam a tomar o DTG apenas 1 vez/dia.'
         } else if(this.medicine === "tdf/3tc/dtg" && this.weight < 30) {
             note = 'O <b>TDF/3TC/DTG 300/300/50 mg Comp.</b> não é recomendado para crianças com peso &lt;  30 kg.'
         } else if(this.medicine === "lpv/r-40/10mg-saquetas" && this.weight >= 20) {
