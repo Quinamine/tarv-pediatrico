@@ -88,7 +88,7 @@ function listenToEvents() {
                 const relatedArticle = document.querySelector(`.${option.dataset.article}`);
                 menu.openArticle(relatedArticle);
                 document.body.classList.add("--overflow-h"); // Add Overflow: hidden to the body
-                document.querySelector(".blurringDiv").classList.add("on"); // Blur bg-color
+                document.querySelector(".blurringDiv").classList.add("on"); // Blur background
             }
         });
     });
@@ -98,7 +98,7 @@ function listenToEvents() {
         btn.addEventListener("click", () => {
             menu.closeArticle(btn.parentElement);
             document.body.classList.remove("--overflow-h"); // Remove Overflow: hidden from the body
-            document.querySelector(".blurringDiv").classList.remove("on"); // Light bg-color
+            document.querySelector(".blurringDiv").classList.remove("on"); // Light background
         });
     });
     // Open main-menu-tabs;
@@ -114,8 +114,8 @@ function listenToEvents() {
     });
     // Share
     let data = {
-        title: "Tarv Pediátrico",
-        text: 'O serviço Tarv Pediátrico doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data de publicação da última actualização do Tarv (11/08/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.',
+        title: "TARV Pediátrico",
+        text: 'O serviço TARV Pediátrico doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data de publicação da última actualização do Tarv (11/08/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.',
         url: "https://quinamine.github.io/tarv-pediatrico/index.html"
     }
     let btnShare = document.querySelector(".meatballs-menu-expanded__option--share");
@@ -124,7 +124,7 @@ function listenToEvents() {
             navigator.share(data).then( () => {
                 console.log("Partilha bem sucedida.");
             }).catch(error => {
-                console.log(`Não foi possível partilhar o Tarv Pediátrico devido ao erro: ${error}.`);
+                console.log(`Não foi possível partilhar o TARV Pediátrico devido ao erro: ${error}.`);
             });
         } catch (error) {
             console.log('O seu navegador não tem suporte ao método "navigator.share()".');

@@ -4,21 +4,21 @@
         <meta charset=UTF-8>
         <meta content="IE=edge" http-equiv="X-UA-Compatible">
         <meta content="width=device-width, initial-scale=1" name="viewport">
-        <title>Tarv Pediátrico</title>
+        <title>TARV PEDIÁTRICO - Doseador de ARVs, CTZ, INH, 3HP e Lfx</title>
         <meta content="index, follow" name="robots">
-        <meta content='Doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data de publicação da última actualização do Tarv (11/08/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' name="description">
-        <meta content="Tarv Pediátrico, Tratamento Antirretroviral, Tarv Pediátrico, Doseador de Antirretrovirais, Doseador de ARVs, Tratamento Profilático com Cotrimoxazol, TPC, Tratamento Preventivo de Tuberculose, TPT, Abacavir + Lamivudina, Dolutegravir, Tenofovir + Lamivudina, Lopinavir + Ritonavir, Zidovudina + Lamivudina, Tenofovir + Lamivudina, Tenofovir + Lamivudina + Efavirenz, Atazanavir + Ritonavir, Darunavir, ABC+3TC, DTG, TDF+3TC, TDF+3TC+DTG, TDF+3TC+EFV, LPV/r, AZT+3TC, EFV, RTV, DRV, Cotrimoxazol, Isoniazida, Rifapentina, CTZ, INH, 3HP" name="keywords">
+        <meta content='Doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data de publicação da última actualização do TARV (11/08/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' name="description">
+        <meta content="TARV Pediátrico, Tratamento Antirretroviral, TARV Pediátrico, Doseador de Antirretrovirais, Doseador de ARVs, Tratamento Profilático com Cotrimoxazol, TPC, Tratamento Preventivo de Tuberculose, TPT, Abacavir + Lamivudina, Dolutegravir, Tenofovir + Lamivudina, Lopinavir + Ritonavir, Zidovudina + Lamivudina, Tenofovir + Lamivudina, Tenofovir + Lamivudina + Efavirenz, Atazanavir + Ritonavir, Darunavir, ABC+3TC, DTG, TDF+3TC, TDF+3TC+DTG, TDF+3TC+EFV, LPV/r, AZT+3TC, EFV, RTV, DRV, Cotrimoxazol, Isoniazida, Rifapentina, CTZ, INH, 3HP" name="keywords">
         <meta content="Adérito Félix Quinamine" name="author">
         <meta content="https://quinamine.github.io/tarv-pediatrico/index.html" property="og:url">
-        <meta content="Tarv Pediátrico" property="og:title">
-        <meta content='Doseia automaticamente, de acordo com o peso inserido pelo usuário, Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data de publicação da última actualização do Tarv (11/08/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' property="og:description">
+        <meta content="TARV PEDIÁTRICO - Doseador de ARVs, CTZ, INH, 3HP e Lfx" property="og:title">
+        <meta content='Doseia automaticamente, de acordo com o peso inserido pelo usuário, Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data de publicação da última actualização do TARV (11/08/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' property="og:description">
         <meta content="https://quinamine.github.io/tarv-pediatrico/images/tarv-pediatrico.jpg" property="og:image">
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="design/reset.css" rel="stylesheet">
         <link href="design/layout.css" rel="stylesheet">
         <script src="physiology/menu.js"></script>
         <script src="physiology/doser.js"></script>
-        <script src="physiology/webstorage.js"></script>
+        <script src="physiology/webstorageandmore.js"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-YBM46MLS6W" async></script>
         <script>
             function gtag() {
@@ -33,7 +33,7 @@
     <body id="body">
         <header>
             <div class="header__row">
-                <div class="layout-row">
+                <div class="layout-row layout-row--with-min-height">
                     <a href="index.html" id="logo">Tarv Pediátrico</a>
                     <div class="meatballs-menu">
                         <div class="meatballs-menu__dot"></div>
@@ -42,30 +42,14 @@
                     </div>
                     <div class="meatballs-menu-expanded">
                         <ul>
-                            <li>
-                                <button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button>
-                            </li>
-                            <li>
-                                <button class="meatballs-menu-expanded__option" data-article="article__section--regimes-alternativos">Regimes de ARVs alternativos</button>
-                            </li>
-                            <li>
-                                <button class="meatballs-menu-expanded__option" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button>
-                            </li>
-                            <li>
-                                <button class="meatballs-menu-expanded__option" data-article="article__section--desnutricao">Manejo da Desnutrição Aguda</button>
-                            </li>
-                            <li>
-                                <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download class="meatballs-menu-expanded__option">Baixar políptico pediátrico</a>
-                            </li>
-                            <li>
-                                <button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar Tarv Pediátrico</button>
-                            </li>
-                            <li>
-                                <a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Acessar TAT Pediátrico</a>
-                            </li>
-                            <li>
-                                <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Sobre o Desenvolvedor</a>
-                            </li>
+                            <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-alternativos">Regimes de ARVs alternativos</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--desnutricao">Manejo de Desnutrição Aguda</button></li>
+                            <li><a href="sources/poliptico-pediatrico-16-2-2022.pdf" download class="meatballs-menu-expanded__option">Baixar políptico pediátrico</a></li>
+                            <li><a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Doseador de medicamentos anti-TB</a></li>
+                            <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar TARV Pediátrico</button></li>
+                            <li><a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Sobre o Desenvolvedor</a></li>
                         </ul>
                     </div>
                 </div>
@@ -88,10 +72,7 @@
                 <div class="doser__section doser__section--medicines">
                     <label class="doser__label doser__label--medicine select-opener" for="select">ARV: </label>
                     <ul class="doser__select" id="select">
-                        <li class="doser__select__option doser__select__option--placeholder --selected">
-                            <span class="hide-on-desktop">Toque</span>
-                            <span class="hide-on-mobile">Clique</span> aqui para selecionar um ARV
-                        </li>
+                        <li class="doser__select__option doser__select__option--placeholder --selected"><span class="hide-on-desktop">Toque</span><span class="hide-on-mobile">Clique</span> aqui para selecionar um ARV</li>
                         <div class="doser__select__searching-box">
                             <button class="doser__select__btn--close">
                                 <svg style="width: 16px; height:16px">
@@ -104,127 +85,69 @@
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs abc-3tc">
                             <h3 class="doser__optgroup__title">ABACAVIR + LAMIVUDINA</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="abc/3tc-120/60mg">
-                                ABC/3TC 120 mg/60 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="abc/3tc-600/300mg">
-                                ABC/3TC 600 mg/300 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="abc/3tc-120/60mg">ABC/3TC 120 mg/60 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="abc/3tc-600/300mg">ABC/3TC 600 mg/300 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs dtg">
                             <h3 class="doser__optgroup__title">DOLUTEGRAVIR</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="pDtg-10mg">
-                                pDTG 10 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="dtg-50mg">
-                                DTG 50 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc/dtg">
-                                TDF/3TC/DTG 300/300/50 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="pDtg-10mg">pDTG 10 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="dtg-50mg">DTG 50 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc/dtg">TDF/3TC/DTG 300/300/50 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs lpv-r">
                             <h3 class="doser__optgroup__title">LOPINAVIR + RITONAVIR</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-40/10mg-saquetas">
-                                LPV/r 40 mg/10 mg Saquetas
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-100/25mg">
-                                LPV/r 100 mg/25 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-200/50mg">
-                                LPV/r 200 mg/50 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-40/10mg-saquetas">LPV/r 40 mg/10 mg Saquetas</li>
+                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-100/25mg">LPV/r 100 mg/25 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-200/50mg">LPV/r 200 mg/50 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs azt-3tc">
                             <h3 class="doser__optgroup__title">ZIDOVUDINA + LAMIVUDINA</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="azt-susp">
-                                AZT 10 mg/ml Xarope
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="duovir-ped">
-                                AZT/3TC 60 mg/30 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="duovir-adult">
-                                AZT/3TC 300 mg/150 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="azt-susp">AZT 10 mg/ml Xarope</li>
+                            <li class="doser__select__option" data-nameofthemedicine="duovir-ped">AZT/3TC 60 mg/30 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="duovir-adult">AZT/3TC 300 mg/150 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs tdf-3tc">
                             <h3 class="doser__optgroup__title">TENOFOVIR + LAMIVUDINA</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc">
-                                TDF/3TC 300 mg/300 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc">TDF/3TC 300 mg/300 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs tdf-3tc-efv">
                             <h3 class="doser__optgroup__title">TENOFOVIR + LAMIVUDINA + EFAVIRENZ</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc/efv">
-                                TDF/3TC/EFV 300/300/400 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc/efv">TDF/3TC/EFV 300/300/400 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs efv">
                             <h3 class="doser__optgroup__title">EFAVIRENZ</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="efv">
-                                EFV 200 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="efv">EFV 200 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs atv-r">
                             <h3 class="doser__optgroup__title">ATAZANAVIR + RITONAVIR</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="atv/r">
-                                ATV/r 300 mg/100 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="atv/r">ATV/r 300 mg/100 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs rtv">
-                            <h3 class="doser__optgroup__title">RITONAVIR <sup>(potenciação de LPV/r  100/25 mg no TAT)</sup> </h3>
-                            <li class="doser__select__option" data-nameofthemedicine="rtv-100-superboosting">
-                                RTV 100 mg Comp. <sup>(para&nbsp;superboosting)</sup>
-                            </li>
+                            <h3 class="doser__optgroup__title">RITONAVIR <sup>(potenciação de LPV/r durante o TAT)</sup> </h3>
+                            <li class="doser__select__option" data-nameofthemedicine="rtv-100-superboosting">RTV 100 mg Comp.<sup>(para&nbsp;superboosting)</sup></li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs drv">
                             <h3 class="doser__optgroup__title">DARUNAVIR e RITONAVIR (3ª Linha)</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="drv-75">
-                                DRV 75 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="drv-150">
-                                DRV 150 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="drv-600">
-                                DRV 600 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="rtv-100-3alinha">
-                                RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</sup>
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="drv-75">DRV 75 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="drv-150">DRV 150 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="drv-600">DRV 600 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="rtv-100-3alinha">RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</sup></li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--ctz --display-none">
                             <h3 class="doser__optgroup__title">TRATAMENTO PROFILÁTICO COM COTRIMOXAZOL</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="ctz-susp">
-                                Cotrimoxazol 240 mg/5 ml Susp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="ctz-cp">
-                                Cotrimoxazol 480 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="ctz-susp">Cotrimoxazol 240 mg/5 ml Susp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="ctz-cp">Cotrimoxazol 480 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--anti-tbs --display-none">
                             <h3 class="doser__optgroup__title">TRATAMENTO PREVENTIVO DE TUBERCULOSE <sup>sensível</sup></h3>
-                            <li class="doser__select__option" data-nameofthemedicine="inh-100">
-                                Isoniazida 100 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="inh-300">
-                                Isoniazida 300 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="3hp-100/150">
-                                Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup> 
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="3hp-300/150">
-                                Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup> 
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="3hp-300/300-dfc">
-                                Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup>
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="inh-100">Isoniazida 100 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="inh-300">Isoniazida 300 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="3hp-100/150">Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></li>
+                            <li class="doser__select__option" data-nameofthemedicine="3hp-300/150">Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></li>
+                            <li class="doser__select__option" data-nameofthemedicine="3hp-300/300-dfc">Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup></li>
                             <h3 class="doser__optgroup__title">TRATAMENTO PREVENTIVO DE TUBERCULOSE <sup>MR</sup></h3>
-                            <li class="doser__select__option" data-nameofthemedicine="lfx-100">
-                                Levofloxacina 100 mg Comp.
-                            </li>
-                            <li class="doser__select__option" data-nameofthemedicine="lfx-250">
-                                Levofloxacina 250 mg Comp.
-                            </li>
+                            <li class="doser__select__option" data-nameofthemedicine="lfx-100">Levofloxacina 100 mg Comp.</li>
+                            <li class="doser__select__option" data-nameofthemedicine="lfx-250">Levofloxacina 250 mg Comp.</li>
                         </div>
                     </ul>
                     <button class="doser__btn--expand-select select-opener">
@@ -242,22 +165,20 @@
                     <h2 class="doser__section__title">Notas e Precauções</h2>
                     <p class="doser__section__note doser__section__note--no-padding"></p>
                 </div>
-                <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</p>
+                <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</p>
             </div>
             <article class="article">
                 <section class="article__section article__section--main article__section--darv --open">
                     <h2 class="article__title article__title--level-1">Visão geral sobre o Doseador de Antirretrovirais</h2>
-                    <p class="article__p">
-                        O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-08-11">11/08/2024</time>), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong>
-                    </p>   
+                    <p class="article__p">O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-08-11">11/08/2024</time>), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong></p>   
                     <figure class="article__frame">
                         <img src="images/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
-                        <figcaption class="article__frame__figcaption">Trecho da Tabela de Dosagem de Arvs do políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> - Referência do DARV.</figcaption>
+                        <figcaption class="article__frame__figcaption">Trecho da Tabela de Dosagem de Arvs do políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> - Referência do DARV.</figcaption>
                     </figure>
                     <p class="article__p">O DARV está basicamente estruturado da seguinte forma:</p>
                     <ul class="article__list article__list--ul">
                         <li> Um campo com o rótulo <b>Peso</b>, para inserir o peso em quilograma(s) da criança para a qual você pretende calcular a dose;</li>
-                        <li><b>ARV</b>, campo de seleção com todos os ARVs da Tabela de Dosagem de ARVs do <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download="Políptico-Pediátrico-para-Manejo-de-HIV">políptico pediátrico</a>. <span class="hide-on-mobile">Clique</span><span class="hide-on-desktop">Toque</span> no campo para abrir a lista dos ARVs e em seguida, selecione o ARV do qual pretende calcular a dose.</li>
+                        <li><b>ARV</b>, campo de seleção com todos os ARVs da Tabela de Dosagem de ARVs do <a href="sources/poliptico-pediatrico-16-2-2022.pdf">políptico pediátrico</a>. <span class="hide-on-mobile">Clique</span><span class="hide-on-desktop">Toque</span> no campo para abrir a lista dos ARVs e em seguida, selecione o ARV do qual pretende calcular a dose.</li>
                         <li><b>Dose, Posologia e Quantidade:</b> secção de saída em que são mostradas automaticamente a dose, posologia e quantidade de comprimidos a dispensar do antirretroviral (ARV) selecionado de acordo com o peso inserido;</li>
                         <li><b>Notas e Precauções:</b> secção de saída em que são mostradas recomendações, interações medicamentosas, entre outras informações pertinentes acerca do ARV selecionado.</li>
                     </ul>
@@ -269,9 +190,7 @@
                         <li>Na 4ª linha, a primeira célula mostra o número exacto de comprimidos a fornecer ao paciente para 30 dias (Dispensa mensal) e a segunda célula, para 90 dias (Dispensa trimestral).</li>
                         <li>As duas células da 3ª linha são títulos da 4ª linha, <b>Dispensa mensal</b> e <b>Dispensa trimestral</b> respectivamente.</li>
                     </ul>
-                    <p class="article__p article__p--highlight">
-                        Por exemplo, utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 16 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:
-                    </p>
+                    <p class="article__p article__p--highlight">Por exemplo, utilizando o Doseador de ARVs para o cálculo da dose para uma criança com peso de 16 kg em uso de ABC/3TC 120 mg/60 mg, teríamos o seguinte resultado:</p>
                     <table class="table table--grayscale table--layout-fixed">
                         <thead class="table__header table__header--bg-color-grayscale">
                             <tr class="--border-t">
@@ -290,10 +209,7 @@
                             </tr>                   
                         </tbody>
                     </table>
-                    <p class="article__p article__p--highlight">
-                        <b>Interpretação:</b>
-                        Neste caso significa que diariamente o paciente deve tomar 2.5 comprimidos apenas de manhã e devem ser fornecidos ao paciente 75 comprimidos (em caso de dispensa mensal) ou 225 comprimidos (se dispensa trimestral).
-                    </p>
+                    <p class="article__p article__p--highlight"><b>Interpretação:</b> Neste caso significa que diariamente o paciente deve tomar 2.5 comprimidos apenas de manhã e devem ser fornecidos ao paciente 75 comprimidos (em caso de dispensa mensal) ou 225 comprimidos (se dispensa trimestral).</p>
                 </section>
                 <section class="article__section article__section--main article__section--tpc">
                     <h2 class="article__title article__title--level-1">Critérios de Tratamento Profilático com Cotrimoxazol</h2>
@@ -423,7 +339,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 4.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 4.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--regimes-para-inicios-tarv">
@@ -469,7 +385,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 18.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 18.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--regimes-alternativos">
@@ -517,7 +433,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 20.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 20.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--desnutricao">
@@ -565,7 +481,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 5.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 5.</p>
                     <h2 class="article__title article__title--level-1" id="desnutricao-conduta">Conduta em caso de Desnutrição Aguda</h2>
                     <table class="table table--no-margin-b">
                         <thead class="table__header --border-b">
@@ -601,7 +517,7 @@
                             </td>
                         </tfoot>
                     </table>                 
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 6.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 6.</p>
                     <h2 class="article__title article__title--level-1" id="dam-conduta">Tipo e quantidade de saquetas de ATPU e ASPU para tratamento da DAM por idade</h2>
                     <table class="table table--no-margin-b">
                         <thead class="table__header --border-b">
@@ -636,7 +552,7 @@
                             </td>
                         </tfoot>
                     </table>               
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 7.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 7.</p>
                     <h2 class="article__title article__title--level-1" id="dag-conduta">Dosagem de ATPU para tratamento da DAG
                     </h2>
                     <table class="table table--layout-fixed table--no-margin-b">
@@ -677,15 +593,13 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 8.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 8.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
             </article>
             <div class="dialog-box-default dialog-box-default--bibliography">
                 <h3 class="dialog-box-default__title">IMPORTANTE</h3>
-                <p class="dialog-box-default__p">
-                    O serviço Tarv Pediátrico foi desenvolvido com base em normas que constam do políptico pediátrico - <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download>Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-08-11">11/08/2024</time>), ainda estavam em vigor no Serviço Nacional de Saúde (SNS) em Moçambique. No entanto, face as frequentes mudanças nas abordagens médicas que acompanham a evolução da Medicina, tais normas poderão ter sido actualizadas e outro instrumento de apoio, disponibilizado. 
-                </p>
+                <p class="dialog-box-default__p">O TARV Pediátrico foi desenvolvido com base em normas que constam do políptico pediátrico - <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data de publicação da última actualização deste serviço (<time datetime="2024-08-11">11/08/2024</time>), ainda estavam em vigor no Serviço Nacional de Saúde (SNS) em Moçambique. No entanto, face as frequentes mudanças nas abordagens médicas que acompanham a evolução da Medicina, tais normas poderão ter sido actualizadas e outro instrumento de apoio, disponibilizado.</p>
                 <div class="dialog-box-default__btn-container">
                     <button class="dialog-box-default__btn dialog-box-default__btn--entendi">Entendi</button>
                 </div>
@@ -844,14 +758,13 @@
                 <div class="footer__bibliography-sources">
                     <h5 class="footer__bibliography-sources__title">Referência:</h5>
                     <ul class="footer__bibliography-sources__list">
-                        <li>MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" download class="footer__bibliography-sources__link">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</li>
+                        <li>MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" class="footer__bibliography-sources__link">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</li>
                     </ul>
                 </div>
-                <p class="footer__p footer__p--created-by">
-                    Desenvolvido por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> | &copy; 2024 - Tarv&nbsp;Pediátrico
+                <p class="footer__p footer__p--created-by">Criado com atenção e <span class="footer__p__heart">❤</span> por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> | ©&nbsp;<span class="footer__current-year"></span> - TARV&nbsp;Pediátrico
                 </p>
-                <a href="#root" class="footer__link-back-to-top">Rolar para o topo</a>
                 <p class="footer__p footer__p--available-since">Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: Agosto/2024.</p>
+                <a href="#root" class="footer__link-back-to-top">Rolar para o topo</a>
             </div>
         </footer>
         <div class="blurringDiv"></div>

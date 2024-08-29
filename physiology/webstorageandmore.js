@@ -9,6 +9,13 @@ const referenciaBibliografia = {
         sessionStorage.setItem(`tarv-reference`, `user:aware`);
     }
 }
+function actualizarAnoDeCopyright() {
+    const tempo = new Date();
+    let anoActual = tempo.getFullYear();
+    if(anoActual < 2024) anoActual = 2024;
+    const currentYearOutput = document.querySelector(".footer__current-year");
+    currentYearOutput.textContent = anoActual;
+}
 window.addEventListener("load", () => {
     referenciaBibliografia.mostrarAlerta();
     const btnEntendi = document.querySelector(".dialog-box-default__btn--entendi");
@@ -17,4 +24,5 @@ window.addEventListener("load", () => {
         const alerta = document.querySelector(".dialog-box-default--bibliography");
         alerta.classList.remove("--open")
     });
+    actualizarAnoDeCopyright();
 });

@@ -6,6 +6,7 @@
     --hyperlink-color: #1558bc;
     --text-color: #333333;
     --footer-bg-color: #555555;
+    --heart-color: #f97171;
     --alert-color: #dd0000;
     --yt: #ffffff;
     --black: #000000;
@@ -71,6 +72,9 @@
         padding: 0;
     }
 }
+.layout-row--with-min-height {
+    min-height: 40px;
+}
 .layout-row--no-space-between-n-padding {
     justify-content: initial;
     padding: 0;
@@ -82,8 +86,9 @@
 }
 #logo {
     color: var(--main-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 .meatballs-menu {
     width: 36px;
@@ -615,12 +620,18 @@
     text-align: center;
     vertical-align: middle;
 }
+article .table__cell {
+    padding: 5px;
+}
 .table__cell--padding-diff {
     padding-left: 5px;
     padding-right: 5px;
 }
 .table__cell--text-align-left {
     text-align: left;
+}
+.table__cell li:last-child {
+    margin-bottom: 0;
 }
 .table__footer {
     background-color: var(--orange--light);
@@ -900,6 +911,9 @@
 }
 .footer__p--created-by a {
     color: var(--main-color);
+}
+.footer__p__heart {
+    color: var(--heart-color);
 }
 .footer__link-back-to-top {
     position: absolute;

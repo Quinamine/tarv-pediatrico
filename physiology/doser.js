@@ -503,7 +503,7 @@ class Doser {
                 doseManha = "4.5*";
                 doseNoite = "-";
             } else if(weight < 26) {
-                doseManha = 5;
+                doseManha = "5*";
                 doseNoite = "-";
             } else {
                 doseManha = "-";
