@@ -21,6 +21,12 @@ const doserGeneralFunctions = {
         doserGeneralFunctions.removehighlightFromFocusedInput(selectOfMedicines);
         const body = document.querySelector("#body");
         body.classList.remove("--overflow-hide-on-mobile");
+        // Mostrar options ocultas pela funcionalidade de pesquisa;
+        const options = document.querySelectorAll(".doser__select *");
+        for(const option of options) {
+            option.classList.remove("--display-none");
+            if(option.matches(".doser__select__input--search")) option.value = "";
+        }
     },
     selectAnOption(optionToSelect) {
         const options = document.querySelectorAll(".doser__select__option");
@@ -37,7 +43,6 @@ const doserGeneralFunctions = {
             action === "show" ? element.classList.remove("--display-none")
             : element.classList.add("--display-none")
         }
-
         // Filter or Search options
         query = trimAndLowerStr(query);
         const options = document.querySelectorAll(".doser__select__option");
@@ -45,13 +50,11 @@ const doserGeneralFunctions = {
             trimAndLowerStr(option.textContent).includes(query) ? showOrHideElement("show", option)
             : showOrHideElement("hide", option);
         }
-
         // Filter Optgroups
-        const optgroups = document.querySelectorAll(".doser__select__optgroup");
+        const optgroups = document.querySelectorAll(".do");
         for (const optgroup of optgroups) {
             if(trimAndLowerStr(optgroup.textContent).includes(query)) {
                 showOrHideElement("show", optgroup);
-
                 let optionsRelated = optgroup.parentElement.querySelectorAll(".doser__select__option");
                 for (const option of optionsRelated) {showOrHideElement("show", option)}
             } else {
@@ -168,287 +171,116 @@ class Doser {
         let doseManha, doseNoite = "-";
         let weight = this.weight;
         if(this.medicine === "abc/3tc-120/60mg") {
-            if(weight < 6) {
-                doseManha = 1;
-            } else if(weight < 10) {
-                doseManha = 1.5;
-            } else if(weight < 14) {
-                doseManha = 2;
-            } else if(weight < 20) {
-                doseManha = 2.5;
-            } else if(weight < 25) {
-                doseManha = 3;
-            } else {
-                doseManha = "-";
-            }
-        } else if(this.medicine === "abc/3tc-600/300mg") {
-            weight < 25 ? doseManha = "-" : doseManha = 1;
+            doseManha = weight < 6 ? 1
+            : weight < 10 ? 1.5
+            : weight < 14 ? 2
+            : weight < 20 ? 2.5
+            : weight < 25 ? 3
+            : "-";
+        } else if(this.medicine === "abc/3tc-600/300mg" || this.medicine === "atv/r" || this.medicine === "inh-300") {
+            doseManha = weight >= 25 ? 1 : "-";
         } else if(this.medicine === "pDtg-10mg") {
-            if(weight < 6) {
-                doseManha = 0.5;
-            } else if(weight < 10) {
-                doseManha = 1.5;
-            } else if(weight < 14) {
-                doseManha = 2;
-            } else if(weight < 20) {
-                doseManha = 2.5;
-            } else if(weight < 25) {
-                doseManha = "3*";
-            } else {
-                doseManha = "-";
-            }
+            doseManha = weight < 6 ? 0.5
+            : weight < 10 ? 1.5
+            : weight < 14 ? 2
+            : weight < 20 ? 2.5
+            : weight < 25 ? "3*"
+            : "-";
         } else if(this.medicine === "dtg-50mg") {
-            if(weight < 20) {
-                doseManha = "-";
-            } else {
-                doseManha = 1;
-            } 
+            doseManha = weight >= 20 ? 1 : "-";
         } else if(this.medicine.includes(`tdf`)) {
-            if(weight < 30) {
-                doseManha = "-";
-            } else {
-                doseManha = 1;
-            } 
+            doseManha = weight >= 30 ? 1 : "-";
         } else if(this.medicine === "lpv/r-40/10mg-saquetas") {
-            if(weight < 6) {
-                doseManha = 2;
-                doseNoite = 2
-            } else if(weight < 10) {
-                doseManha = 3;
-                doseNoite = 3
-            } else if(weight < 14) {
-                doseManha = 4;
-                doseNoite = 4
-            } else if(weight < 20) {
-                doseManha = 5;
-                doseNoite = 5
-            } else {
-                doseManha = "-";
-                doseNoite = "-";
-            }
+            doseManha = weight < 6 ? 2
+            : weight < 10 ? 3
+            : weight < 14 ? 4
+            : weight < 20 ? 5
+            : "-";
+            doseNoite = doseManha;
         } else if(this.medicine === "lpv/r-100/25mg") {
-            if(weight < 10) {
-                doseManha = "-";
-                doseNoite = "-"
-            } else if(weight < 14) {
-                doseManha = 2;
-                doseNoite = 1
-            } else if(weight < 25) {
-                doseManha = 2;
-                doseNoite = 2
-            } else {
-                doseManha = 3;
-                doseNoite = 3;
-            }
+            weight < 10 ? (doseManha = doseNoite = "-")
+            : weight < 14 ? (doseManha = 2, doseNoite = 1)
+            : weight < 25 ? (doseManha = doseNoite = 2)
+            : (doseManha = doseNoite = 3);
         } else if(this.medicine === "lpv/r-200/50mg") {
-            if(weight < 14) {
-                doseManha = "-";
-                doseNoite = "-"
-            } else if(weight < 25) {
-                doseManha = 1;
-                doseNoite = 1
-            } else if(weight < 30) {
-                doseManha = 2;
-                doseNoite = 1
-            } else {
-                doseManha = 2;
-                doseNoite = 2;
-            }
+            weight < 14 ? (doseManha = doseNoite = "-")
+            : weight < 25 ? (doseManha = doseNoite = 1)
+            : weight < 30 ? (doseManha = 2, doseNoite = 1)
+            : (doseManha = doseNoite = 2);
         } else if(this.medicine === "azt-susp") {
-            if(weight < 6) {
-                doseManha = 6;
-                doseNoite = 6
-            } else if(weight < 10) {
-                doseManha = 9;
-                doseNoite = 9
-            } else if(weight < 14) {
-                doseManha = 12;
-                doseNoite = 12
-            } else {
-                doseManha = "-"
-                doseNoite = "-"
-            }
+            doseManha = weight < 6 ? 6
+            : weight < 10 ? 9
+            : weight < 14 ? 12
+            : "-";
+            doseNoite = doseManha;
         } else if(this.medicine === "duovir-ped") {
-            if(weight < 6) {
-                doseManha = 1;
-                doseNoite = 1;
-            } else if(weight < 10) {
-                doseManha = 1.5;
-                doseNoite = 1.5;
-            } else if(weight < 14) {
-                doseManha = 2;
-                doseNoite = 2;
-            } else if(weight < 20) {
-                doseManha = 2.5;
-                doseNoite = 2.5;
-            } else if(weight < 25) {
-                doseManha = 3;
-                doseNoite = 3;
-            } else {
-                doseManha = "-"
-                doseNoite = "-"
-            }
+            doseManha = weight < 6 ? 1
+            : weight < 10 ? 1.5
+            : weight < 14 ? 2
+            : weight < 20 ? 2.5
+            : weight < 25 ? 3
+            : "-";
+            doseNoite = doseManha;
         } else if(this.medicine === "duovir-adult") {
-            if(weight < 14) {
-                doseManha = "-"
-                doseNoite = "-"
-            } else if(weight < 25) {
-                doseManha = 1;
-                doseNoite = 0.5;
-            } else {
-                doseManha = 1;
-                doseNoite = 1;
-            }
+            weight < 14 ? (doseManha = doseNoite = "-")
+            : weight < 25 ? (doseManha = 1, doseNoite = 0.5)
+            : (doseManha = doseNoite = 1);
         } else if(this.medicine === "efv") {
-            if(weight < 10) {
-                doseManha = "-"
-                doseNoite = "-"
-            } else if(weight < 14) {
-                doseManha = "-"
-                doseNoite = 1;
-            } else if(weight < 25) {
-                doseManha = "-"
-                doseNoite = 1.5;
-            } else {
-                doseManha = "-"
-                doseNoite = 2;
-            }
-        } else if(this.medicine === "atv/r") {
-            if(weight < 25) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else {
-                doseManha = 1;
-                doseNoite = "-";
-            }
+            doseNoite = weight < 10 ? "-"
+            : weight < 14 ? 1
+            : weight < 25 ? 1.5
+            : 2;
+            doseManha = "-";
         } else if(this.medicine === "rtv-100-superboosting") {
-            if(weight < 10) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else if(weight < 14) {
-                doseManha = 1;
-                doseNoite = 1;
-            } else if(weight < 25) {
-                doseManha = 1;
-                doseNoite = 2;
-            } else {
-                doseManha = 2;
-                doseNoite = 2;
-            }
+            weight < 10 ? (doseManha = doseNoite = "-")
+            : weight < 14 ? (doseManha = doseNoite = 1)
+            : weight < 25 ? (doseManha = 1, doseNoite = 2)
+            : (doseManha = doseNoite = 2);
         } else if(this.medicine === "drv-75") {
-            if(weight >= 14 && weight < 25) {
-                doseManha = 5;
-                doseNoite = 5;
-            } else {
-                doseManha = "-";
-                doseNoite = "-";
-            }
+            doseManha = weight >= 14 && weight < 25 ? 5
+            : "-";
+            doseNoite = doseManha;
         } else if(this.medicine === "drv-150") {
-            if(weight < 14) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else if(weight < 25) {
-                doseManha = 2.5;
-                doseNoite = 2.5;
-            } else if(weight < 30) {
-                doseManha = 3;
-                doseNoite = 3;
-            } else {
-                doseManha = "-";
-                doseNoite = "-";
-            }
+            doseManha = weight < 14 || weight >= 30 ? "-"
+            : weight < 25 ? 2.5
+            : 3;
+            doseNoite = doseManha;
         } else if(this.medicine === "drv-600") {
-            if(weight < 14) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else if(weight < 25) {
-                doseManha = "0.5*";
-                doseNoite = "0.5*";
-            } else {
-                doseManha = 1;
-                doseNoite = 1;
-            }
+            doseManha = weight < 14 ? "-"
+            : weight < 25 ? "0.5*"
+            : 1;
+            doseNoite = doseManha;
         } else if(this.medicine === "rtv-100-3alinha") {
-            if(weight < 14) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else if(weight < 25) {
-                doseManha = 0.5;
-                doseNoite = 0.5;
-            } else {
-                doseManha = 1;
-                doseNoite = 1;
-            }
+            doseManha = weight < 14 ? "-"
+            : weight < 25 ? 0.5
+            : 1;
+            doseNoite = doseManha;
         } else if(this.medicine === "ctz-susp") {
-            if(weight < 6) {
-                doseManha = 2.5;
-                doseNoite = "-";
-            } else if(weight < 14) {
-                doseManha = 5;
-                doseNoite = "-";
-            } else if(weight < 25) {
-                doseManha = 10;
-                doseNoite = "-";
-            } else {
-                doseManha = "-";
-                doseNoite = "-";
-            }
+            doseManha = weight < 6 ? 2.5
+            : weight < 14 ? 5
+            : weight < 25 ? 10
+            : "-";
         } else if(this.medicine === "ctz-cp") {
-            if(weight < 6) {
-                doseManha = 0.25;
-                doseNoite = "-";
-            } else if(weight < 14) {
-                doseManha = 0.5;
-                doseNoite = "-";
-            } else if(weight < 25) {
-                doseManha = 1;
-                doseNoite = "-";
-            } else {
-                doseManha = 2;
-                doseNoite = "-";
-            }
+            doseManha = weight < 6 ? 0.25
+            : weight < 14 ? 0.5
+            : weight < 25 ? 1
+            : 2
         } else if(this.medicine === "inh-100") {
-            if(weight < 5) {
-                doseManha = 0.5;
-                doseNoite = "-";
-            } else if(weight < 10) {
-                doseManha = 1;
-                doseNoite = "-";
-            } else if(weight < 14) {
-                doseManha = 1.5;
-                doseNoite = "-";
-            } else if(weight < 20) {
-                doseManha = 2;
-                doseNoite = "-";
-            } else if(weight < 25) {
-                doseManha = 2.5;
-                doseNoite = "-";
-            } else {
-                doseManha = 3;
-                doseNoite = "-";
-            }
-        } else if(this.medicine === "inh-300") {
-            if(weight < 25) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else {
-                doseManha = 1;
-                doseNoite = "-";
-            }
+            doseManha = weight < 5 ? 0.5
+            : weight < 10 ? 1
+            : weight < 14 ? 1.5
+            : weight < 20 ? 2
+            : weight < 25 ? 2.5
+            : 3;
         } else if(this.medicine === "3hp-100/150") {
             let doseDeINH, doseDeRifapentina;
             if(weight < 10 || weight >= 30) {
                 return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
-            } else if(weight < 16) {
-                doseDeINH = 3;
-                doseDeRifapentina= 2;
-            } else if(weight < 24) {
-                doseDeINH = 5;
-                doseDeRifapentina= 3;
-            } else if(weight < 30) {
-                doseDeINH = 6;
-                doseDeRifapentina= 4;
-            }
+            } 
+            weight < 16 ? (doseDeINH = 3, doseDeRifapentina = 2)
+            : weight < 24 ? (doseDeINH = 5, doseDeRifapentina= 3)
+            : (doseDeINH = 6, doseDeRifapentina= 4);
+
             return this.printDoseDe3hpNaoDFC("Isoniazida <br/> cp 100mg", doseDeINH, "Rifapentina <br/> cp 150mg", doseDeRifapentina);
         } else if(this.medicine === "3hp-300/150") {
             let doseDeINH, doseDeRifapentina;
@@ -478,60 +310,24 @@ class Doser {
                 return this.printDoseDe3hpDFC(dose);
             }
         } else if(this.medicine === "lfx-100") {
-            if(weight < 4) {
-                doseManha = 0.5;
-                doseNoite = "-";
-            } else if(weight < 7) {
-                doseManha = 1;
-                doseNoite = "-";
-            } else if(weight < 10) {
-                doseManha = 1.5;
-                doseNoite = "-";
-            } else if(weight < 13) {
-                doseManha = 2;
-                doseNoite = "-";
-            } else if(weight < 16) {
-                doseManha = 3;
-                doseNoite = "-";
-            } else if(weight < 19) {
-                doseManha = "3.5*";
-                doseNoite = "-";
-            } else if(weight < 21) {
-                doseManha = "4*";
-                doseNoite = "-";
-            } else if(weight < 24) {
-                doseManha = "4.5*";
-                doseNoite = "-";
-            } else if(weight < 26) {
-                doseManha = "5*";
-                doseNoite = "-";
-            } else {
-                doseManha = "-";
-                doseNoite = "-";
-            }
+            doseManha = weight < 4 ? 0.5
+            : weight < 7 ? 1
+            : weight < 10 ? 1.5
+            : weight < 13 ? 2
+            : weight < 16 ? 3
+            : weight < 19 ? "3.5*"
+            : weight < 21 ? "4*"
+            : weight < 24 ? "4.5*"
+            : weight < 26 ? "5*"
+            : "-";
         } else if(this.medicine === "lfx-250") {
-            if(weight < 4) {
-                doseManha = "-";
-                doseNoite = "-";
-            } else if(weight < 10) {
-                doseManha = 0.5;
-                doseNoite = "-";
-            } else if(weight < 16) {
-                doseManha = 1;
-                doseNoite = "-";
-            } else if(weight < 21) {
-                doseManha = 1.5;
-                doseNoite = "-";
-            } else if(weight < 26) {
-                doseManha = 2;
-                doseNoite = "-";
-            } else if(weight < 45) {
-                doseManha = 3;
-                doseNoite = "-";
-            } else {
-                doseManha = 4;
-                doseNoite = "-";
-            }
+            doseManha = weight < 4 ? "-"
+            : weight < 10 ? 0.5
+            : weight < 16 ? 1
+            : weight < 21 ? 1.5
+            : weight < 26 ? 2
+            : weight < 45 ? 3
+            : 4;
         }
         return this.printDose(doseManha, doseNoite)
     }
