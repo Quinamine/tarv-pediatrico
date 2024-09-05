@@ -29,7 +29,7 @@
     --orange: #f5d589;
     --orange--light: #faecc6;
     --orange--too-light: #fdf7e7;
-    --greenyellow:greenyellow;
+    --greenyellow: #adff2f;
     --brown: brown;
     --layout-width: 1200px;
 }
@@ -51,7 +51,7 @@
     overflow: hidden;
 }
 @media screen and (max-width: 1023px) {
-    #body.--overflow-hide-on-mobile {
+    #body.--overflow-hidden-on-mobile {
         overflow: hidden;
     }
 }
@@ -915,7 +915,7 @@ article .table__cell {
 .footer__p__heart {
     color: var(--heart-color);
 }
-.footer__link-back-to-top {
+.footer__link--back-to-top {
     position: absolute;
     left: 8px;
     bottom: -40px;
@@ -923,11 +923,11 @@ article .table__cell {
     color: var(--gray--a);
 }
 @media screen and (min-width: 1024px) {
-    .footer__link-back-to-top {
+    .footer__link--back-to-top {
         left: -5px;
     }
 }
-.footer__link-back-to-top:visited {
+.footer__link--back-to-top:visited {
     color: var(--gray--a);
 }
 .blurringDiv.on {
