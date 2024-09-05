@@ -62,10 +62,8 @@ const doserGeneralFunctions = {
         const options = document.querySelectorAll(".doser__select *");
         const inputSearch = document.querySelector(".doser__select__input--search")
         for(const option of options) {
-            if(!option.matches(".doser__select__optgroup--ctz, .doser__select__optgroup--anti-tbs")) {
-                option.classList.remove("--hidden");
-                inputSearch.value = "";
-            }
+            option.classList.remove("--hidden");
+            inputSearch.value = "";
         }
     },
     showMinWeightAlert() {
