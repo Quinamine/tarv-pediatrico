@@ -36,8 +36,8 @@ const doserGeneralFunctions = {
             return str.replaceAll(/\W/g, "").toLowerCase();
         }
         function showOrHideElement(action, element) {
-            action === "show" ? element.classList.remove("--display-none")
-            : element.classList.add("--display-none")
+            action === "show" ? element.classList.remove("--hidden")
+            : element.classList.add("--hidden")
         }
         // Filter or Search options
         query = trimAndLowerStr(query);
@@ -62,9 +62,10 @@ const doserGeneralFunctions = {
         const options = document.querySelectorAll(".doser__select *");
         const inputSearch = document.querySelector(".doser__select__input--search")
         for(const option of options) {
-            if(option.matches(".doser__select__optgroup--ctz, .doser__select__optgroup--anti-tbs")) return 0;
-            option.classList.remove("--display-none");
-            inputSearch.value = "";
+            if(!option.matches(".doser__select__optgroup--ctz, .doser__select__optgroup--anti-tbs")) {
+                option.classList.remove("--hidden");
+                inputSearch.value = "";
+            }
         }
     },
     showMinWeightAlert() {

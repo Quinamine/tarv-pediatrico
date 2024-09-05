@@ -965,6 +965,6 @@ article .table__cell {
 .--border-l {
     border-left: 1px solid var(--orange);
 }
-.--display-none {
+.--display-none, .--hidden {
     display: none !important;
 }
