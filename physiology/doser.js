@@ -357,7 +357,7 @@ class Doser {
                 // Regra de 3 simples (Total de ml * 1/100 ml) em que 1 é frasco e 100, o seu volume;
                 dispensaMensal = Math.ceil((doseM + doseN) * 30 / 100);
                 dispensaTrimestral = Math.ceil((doseM + doseN) * 90 / 100); 
-                unidadeDaQtdAaviar = "frasco(s) de <br> 100 ml";
+                unidadeDaQtdAaviar = "frasco(s) de <br>100 ml";
             }
         } else if(typeof doseM === "number" && typeof doseN !== "number") {
             dispensaMensal = doseM * 30;
@@ -367,7 +367,7 @@ class Doser {
                 // Regra de 3 simples (Total de ml * 1/100 ml) em que 1 é frasco e 100, o seu volume;
                 dispensaMensal = Math.ceil(doseM * 30 / 100);
                 dispensaTrimestral = Math.ceil(doseM * 90 / 100); 
-                unidadeDaQtdAaviar = "frasco(s) de <br> 100 ml";
+                unidadeDaQtdAaviar = "frasco(s) de <br>100 ml";
             }
         } else if(typeof doseM !== "number" && typeof doseN === "number") {
             dispensaMensal = doseN * 30;
@@ -377,7 +377,7 @@ class Doser {
                 // Regra de 3 simples (Total de ml * 1/100 ml) em que 1 é frasco e 100, o seu volume;
                 dispensaMensal = Math.ceil(doseN * 30 / 100);
                 dispensaTrimestral = Math.ceil(doseN * 90 / 100); 
-                unidadeDaQtdAaviar = "frasco(s) de <br> 100 ml";
+                unidadeDaQtdAaviar = "frasco(s) de <br>100 ml";
             }
         } else if(doseManha === "-" && doseNoite === "-"){
             return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
@@ -429,9 +429,9 @@ class Doser {
                 <td class="table__cell">Dispensa trimestral</td>
             </tr>
             <tr class="--border-b --border-t">
-                <td class="table__cell">Isoniazida: ${dispensaMensalDeINH} cp(s), <br> 
+                <td class="table__cell">Isoniazida: ${dispensaMensalDeINH} cp(s), <br>
                 Rifapentina: ${dispensaMensalDeRifapentina} cp(s)</td> 
-                <td class="table__cell">Isoniazida: ${dispensaTrimestralDeINH} cp(s), <br> 
+                <td class="table__cell">Isoniazida: ${dispensaTrimestralDeINH} cp(s), <br>
                 Rifapentina: ${dispensaTrimestralDeRifapentina} cp(s)</td>
             </tr>                   
         </tbody>
@@ -462,10 +462,10 @@ class Doser {
             </tr>
             <tr class="--border-b --border-t">
                 <td class="table__cell">
-                    Isoniazida 300mg: ${dispensaMensalDeINH300} cp(s), <br> Isoniazida 100mg: ${dispensaMensalDeINH100} cp(s), <br> Rifapentina: ${dispensaMensalDeRifapentina} cp(s)
+                    Isoniazida 300mg: ${dispensaMensalDeINH300} cp(s), <br>Isoniazida 100mg: ${dispensaMensalDeINH100} cp(s), <br>Rifapentina: ${dispensaMensalDeRifapentina} cp(s)
                 </td> 
                 <td class="table__cell">
-                    Isoniazida 300mg: ${dispensaTrimestralDeINH300} cp(s), <br> Isoniazida 100mg: ${dispensaTrimestralDeINH100} cp(s), <br> Rifapentina: ${dispensaTrimestralDeRifapentina} cp(s)
+                    Isoniazida 300mg: ${dispensaTrimestralDeINH300} cp(s), <br>Isoniazida 100mg: ${dispensaTrimestralDeINH100} cp(s), <br>Rifapentina: ${dispensaTrimestralDeRifapentina} cp(s)
                 </td>
             </tr>                   
         </tbody>
