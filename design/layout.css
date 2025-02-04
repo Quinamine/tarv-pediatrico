@@ -805,6 +805,7 @@ article .table__cell {
     color: var(--cor-de-texto);
 }
 /* PROPAGANDA */
+/* PROPAGANDA */
 .advertising {
     width: 100%;
     background: linear-gradient(-180deg,var(--gray--e) 0,var(--yt) 50%);
@@ -871,18 +872,22 @@ article .table__cell {
     display: grid;
     grid-template-rows: 52px 1fr 32px;
 }
+.advertising__card__title,
+.advertising__card__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .advertising__card__title {
+    -webkit-line-clamp: 2;
     font-weight: 700;
     font-size: 17px;
 }
 .advertising__card__description {
     margin: 18px 0;
     line-height: 1.5;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .advertising__card__link {
     display: block;
