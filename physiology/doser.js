@@ -159,13 +159,13 @@ class Doser {
         } else if(this.medicine=== "3hp-300/300-dfc" && this.weight < 30) {
             note = 'Para peso &lt; 30 kg, recomenda-se <strong>Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong> ou <strong>Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong>'
         }  else if(this.medicine === "lfx-100" && this.weight >= 16 && this.weight < 26) {
-            note = '*Crianças com peso &ge; 16 kg que consigam engolir comprimidos inteiros, passar para comprimidos de 250 mg. <br/> Se o caso fonte tiver resistência comprovada a Fluroquinolonas, não deve ser oferecido TPT.</strong>'
+            note = '*Crianças com peso &ge; 16 kg que consigam engolir comprimidos inteiros, passar para comprimidos de 250 mg. <br/> Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT.</strong>'
         } else if(this.medicine === "lfx-100" && this.weight >= 26) {
             note = 'Para peso &ge; 26 kg, recomenda-se <strong>Levofloxacina 250 mg Comp.</strong>'
         } else if(this.medicine === "lfx-250" && this.weight < 4) {
             note = 'Para peso &lt; 4 kg, use <strong>Levofloxacina 100 mg Comp.</strong>'
         } else if(this.medicine === "lfx-250" && this.weight >= 4 || this.medicine === "lfx-100" && this.weight < 16) {
-            note = 'Se o caso fonte tiver resistência comprovada a Fluroquinolonas, não deve ser oferecido TPT.'
+            note = 'Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT.'
         } else {
             note = "";
         }

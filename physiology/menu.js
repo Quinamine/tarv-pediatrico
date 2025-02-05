@@ -115,7 +115,7 @@ function listenToEvents() {
     // Share
     let data = {
         title: "TARV Pediátrico",
-        text: 'O serviço TARV Pediátrico doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Setembro/2024), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.',
+        text: 'O serviço TARV Pediátrico doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.',
         url: "https://quinamine.github.io/tarv-pediatrico/index.html"
     }
     let btnShare = document.querySelector(".meatballs-menu-expanded__option--share");
