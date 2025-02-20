@@ -512,8 +512,8 @@ function instantiateDoser() {
             }
         }
         // Se não for option de placeholder
-        if(selectedMedicine.dataset.nameofthemedicine) {
-            selectedMedicine = selectedMedicine.dataset.nameofthemedicine;
+        if(selectedMedicine.dataset.farmaco) {
+            selectedMedicine = selectedMedicine.dataset.farmaco;
             let doserObject = new Doser(weight, selectedMedicine);
             let doseOutput = document.querySelector(".doser__section__dose");
             let noteOutput = document.querySelector(".doser__section__note");

@@ -6,19 +6,19 @@
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <title>TARV PEDIÁTRICO - Doseador de ARVs, CTZ, INH, 3HP e Lfx</title>
         <meta content="index, follow" name="robots">
-        <meta content='Doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' name="description">
+        <meta content='Doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' name="description">
         <meta content="TARV Pediátrico, Tratamento Antirretroviral, TARV Pediátrico, Doseador de Antirretrovirais, Doseador de ARVs, Tratamento Profilático com Cotrimoxazol, TPC, Tratamento Preventivo de Tuberculose, TPT, Abacavir + Lamivudina, Dolutegravir, Tenofovir + Lamivudina, Lopinavir + Ritonavir, Zidovudina + Lamivudina, Tenofovir + Lamivudina, Tenofovir + Lamivudina + Efavirenz, Atazanavir + Ritonavir, Darunavir, ABC+3TC, DTG, TDF+3TC, TDF+3TC+DTG, TDF+3TC+EFV, LPV/r, AZT+3TC, EFV, RTV, DRV, Cotrimoxazol, Isoniazida, Rifapentina, CTZ, INH, 3HP" name="keywords">
         <meta content="Adérito Félix Quinamine" name="author">
         <meta content="https://quinamine.github.io/tarv-pediatrico/index.html" property="og:url">
         <meta content="TARV PEDIÁTRICO - Doseador de ARVs, CTZ, INH, 3HP e Lfx" property="og:title">
-        <meta content='Doseia automaticamente, de acordo com o peso inserido pelo usuário, Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). Tem como referência o políptico pediátrico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' property="og:description">
-        <meta content="https://quinamine.github.io/tarv-pediatrico/images/tarv-pediatrico.png" property="og:image">
+        <meta content='Doseia automaticamente, de acordo com o peso inserido pelo usuário, Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' property="og:description">
+        <meta content="https://quinamine.github.io/tarv-pediatrico/imagens/tarv-pediatrico.png" property="og:image">
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-        <link href="design/reset.css" rel="stylesheet">
-        <link href="design/layout.css" rel="stylesheet">
-        <script src="physiology/menu.js"></script>
-        <script src="physiology/doser.js"></script>
-        <script src="physiology/webstorageandmore.js"></script>
+        <link href="anatomia/reset.css" rel="stylesheet">
+        <link href="anatomia/layout.css" rel="stylesheet">
+        <script src="fisiologia/menu.js"></script>
+        <script src="fisiologia/doser.js"></script>
+        <script src="fisiologia/webstorageandmore.js"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-YBM46MLS6W" async></script>
         <script>
             function gtag() {
@@ -51,8 +51,8 @@
                             <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-alternativos">Regimes de ARVs alternativos</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button></li>
+                            <li><a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option">Doseador de MATs e Piridoxina</a></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--desnutricao">Manejo de Desnutrição Aguda</button></li>
-                            <li><a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option">Doseador de MATs</a></li>
                             <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar TARV Pediátrico</button></li>
                             <li><a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Sobre o Desenvolvedor</a></li>
                         </ul>
@@ -70,7 +70,7 @@
                 <h1 class="doser__title">Doseador de Antirretrovirais</h1>
                 <div class="doser__section doser__section--weight">
                     <label class="doser__label" for="input-weight">Peso:</label>
-                    <input type="number" max="45" min="3" placeholder="Digite aqui o peso da criança" id="input-weight" class="doser__input doser__input--weight">
+                    <input type="number" min="3" placeholder="Digite aqui o peso da criança" id="input-weight" class="doser__input doser__input--weight">
                     <label class="doser__label doser__label--kg" for="input-weight">kg</label>
                 </div>
                 <p class="doser__min-weight-alert"></p>
@@ -90,69 +90,69 @@
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs abc-3tc">
                             <h3 class="doser__optgroup__title">ABACAVIR + LAMIVUDINA</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="abc/3tc-120/60mg">ABC/3TC 120 mg/60 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="abc/3tc-600/300mg">ABC/3TC 600 mg/300 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="abc/3tc-120/60mg">ABC/3TC 120 mg/60 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="abc/3tc-600/300mg">ABC/3TC 600 mg/300 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs dtg">
                             <h3 class="doser__optgroup__title">DOLUTEGRAVIR</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="pDtg-10mg">pDTG 10 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="dtg-50mg">DTG 50 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc/dtg">TDF/3TC/DTG 300/300/50 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="pDtg-10mg">pDTG 10 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="dtg-50mg">DTG 50 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="tdf/3tc/dtg">TDF/3TC/DTG 300/300/50 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs lpv-r">
                             <h3 class="doser__optgroup__title">LOPINAVIR + RITONAVIR</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-40/10mg-saquetas">LPV/r 40 mg/10 mg Saquetas</li>
-                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-100/25mg">LPV/r 100 mg/25 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="lpv/r-200/50mg">LPV/r 200 mg/50 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="lpv/r-40/10mg-saquetas">LPV/r 40 mg/10 mg Saquetas</li>
+                            <li class="doser__select__option" data-farmaco="lpv/r-100/25mg">LPV/r 100 mg/25 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="lpv/r-200/50mg">LPV/r 200 mg/50 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs azt-3tc">
                             <h3 class="doser__optgroup__title">ZIDOVUDINA + LAMIVUDINA</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="azt-susp">AZT 10 mg/ml Xarope</li>
-                            <li class="doser__select__option" data-nameofthemedicine="duovir-ped">AZT/3TC 60 mg/30 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="duovir-adult">AZT/3TC 300 mg/150 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="azt-susp">AZT 10 mg/ml Xarope</li>
+                            <li class="doser__select__option" data-farmaco="duovir-ped">AZT/3TC 60 mg/30 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="duovir-adult">AZT/3TC 300 mg/150 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs tdf-3tc">
                             <h3 class="doser__optgroup__title">TENOFOVIR + LAMIVUDINA</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc">TDF/3TC 300 mg/300 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="tdf/3tc">TDF/3TC 300 mg/300 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs tdf-3tc-efv">
                             <h3 class="doser__optgroup__title">TENOFOVIR + LAMIVUDINA + EFAVIRENZ</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="tdf/3tc/efv">TDF/3TC/EFV 300/300/400 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="tdf/3tc/efv">TDF/3TC/EFV 300/300/400 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs efv">
                             <h3 class="doser__optgroup__title">EFAVIRENZ</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="efv">EFV 200 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="efv">EFV 200 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs atv-r">
                             <h3 class="doser__optgroup__title">ATAZANAVIR + RITONAVIR</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="atv/r">ATV/r 300 mg/100 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="atv/r">ATV/r 300 mg/100 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs rtv">
                             <h3 class="doser__optgroup__title">RITONAVIR <sup>(potenciação de LPV/r durante o TAT)</sup> </h3>
-                            <li class="doser__select__option" data-nameofthemedicine="rtv-100-superboosting">RTV 100 mg Comp.<sup>(para&nbsp;superboosting)</sup></li>
+                            <li class="doser__select__option" data-farmaco="rtv-100-superboosting">RTV 100 mg Comp.<sup>(para&nbsp;superboosting)</sup></li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs drv">
                             <h3 class="doser__optgroup__title">DARUNAVIR e RITONAVIR (3ª Linha)</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="drv-75">DRV 75 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="drv-150">DRV 150 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="drv-600">DRV 600 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="rtv-100-3alinha">RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</sup></li>
+                            <li class="doser__select__option" data-farmaco="drv-75">DRV 75 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="drv-150">DRV 150 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="drv-600">DRV 600 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="rtv-100-3alinha">RTV 100 mg Comp. <sup>(na&nbsp;3ª&nbsp;linha&nbsp;com&nbsp;DRV)</sup></li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--ctz --display-none">
                             <h3 class="doser__optgroup__title">TRATAMENTO PROFILÁTICO COM COTRIMOXAZOL</h3>
-                            <li class="doser__select__option" data-nameofthemedicine="ctz-susp">Cotrimoxazol 240 mg/5 ml Susp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="ctz-cp">Cotrimoxazol 480 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="ctz-susp">Cotrimoxazol 240 mg/5 ml Susp.</li>
+                            <li class="doser__select__option" data-farmaco="ctz-cp">Cotrimoxazol 480 mg Comp.</li>
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--anti-tbs --display-none">
                             <h3 class="doser__optgroup__title">TRATAMENTO PREVENTIVO DE TUBERCULOSE <sup>sensível</sup></h3>
-                            <li class="doser__select__option" data-nameofthemedicine="inh-100">Isoniazida 100 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="inh-300">Isoniazida 300 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="3hp-100/150">Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></li>
-                            <li class="doser__select__option" data-nameofthemedicine="3hp-300/150">Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></li>
-                            <li class="doser__select__option" data-nameofthemedicine="3hp-300/300-dfc">Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup></li>
+                            <li class="doser__select__option" data-farmaco="inh-100">Isoniazida 100 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="inh-300">Isoniazida 300 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="3hp-100/150">Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></li>
+                            <li class="doser__select__option" data-farmaco="3hp-300/150">Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></li>
+                            <li class="doser__select__option" data-farmaco="3hp-300/300-dfc">Isoniazida/Rifapentina 300 mg/300 mg Comp.<sup>(3HP em DFC)</sup></li>
                             <h3 class="doser__optgroup__title">TRATAMENTO PREVENTIVO DE TUBERCULOSE <sup>MR</sup></h3>
-                            <li class="doser__select__option" data-nameofthemedicine="lfx-100">Levofloxacina 100 mg Comp.</li>
-                            <li class="doser__select__option" data-nameofthemedicine="lfx-250">Levofloxacina 250 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="lfx-100">Levofloxacina 100 mg Comp.</li>
+                            <li class="doser__select__option" data-farmaco="lfx-250">Levofloxacina 250 mg Comp.</li>
                         </div>
                     </ul>
                     <button class="doser__btn--expand-select select-opener">
@@ -170,20 +170,20 @@
                     <h2 class="doser__section__title">Notas e Precauções</h2>
                     <p class="doser__section__note doser__section__note--no-padding"></p>
                 </div>
-                <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</p>
+                <p class="bibliography-source bibliography-source--hide-on-desktop"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</p>
             </div>
             <article class="article">
                 <section class="article__section article__section--main article__section--darv --open">
                     <h2 class="article__title article__title--level-1">Visão geral sobre o Doseador de Antirretrovirais</h2>
-                    <p class="article__p">O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong></p>   
+                    <p class="article__p">O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong></p>   
                     <figure class="article__frame">
-                        <img src="images/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
-                        <figcaption class="article__frame__figcaption">Trecho da Tabela de Dosagem de Arvs do políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> - Referência do DARV.</figcaption>
+                        <img src="imagens/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
+                        <figcaption class="article__frame__figcaption">Trecho da Tabela de Dosagem de Arvs do tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf" class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> - Referência do DARV.</figcaption>
                     </figure>
                     <p class="article__p">O DARV está basicamente estruturado da seguinte forma:</p>
                     <ul class="article__list article__list--ul">
                         <li> Um campo com o rótulo <b>Peso</b>, para inserir o peso em quilograma(s) da criança para a qual você pretende calcular a dose;</li>
-                        <li><b>ARV</b>, campo de seleção com todos os ARVs da Tabela de Dosagem de ARVs do <a href="sources/poliptico-pediatrico-16-2-2022.pdf">políptico pediátrico</a>. <span class="--hide-on-mobile">Clique</span><span class="--hide-on-desktop">Toque</span> no campo para abrir a lista dos ARVs e em seguida, selecione o ARV do qual pretende calcular a dose.</li>
+                        <li><b>ARV</b>, campo de seleção com todos os ARVs da Tabela de Dosagem de ARVs do <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">tríptico</a>. <span class="--hide-on-mobile">Clique</span><span class="--hide-on-desktop">Toque</span> no campo para abrir a lista dos ARVs e em seguida, selecione o ARV do qual pretende calcular a dose.</li>
                         <li><b>Dose, Posologia e Quantidade:</b> secção de saída em que são mostradas automaticamente a dose, posologia e quantidade de comprimidos a dispensar do antirretroviral (ARV) selecionado de acordo com o peso inserido;</li>
                         <li><b>Notas e Precauções:</b> secção de saída em que são mostradas recomendações, interações medicamentosas, entre outras informações pertinentes acerca do ARV selecionado.</li>
                     </ul>
@@ -344,7 +344,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 4.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 4.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--regimes-para-inicios-tarv">
@@ -395,7 +395,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 18.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 18.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--regimes-alternativos">
@@ -443,7 +443,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 20.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 20.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--desnutricao">
@@ -491,7 +491,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 5.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 5.</p>
                     <h2 class="article__title article__title--level-1" id="desnutricao-conduta">Conduta em caso de Desnutrição Aguda</h2>
                     <table class="table table--no-margin-b">
                         <thead class="table__header --border-b">
@@ -527,7 +527,7 @@
                             </td>
                         </tfoot>
                     </table>                 
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 6.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 6.</p>
                     <h2 class="article__title article__title--level-1" id="dam-conduta">Tipo e quantidade de saquetas de ATPU e ASPU para tratamento da DAM por idade</h2>
                     <table class="table table--no-margin-b">
                         <thead class="table__header --border-b">
@@ -562,7 +562,7 @@
                             </td>
                         </tfoot>
                     </table>               
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 7.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 7.</p>
                     <h2 class="article__title article__title--level-1" id="dag-conduta">Dosagem de ATPU para tratamento da DAG
                     </h2>
                     <table class="table table--layout-fixed table--no-margin-b">
@@ -603,15 +603,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 8.</p>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 8.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
             </article>
             <div class="dialog-box-default dialog-box-default--bibliography">
                 <h3 class="dialog-box-default__title">IMPORTANTE</h3>
-                <p class="dialog-box-default__p">O TARV Pediátrico foi criado de acordo com as normas do políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estavam em vigor no Serviço Nacional de Saúde (SNS) em Moçambique. No entanto, face as frequentes mudanças nas abordagens médicas que acompanham a evolução da Medicina, tais normas poderão ter sido actualizadas e outro instrumento de apoio, disponibilizado.</p>
+                <p class="dialog-box-default__p">O TARV Pediátrico foi criado de acordo com as normas do tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data da última actualização do TARV (Fevereiro/2025), ainda estavam em vigor no Serviço Nacional de Saúde (SNS) em Moçambique. No entanto, face as frequentes mudanças nas abordagens médicas que acompanham a evolução da Medicina, tais normas poderão ter sido actualizadas e outro instrumento de apoio, disponibilizado.</p>
                 <div class="dialog-box-default__btn-container">
-                    <button class="dialog-box-default__btn dialog-box-default__btn--entendi">Fechar</button>
+                    <button class="dialog-box-default__btn dialog-box-default__btn--entendi">Entendi</button>
                 </div>
             </div>
         </main>
@@ -621,7 +621,7 @@
                 <div class="advertising__row__container-of-cards">
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/calculadora-de-doses-pediatricas.png" alt="Calculadora de Doses Pediátricas" class="advertising__card__img">
+                            <img src="imagens/calculadora-de-doses-pediatricas.png" alt="Calculadora de Doses Pediátricas" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Calculadora de Doses Pediátricas</h5>
@@ -631,7 +631,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/tat-pediatrico.png" alt="TAT Pediátrico" class="advertising__card__img">
+                            <img src="imagens/tat-pediatrico.png" alt="TAT Pediátrico" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">TAT Pediátrico</h5>
@@ -641,7 +641,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas Externas" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas Externas" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Consultas Externas</h5>
@@ -651,7 +651,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-hiv.png" alt="Totalizador de Resumo Mensal de HIV/SIDA" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-hiv.png" alt="Totalizador de Resumo Mensal de HIV/SIDA" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de HIV/SIDA</h5>
@@ -661,7 +661,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de SAAJ</h5>
@@ -671,7 +671,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-ccd.png" alt="Totalizador de Resumo Mensal de CCD" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-ccd.png" alt="Totalizador de Resumo Mensal de CCD" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de CCD</h5>
@@ -681,7 +681,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-malaria.png" alt="Totalizador de Resumo Mensal de Malária" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-malaria.png" alt="Totalizador de Resumo Mensal de Malária" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Malária</h5>
@@ -691,7 +691,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-prn-ii.png" alt="Totalizador de Resumo Mensal de PRN 2" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-prn-ii.png" alt="Totalizador de Resumo Mensal de PRN 2" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de PRN II</h5>
@@ -701,7 +701,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-prn-i.png" alt="Totalizador de Resumo Mensal de PRN 1" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-prn-i.png" alt="Totalizador de Resumo Mensal de PRN 1" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de PRN I</h5>
@@ -711,7 +711,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/requisicao-balancete.png" alt="Requisição/Balancete" class="advertising__card__img">
+                            <img src="imagens/requisicao-balancete.png" alt="Requisição/Balancete" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Requisição/Balancete</h5>
@@ -721,7 +721,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-ats.png" alt="Totalizador de Resumo Mensal de ATS" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-ats.png" alt="Totalizador de Resumo Mensal de ATS" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de ATS</h5>
@@ -731,7 +731,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-trimestral-de-apss-e-pp.png" alt="Totalizador de Resumo Trimestral de APSS/PP" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-trimestral-de-apss-e-pp.png" alt="Totalizador de Resumo Trimestral de APSS/PP" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Trimestral de APSS/PP</h5>
@@ -741,7 +741,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-notificacao-de-tb-e-tb-hiv.png" alt="Totalizador de Resumo Mensal de Notificação de TB e TB/HIV" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-notificacao-de-tb-e-tb-hiv.png" alt="Totalizador de Resumo Mensal de Notificação de TB e TB/HIV" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Notificação de TB e TB/HIV</h5>
@@ -751,7 +751,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-mapa-resumo-mensal-de-caixa.png" alt="Totalizador de Mapa Resumo Mensal de Caixa" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-mapa-resumo-mensal-de-caixa.png" alt="Totalizador de Mapa Resumo Mensal de Caixa" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Mapa Resumo Mensal de Caixa</h5>
@@ -761,7 +761,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-trimestral-de-avaliacao-de-tto-de-tb-e-tb-hiv.png" alt="Totalizador de Resumo Trimestral de Avaliação de Tratamento de TB e TB/HIV" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-trimestral-de-avaliacao-de-tto-de-tb-e-tb-hiv.png" alt="Totalizador de Resumo Trimestral de Avaliação de Tratamento de TB e TB/HIV" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Trimestral de Avaliação de Tratamento de TB e TB/HIV</h5>
@@ -771,7 +771,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/ficha-de-resumo-mensal-de-exames-laboratoriais-de-tb.png" alt="Ficha de Resumo Mensal de Exames Laboratoriais de TB" class="advertising__card__img">
+                            <img src="imagens/ficha-de-resumo-mensal-de-exames-laboratoriais-de-tb.png" alt="Ficha de Resumo Mensal de Exames Laboratoriais de TB" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Ficha de Resumo Mensal de Exames Laboratoriais de TB</h5>
@@ -781,7 +781,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/ficha-de-resumo-trimestral-de-cuidados-de-tb-em-grupos-de-alto-risco.png" alt="Ficha de Resumo Trimestral de Cuidados de TB em Grupos de Alto Risco" class="advertising__card__img">
+                            <img src="imagens/ficha-de-resumo-trimestral-de-cuidados-de-tb-em-grupos-de-alto-risco.png" alt="Ficha de Resumo Trimestral de Cuidados de TB em Grupos de Alto Risco" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Ficha de Resumo Trimestral de Cuidados de TB em Grupos de Alto Risco</h5>
@@ -791,7 +791,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-trimestral-de-cuidados-de-tb-na-comunidade-e-parcerias-publico-privadas.png" alt="Totalizador de Resumo Trimestral de Cuidados de TB na Comunidade e Parcerias Público-Privadas" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-trimestral-de-cuidados-de-tb-na-comunidade-e-parcerias-publico-privadas.png" alt="Totalizador de Resumo Trimestral de Cuidados de TB na Comunidade e Parcerias Público-Privadas" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Trimestral de Cuidados de TB na Comunidade e Parcerias Público-Privadas</h5>
@@ -801,7 +801,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-trimestral-de-fortalecimento-de-sistemas-para-tb.png" alt="Totalizador de Resumo Trimestral de Fortalecimento de Sistemas para TB" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-trimestral-de-fortalecimento-de-sistemas-para-tb.png" alt="Totalizador de Resumo Trimestral de Fortalecimento de Sistemas para TB" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Trimestral de Fortalecimento de Sistemas para TB</h5>
@@ -811,7 +811,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-trimestral-das-actividades-de-apoio-psicossocial-mod-sis-pnct-apss-11-a.png" alt="Totalizador de Resumo Trimestral das Actividades de Apoio Psicossocial (MOD. SIS - PNCT APSS 11A)" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-trimestral-das-actividades-de-apoio-psicossocial-mod-sis-pnct-apss-11-a.png" alt="Totalizador de Resumo Trimestral das Actividades de Apoio Psicossocial (MOD. SIS - PNCT APSS 11A)" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Trimestral das Actividades de Apoio Psicossocial (MOD. SIS - PNCT APSS 11A)</h5>
@@ -821,7 +821,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-trimestral-de-avaliacao-de-tto-de-tb-resistente.png" alt="Totalizador de Resumo Trimestral de Avaliação de Tratamento de TB Resistente" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-trimestral-de-avaliacao-de-tto-de-tb-resistente.png" alt="Totalizador de Resumo Trimestral de Avaliação de Tratamento de TB Resistente" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Trimestral de Avaliação de Tratamento de TB Resistente</h5>
@@ -831,7 +831,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/ficha-de-resumo-trimestral-de-avaliacao-de-resultados-intermediarios-de-tto-de-tb-resistente.png" alt="Ficha de Resumo Trimestral de Avaliação de Resultados Intermediários de Tratamento de TB Resistente" class="advertising__card__img">
+                            <img src="imagens/ficha-de-resumo-trimestral-de-avaliacao-de-resultados-intermediarios-de-tto-de-tb-resistente.png" alt="Ficha de Resumo Trimestral de Avaliação de Resultados Intermediários de Tratamento de TB Resistente" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Ficha de Resumo Trimestral de Avaliação de Resultados Intermediários de Tratamento de TB Resistente</h5>
@@ -841,7 +841,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-vigilancia-e-notificacao-de-tb-resistente.png" alt="Totalizador de Resumo Mensal de Vigilância e Notificação de TB Resistente" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-vigilancia-e-notificacao-de-tb-resistente.png" alt="Totalizador de Resumo Mensal de Vigilância e Notificação de TB Resistente" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Vigilância e Notificação de TB Resistente</h5>
@@ -851,7 +851,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-rastreio-e-investigacao-de-tb-contactos-e-inicio-de-tpt.png" alt="Totalizador de Resumo Mensal de Rastreio e Investigação de TB, Contactos e Início de TPT" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-rastreio-e-investigacao-de-tb-contactos-e-inicio-de-tpt.png" alt="Totalizador de Resumo Mensal de Rastreio e Investigação de TB, Contactos e Início de TPT" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Rastreio e Investigação de TB, Contactos e Início de TPT</h5>
@@ -861,7 +861,7 @@
                     </div> 
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-prep.png" alt="Totalizador de Resumo Mensal de PrEP" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-prep.png" alt="Totalizador de Resumo Mensal de PrEP" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de PrEP</h5>
@@ -871,7 +871,7 @@
                     </div>
                     <div class="advertising__card">
                         <figure class="advertising__card__frame">
-                            <img src="images/totalizador-de-resumo-mensal-de-doenca-avancada-por-hiv.png" alt="Totalizador de Resumo Mensal de Doença Avançada por HIV" class="advertising__card__img">
+                            <img src="imagens/totalizador-de-resumo-mensal-de-doenca-avancada-por-hiv.png" alt="Totalizador de Resumo Mensal de Doença Avançada por HIV" class="advertising__card__img">
                         </figure>
                         <div class="advertising__card__container-of-description">
                             <h5 class="advertising__card__title">Totalizador de Resumo Mensal de Doença Avançada por HIV</h5>
@@ -887,7 +887,7 @@
                 <div class="footer__bibliography-sources">
                     <h5 class="footer__bibliography-sources__title">Referência:</h5>
                     <ul class="footer__bibliography-sources__list">
-                        <li>MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Políptico pediátrico <a href="sources/poliptico-pediatrico-16-2-2022.pdf" class="footer__bibliography-sources__link">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</li>
+                        <li>MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf" class="footer__bibliography-sources__link">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>.</li>
                     </ul>
                 </div>
                 <p class="footer__p footer__p--created-by">Criado com atenção e <span class="footer__p__heart">❤</span> por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> | ©&nbsp;<span class="footer__current-year"></span> TARV&nbsp;Pediátrico
