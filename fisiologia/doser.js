@@ -107,7 +107,7 @@ class Doser {
         } else if(this.medicine === "dtg-50mg" && this.weight < 20) {
             note = 'Para peso &lt; 20 kg, use <strong>pDTG 10 mg Comp.</strong>'
         }  else if(this.medicine === "pDtg-10mg" && this.weight < 20 || this.medicine === "dtg-50mg" && this.weight >= 20) {
-            note = '<b>(1)</b> Não é recomendado tomar o DTG ao mesmo tempo que as vitaminas, sal ferroso, fenitoína ou antiácidos, pois reduzem  a concentração plasmática do DTG. Nestes casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma destes medicamentos. <b>(2)</b> Pacientes que estiverem a usar a Rifampicina (RIF) devem ajustar a dose de DTG (DTG 12/12 horas)</b> durante o tempo que recebem RIF e por mais 2 semanas. Depois passam a tomar o DTG apenas 1 vez/dia.'
+            note = '<b>(1)</b> Não é recomendado tomar o DTG ao mesmo tempo que as vitaminas, sal ferroso, fenitoína ou antiácidos, pois reduzem  a concentração plasmática do DTG. Nesses casos, recomenda-se tomar o DTG no mínimo 2 horas antes ou 6 horas depois da toma desses medicamentos. <b>(2)</b> Pacientes que estiverem a usar a Rifampicina (RIF) devem ajustar a dose de DTG (DTG 12/12 horas)</b> durante o tempo que recebem RIF e por mais 2 semanas. Depois passam a tomar o DTG apenas 1 vez/dia.'
         } else if(this.medicine === "tdf/3tc/dtg" && this.weight < 30) {
             note = 'O <b>TDF/3TC/DTG 300/300/50 mg Comp.</b> não é recomendado para crianças com peso &lt;  30 kg.'
         } else if(this.medicine === "lpv/r-40/10mg-saquetas" && this.weight >= 20) {
@@ -117,7 +117,7 @@ class Doser {
         } else if(this.medicine === "lpv/r-200/50mg" && this.weight < 14) {
             note = 'Para peso &lt; 14 kg, use <strong>LPV/r 40 mg/10 mg Saquetas</strong> ou <strong>LPV/r 100 mg/25 mg Comp.</strong>'
         } else if(this.medicine === "lpv/r-100/25mg" && this.weight >= 10 || this.medicine === "lpv/r-200/50mg" && this.weight >= 14) {
-            note = 'Deve-se engolir inteiro. Este comprimido não se parte, não se esmaga e não se dissolve em líquidos. Caso não consiga engolir inteiro, deve tomar <b>LPV/r 40 mg/10 mg Saquetas</b>.'
+            note = 'Deve-se engolir inteiro. Esse comprimido não se parte, não se esmaga e não se dissolve em líquidos. Caso não consiga engolir inteiro, deve tomar <b>LPV/r 40 mg/10 mg Saquetas</b>.'
         } else if(this.medicine === "azt-susp" && this.weight >= 14) {
             note = 'O <b>AZT 10 mg/ml Xarope</b> recomenda-se para crianças com peso &lt; 14 kg.'
         } else if(this.medicine === "duovir-ped" && this.weight >= 25) {
@@ -159,13 +159,13 @@ class Doser {
         } else if(this.medicine=== "3hp-300/300-dfc" && this.weight < 30) {
             note = 'Para peso &lt; 30 kg, recomenda-se <strong>Isoniazida 100 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong> ou <strong>Isoniazida 300 mg e Rifapentina 150 mg Comp.<sup>(3HP não DFC)</sup></strong>'
         }  else if(this.medicine === "lfx-100" && this.weight >= 16 && this.weight < 26) {
-            note = '*Crianças com peso &ge; 16 kg que consigam engolir comprimidos inteiros, passar para comprimidos de 250 mg. <br/> Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT.</strong>'
+            note = '*Crianças com peso &ge; 16 kg que consigam engolir comprimidos inteiros, passar para comprimidos de 250 mg. <br/> Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT aos contactos.</strong>'
         } else if(this.medicine === "lfx-100" && this.weight >= 26) {
             note = 'Para peso &ge; 26 kg, recomenda-se <strong>Levofloxacina 250 mg Comp.</strong>'
         } else if(this.medicine === "lfx-250" && this.weight < 4) {
             note = 'Para peso &lt; 4 kg, use <strong>Levofloxacina 100 mg Comp.</strong>'
         } else if(this.medicine === "lfx-250" && this.weight >= 4 || this.medicine === "lfx-100" && this.weight < 16) {
-            note = 'Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT.'
+            note = 'Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT aos contactos.'
         } else {
             note = "";
         }
@@ -279,7 +279,7 @@ class Doser {
         } else if(this.medicine === "3hp-100/150") {
             let doseDeINH, doseDeRifapentina;
             if(weight < 10 || weight >= 30) {
-                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
+                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
             } 
             weight < 16 ? (doseDeINH = 3, doseDeRifapentina = 2)
             : weight < 24 ? (doseDeINH = 5, doseDeRifapentina= 3)
@@ -289,7 +289,7 @@ class Doser {
         } else if(this.medicine === "3hp-300/150") {
             let doseDeINH, doseDeRifapentina;
             if(weight < 10) {
-                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
+                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
             } else if(weight < 16) {
                 doseDeINH = 1;
                 doseDeRifapentina= 2;
@@ -308,7 +308,7 @@ class Doser {
         } else if(this.medicine === "3hp-300/300-dfc") {
             let dose;
             if(weight < 30) {
-                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
+                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
             } else {
                 dose = 3;
                 return this.printDoseDe3hpDFC(dose);
@@ -380,32 +380,56 @@ class Doser {
                 unidadeDaQtdAaviar = "frasco(s) de <br>100 ml";
             }
         } else if(doseManha === "-" && doseNoite === "-"){
-            return '<p class="doser__section__note">Ver <b>Notas e Precauções</b>.</p>';
+            return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
         }
         // Converter dose de CTZ de 0.25 para 1/4
         if(doseManha === 0.25) doseManha = "<sup>1</sup>/<sub>4</sub>";
-        return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
-            <thead class="table__header table__header--bg-color-grayscale">
-                <tr class="--border-t">
-                    <th class="table__cell">Dose-manhã</th> 
-                    <th class="table__cell">Dose-noite</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="--border-t">
-                    <td class="table__cell">${doseManha} ${unidadeDaDoseManha}</td> 
-                    <td class="table__cell">${doseNoite} ${unidadeDaDoseNoite}</td>
-                </tr>
-                <tr class="table__header table__header--bg-color-grayscale --border-t">
-                    <td class="table__cell">Dispensa mensal</td> 
-                    <td class="table__cell">Dispensa trimestral</td>
-                </tr>
-                <tr class="--border-b --border-t">
-                    <td class="table__cell">${dispensaMensal} ${unidadeDaQtdAaviar}</td> 
-                    <td class="table__cell">${dispensaTrimestral} ${unidadeDaQtdAaviar}</td>
-                </tr>                   
-            </tbody>
-        </table>`
+        if(this.medicine.includes("ctz-") || this.medicine.includes("inh-")){
+            return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
+                <thead class="table__header table__header--bg-color-grayscale">
+                    <tr class="--border-t">
+                        <th class="table__cell" colspan="2">Dose diária</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="--border-t">
+                        <td class="table__cell" colspan="2">${doseManha} ${unidadeDaDoseManha} uma vez/dia</td>
+                    </tr>
+                    <tr class="table__header table__header--bg-color-grayscale --border-t">
+                        <td class="table__cell">Dispensa mensal</td> 
+                        <td class="table__cell">Dispensa trimestral</td>
+                    </tr>
+                    <tr class="--border-b --border-t">
+                        <td class="table__cell">${dispensaMensal} ${unidadeDaQtdAaviar}</td> 
+                        <td class="table__cell">${dispensaTrimestral} ${unidadeDaQtdAaviar}</td>
+                    </tr>                   
+                </tbody>
+            </table>`
+        } else {
+            return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
+                <thead class="table__header table__header--bg-color-grayscale">
+                    <tr class="--border-t">
+                        <th class="table__cell">Dose-manhã</th> 
+                        <th class="table__cell">Dose-noite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="--border-t">
+                        <td class="table__cell">${doseManha} ${unidadeDaDoseManha}</td> 
+                        <td class="table__cell">${doseNoite} ${unidadeDaDoseNoite}</td>
+                    </tr>
+                    <tr class="table__header table__header--bg-color-grayscale --border-t">
+                        <td class="table__cell">Dispensa mensal</td> 
+                        <td class="table__cell">Dispensa trimestral</td>
+                    </tr>
+                    <tr class="--border-b --border-t">
+                        <td class="table__cell">${dispensaMensal} ${unidadeDaQtdAaviar}</td> 
+                        <td class="table__cell">${dispensaTrimestral} ${unidadeDaQtdAaviar}</td>
+                    </tr>                   
+                </tbody>
+            </table>`
+        }
+        
     }
     printDoseDe3hpNaoDFC(inh, doseDeINH, rifapentina, doseDeRifapentina) {
         let dispensaMensalDeINH = doseDeINH * 4;

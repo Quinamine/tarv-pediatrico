@@ -88,7 +88,7 @@ function listenToEvents() {
                 const relatedArticle = document.querySelector(`.${option.dataset.article}`);
                 menu.openArticle(relatedArticle);
                 document.body.classList.add("--overflow-h"); // Add Overflow: hidden to the body
-                document.querySelector(".blurringDiv").classList.add("on"); // Blur background
+                document.querySelector(".blurring-div").classList.add("--on"); // Blur background
             }
         });
     });
@@ -98,7 +98,7 @@ function listenToEvents() {
         btn.addEventListener("click", () => {
             menu.closeArticle(btn.parentElement);
             document.body.classList.remove("--overflow-h"); // Remove Overflow: hidden from the body
-            document.querySelector(".blurringDiv").classList.remove("on"); // Light background
+            document.querySelector(".blurring-div").classList.remove("--on"); // Light background
         });
     });
     // Open main-menu-tabs;
@@ -115,7 +115,7 @@ function listenToEvents() {
     // Share
     let data = {
         title: "TARV Pediátrico",
-        text: 'O serviço TARV Pediátrico doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Fevereiro/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.',
+        text: 'O serviço TARV Pediátrico doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a altura da última actualização do TARV (Maio/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.',
         url: "https://quinamine.github.io/tarv-pediatrico/index.html"
     }
     let btnShare = document.querySelector(".meatballs-menu-expanded__option--share");
