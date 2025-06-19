@@ -110,10 +110,10 @@ class Doser {
             note = `Dissolver os <b>${dose} cp(s)</b> em <b>${qtdAgua} ml</b> de água ou <b>${numColheres} colheres de chá com água</b> (Vide <b>Colher de chá</b> abaixo). Diluir o pALD preferencialmente com água, ou leite (materno ou fórmula artificial) caso os cuidadores não tenham acesso à água potável ou a criança não aceite o medicamento diluído com água. Para diluir com leite, usar as mesmas medidas acima. <br> <img src="imagens/colheres.png">`;
         }
         else if(this.medicine === "abc/3tc/dtg" && this.weight < 30) {
-            note = `Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong> e <strong>DTG 50 mg Comp.</strong>.`;
+            note = `Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong> e <strong>DTG 50 mg Comp.</strong>`;
         }
         else if(this.medicine === "abc/3tc/dtg" && this.weight >= 30) {
-            note = `Transitar para o regime <strong>TDF/3TC/DTG 300/300/50 mg Comp.</strong>.`;
+            note = `Transitar para o regime <strong>TDF/3TC/DTG 300/300/50 mg Comp.</strong>`;
         }
         else if(this.medicine === "abc/3tc-120/60mg" && this.weight >= 25) {
             note = 'Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong>';
@@ -563,7 +563,7 @@ class Doser {
         } else if(dispensaMensalEmCp <= 150) {
             frascosMensais = "1 frasco de 180 cp(s)";
             frascosTrimestrais = "1 frasco de 90 cp(s) e <br>2 frascos de 180 cp(s)"
-        } else if(dispensaTrimestralEmCp <= 180) {
+        } else if(dispensaMensalEmCp <= 180) {
             frascosMensais = "1 frasco de 180 cp(s)";
             frascosTrimestrais =  "3 frascos de 180 cp(s)"
         }
