@@ -6,12 +6,12 @@
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <title>TARV PEDIÁTRICO - Doseador de ARVs, CTZ, INH, 3HP e Lfx</title>
         <meta content="index, follow" name="robots">
-        <meta content='Doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data da última actualização do TARV (Maio/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' name="description">
+        <meta content='Doseia automaticamente Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina) de acordo com o peso inserido pelo usuário. Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data da última actualização do TARV (Junho/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' name="description">
         <meta content="TARV Pediátrico, Tratamento Antirretroviral, TARV Pediátrico, Doseador de Antirretrovirais, Doseador de ARVs, Tratamento Profilático com Cotrimoxazol, TPC, Tratamento Preventivo de Tuberculose, TPT, Abacavir + Lamivudina, Dolutegravir, Tenofovir + Lamivudina, Lopinavir + Ritonavir, Zidovudina + Lamivudina, Tenofovir + Lamivudina, Tenofovir + Lamivudina + Efavirenz, Atazanavir + Ritonavir, Darunavir, ABC+3TC, DTG, TDF+3TC, TDF+3TC+DTG, TDF+3TC+EFV, LPV/r, AZT+3TC, EFV, RTV, DRV, Cotrimoxazol, Isoniazida, Rifapentina, CTZ, INH, 3HP" name="keywords">
         <meta content="Adérito Félix Quinamine" name="author">
         <meta content="https://quinamine.github.io/tarv-pediatrico/index.html" property="og:url">
         <meta content="TARV PEDIÁTRICO - Doseador de ARVs, CTZ, INH, 3HP e Lfx" property="og:title">
-        <meta content='Doseia automaticamente, de acordo com o peso inserido pelo usuário, Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data da última actualização do TARV (Maio/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' property="og:description">
+        <meta content='Doseia automaticamente, de acordo com o peso inserido pelo usuário, Antirretrovirais, Cotrimoxazol para profilaxia de infecções oportunistas e fármacos preventivos de tuberculose (Isoniazida, 3HP e Levofloxacina). Tem como referência o tríptico "Manejo de infecção por HIV na criança e adolescente, versão 2022" que, até a data da última actualização do TARV (Junho/2025), ainda estava em vigor no Serviço Nacional de Saúde em Moçambique.' property="og:description">
         <meta content="https://quinamine.github.io/tarv-pediatrico/imagens/tarv-pediatrico.png" property="og:image">
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="anatomia/reset.css" rel="stylesheet">
@@ -48,6 +48,7 @@
                     </div>
                     <div class="meatballs-menu-expanded">
                         <ul>
+                            <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--criterios-para-pALD">Critérios de Elegibilidade para o pALD</button></li>
                             <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-alternativos">Regimes de ARVs alternativos</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button></li>
@@ -89,7 +90,8 @@
                             <input type="search" placeholder="Filtrar ARV por nome ou sigla" id="input-src" class="doser__select__input--search">
                         </div>
                         <div class="doser__select__optgroup doser__select__optgroup--arvs abc-3tc">
-                            <h3 class="doser__optgroup__title">ABACAVIR + LAMIVUDINA</h3>
+                            <h3 class="doser__optgroup__title">ABACAVIR + LAMIVUDINA + DOLUTEGRAVIR</h3>
+                            <li class="doser__select__option" data-farmaco="abc/3tc/dtg">ABC/3TC/DTG 60/30/5 mg Comp.<sup>dispersível</sup></li>
                             <li class="doser__select__option" data-farmaco="abc/3tc-120/60mg">ABC/3TC 120 mg/60 mg Comp.</li>
                             <li class="doser__select__option" data-farmaco="abc/3tc-600/300mg">ABC/3TC 600 mg/300 mg Comp.</li>
                         </div>
@@ -175,7 +177,7 @@
             <article class="article">
                 <section class="article__section article__section--main article__section--darv --open">
                     <h2 class="article__title article__title--level-1">Visão geral sobre o Doseador de Antirretrovirais</h2>
-                    <p class="article__p">O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data da última actualização do TARV (Maio/2025), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong></p>   
+                    <p class="article__p">O <b>Doseador de Antirretrovirais (DARV)</b> é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data da última actualização do TARV (Junho/2025), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.</strong></p>   
                     <figure class="article__frame">
                         <img src="imagens/tabela-de-dosagem-de-arvs.png" alt="Trecho da Tabela de Dosagem de Arvs" >
                         <figcaption class="article__frame__figcaption">Trecho da Tabela de Dosagem de Arvs do tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf" class="element--underline">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> - Referência do DARV.</figcaption>
@@ -345,6 +347,25 @@
                         </div>
                     </div>
                     <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. Tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a>, Tabela 4.</p>
+                    <button class="article__section__btn--close">&times;</button>
+                </section>
+                <section class="article__section article__section--fixed article__section--criterios-para-pALD">
+                    <h2 class="article__title article__title--level-1">Critérios de Elegibilidade para o pALD</h2>
+                    <p class="article__p">Todas as crianças com peso entre <b>6 kg</b> e <b>24.9 kg</b> <b>E</b> com idade &ge; 3 meses:</p>
+                    <ul class="article__list article__list--ul">
+                        <li>Novos inícios;</li>
+                        <li>Reinícios;</li>
+                        <li>Activas em TARV na primeira linha;</li>
+                        <li>Activas em TARV na segunda linha em regimes pDTG ou DTG;</li>
+                        <li>Activas em TARV Co-infectadas com TB.</li>
+                    </ul>
+                    <div class="table">
+                        <h3 class="table__header --border-b">Considerações importantes</h3>
+                        <ul class="article__list article__list--padding-r article__list--ul">
+                            <li>As crianças para iniciar pALD devem ter pelo menos 3 meses de idade, crianças menores de 3 meses devem fazer <b>pDTG</b> com <b>ABC/3TC</b>.</li>
+                            <li>O pALD não é recomendado para crianças com peso inferior a 6 kg porque a proporção dos medicamentos <b>ABC/3TC</b> e <b>DTG</b> dentro do pALD não permite obter a dosagem recomendada para essa faixa de peso.</li>
+                        </ul>
+                    </div>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--regimes-para-inicios-tarv">
@@ -609,7 +630,7 @@
             </article>
             <div class="dialog-box-default dialog-box-default--bibliography">
                 <h3 class="dialog-box-default__title">LEIA, É IMPORTANTE!</h3>
-                <p class="dialog-box-default__p">O TARV Pediátrico foi criado de acordo com as normas do tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data da última actualização do TARV (Maio/2025), ainda estavam em vigor no Serviço Nacional de Saúde (SNS) em Moçambique. No entanto, face as frequentes mudanças nas abordagens médicas que acompanham a evolução da Medicina, tais normas poderão ter sido actualizadas e outro instrumento de apoio, disponibilizado.</p>
+                <p class="dialog-box-default__p">O TARV Pediátrico foi criado de acordo com as normas do tríptico <a href="bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf">Manejo de infecção por HIV na criança e adolescente, versão 2022</a> que, até a data da última actualização do TARV (Junho/2025), ainda estavam em vigor no Serviço Nacional de Saúde (SNS) em Moçambique. No entanto, face as frequentes mudanças nas abordagens médicas que acompanham a evolução da Medicina, tais normas poderão ter sido actualizadas e outro instrumento de apoio, disponibilizado.</p>
                 <div class="dialog-box-default__btn-container">
                     <button class="dialog-box-default__btn dialog-box-default__btn--entendi">Entendi</button>
                 </div>
@@ -902,7 +923,7 @@
                 </div>
                 <p class="footer__p footer__p--created-by">Criado com atenção e <span class="footer__p__heart">❤</span> por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> | ©&nbsp;<span class="footer__current-year"></span> TARV&nbsp;Pediátrico
                 </p>
-                <p class="footer__p footer__p--available-since">Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: Maio/2025.</p>
+                <p class="footer__p footer__p--available-since">Disponível desde: <time datetime="2021-09-09">09/09/2021</time>. Última actualização: Junho/2025.</p>
                 <a href="#root" class="footer__link--back-to-top">Rolar para o topo</a>
             </div>
         </footer>

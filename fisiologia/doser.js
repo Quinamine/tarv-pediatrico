@@ -96,7 +96,29 @@ class Doser {
     }
     getNotasEprecaucoes() {
         let note;
-        if(this.medicine === "abc/3tc-120/60mg" && this.weight >= 25) {
+        if(this.medicine === "abc/3tc/dtg" && this.weight < 6) {
+            note = 'Não recomendado. Use <b>ABC/3TC 120/60 mg</b> e <b>pDTG 10 mg</b> para peso < 6 kg.';
+        }
+        else if(this.medicine === "abc/3tc/dtg" && this.weight < 25) {
+            let dose = this.weight < 10 ? 3 
+            : this.weight < 14 ? 4
+            : this.weight < 20 ? 5
+            : this.weight < 25 ? 6
+            : "-";
+            let qtdAgua, numColheres;
+            this.weight < 10 ? (qtdAgua = 15, numColheres = 3) : (qtdAgua = 20, numColheres = 4);
+            note = `Dissolver os <b>${dose} cp(s)</b> em <b>${qtdAgua} ml</b> de água ou <b>${numColheres} colheres de chá com água</b> (Vide <b>Colher de chá</b> abaixo). Diluir o pALD preferencialmente com água, ou leite (materno ou fórmula artificial) caso os cuidadores não tenham acesso à água potável ou a criança não aceite o medicamento diluído com água. Para diluir com leite, usar as mesmas medidas acima. <br> <img src="imagens/colheres.png">`;
+        }
+        else if(this.medicine === "abc/3tc/dtg" && this.weight < 30) {
+            note = `Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong> e <strong>DTG 50 mg Comp.</strong>.`;
+        }
+        else if(this.medicine === "abc/3tc/dtg" && this.weight >= 30) {
+            note = `Transitar para o regime <strong>TDF/3TC/DTG 300/300/50 mg Comp.</strong>.`;
+        }
+        else if(this.medicine === "abc/3tc-120/60mg" && this.weight >= 25) {
+            note = 'Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong>';
+        }
+        else if(this.medicine === "abc/3tc-120/60mg" && this.weight >= 25) {
             note = 'Para peso &ge; 25 kg, use <strong>ABC/3TC 600 mg/300 mg Comp.</strong>';
         } else if(this.medicine === "abc/3tc-600/300mg" && this.weight < 25) {
             note = 'Para peso &lt; 25 kg, use <strong>ABC/3TC 120 mg/60 mg Comp.</strong>'
@@ -174,7 +196,16 @@ class Doser {
     determinarDose() {
         let doseManha, doseNoite = "-";
         let weight = this.weight;
-        if(this.medicine === "abc/3tc-120/60mg") {
+        if(this.medicine === "abc/3tc/dtg") {
+            let dose, qtdLiquido;
+            if(weight < 6 || weight >= 25) return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+            weight <  10 ? (dose = 3, qtdLiquido = 15)
+            : weight < 14 ? (dose = 4, qtdLiquido = 20)
+            : weight < 20 ? (dose = 5, qtdLiquido = 20)
+            : (dose = 6, qtdLiquido = 20);
+            return this.printDoseDePALD(dose, qtdLiquido);
+        } 
+        else if(this.medicine === "abc/3tc-120/60mg") {
             doseManha = weight < 6 ? 1
             : weight < 10 ? 1.5
             : weight < 14 ? 2
@@ -279,7 +310,7 @@ class Doser {
         } else if(this.medicine === "3hp-100/150") {
             let doseDeINH, doseDeRifapentina;
             if(weight < 10 || weight >= 30) {
-                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
+                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
             } 
             weight < 16 ? (doseDeINH = 3, doseDeRifapentina = 2)
             : weight < 24 ? (doseDeINH = 5, doseDeRifapentina= 3)
@@ -289,7 +320,7 @@ class Doser {
         } else if(this.medicine === "3hp-300/150") {
             let doseDeINH, doseDeRifapentina;
             if(weight < 10) {
-                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
+                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
             } else if(weight < 16) {
                 doseDeINH = 1;
                 doseDeRifapentina= 2;
@@ -308,7 +339,7 @@ class Doser {
         } else if(this.medicine === "3hp-300/300-dfc") {
             let dose;
             if(weight < 30) {
-                return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
+                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
             } else {
                 dose = 3;
                 return this.printDoseDe3hpDFC(dose);
@@ -380,7 +411,7 @@ class Doser {
                 unidadeDaQtdAaviar = "frasco(s) de <br>100 ml";
             }
         } else if(doseManha === "-" && doseNoite === "-"){
-            return '<p class="doser__section__note">Ver <b>Notas e Precauções</b> 👇.</p>';
+            return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
         }
         // Converter dose de CTZ de 0.25 para 1/4
         if(doseManha === 0.25) doseManha = "<sup>1</sup>/<sub>4</sub>";
@@ -518,6 +549,30 @@ class Doser {
             </tr>                   
         </tbody>
         </table>` 
+    }
+    printDoseDePALD(dose, qtdLiquido) {
+        return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
+                <thead class="table__header table__header--bg-color-grayscale">
+                    <tr class="--border-t">
+                        <th class="table__cell">Dose</th> 
+                        <th class="table__cell">Água/Leite para dissolver</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="--border-t">
+                        <td class="table__cell">${dose} cp(s)/dia</td>
+                        <td class="table__cell">${qtdLiquido} ml</td>
+                    </tr>
+                    <tr class="table__header table__header--bg-color-grayscale --border-t">
+                        <td class="table__cell">Dispensa mensal</td> 
+                        <td class="table__cell">Dispensa trimestral</td>
+                    </tr>
+                    <tr class="--border-b --border-t">
+                        <td class="table__cell">${dose * 30} cp(s)</td> 
+                        <td class="table__cell">${dose * 90} cp(s)</td>
+                    </tr>                
+                </tbody>
+            </table>`
     }
 }
 function instantiateDoser() {
