@@ -49,7 +49,8 @@
                     <div class="meatballs-menu-expanded">
                         <ul>
                             <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--criterios-para-pALD">Critérios de Elegibilidade para o pALD</button></li>
-                            <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--caracteristicas-do-pALD">Características do pALD</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-para-inicios-tarv">Regimes recomendados para TARV</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-alternativos">Regimes de ARVs alternativos</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button></li>
                             <li><a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option">Doseador de MATs e Piridoxina</a></li>
@@ -252,12 +253,12 @@
                     <h3 class="article__title article__title--level-2">Escolha do regime preferencial de <abbr title="Tratamento Preventivo de Tuberculose">TPT</abbr> (TB sensível) para crianças HIV+ </h3>
                     <p class="article__p"><b>Oferecer Profilaxia com Isoniazida (TPT&nbsp;-&nbsp;INH) a:</b></p>
                     <ul class="article__list article__list--ul">
-                        <li>Criança &lt; 2 anos e Peso &lt; 10 kg <strong>OU</strong> Criança &ge; 2 anos e Peso &lt; 10 kg;</li>
-                        <li>Criança &ge; 2 anos <strong>E</strong> Peso &ge; 10 kg <strong>E</strong> em regime de TARV contendo Lopinavir (LPV/r), Atazanavir (ATV/r), Darunavir (DRV/r) ou Nevirapina (NVP).</li>
+                        <li>Criança &lt; 2 anos e Peso &lt; 10 kg <strong>ou</strong> Criança &ge; 2 anos e Peso &lt; 10 kg;</li>
+                        <li>Criança &ge; 2 anos <strong>e</strong> Peso &ge; 10 kg <strong>e</strong> em regime de TARV contendo Lopinavir (LPV/r), Atazanavir (ATV/r), Darunavir (DRV/r) ou Nevirapina (NVP).</li>
                     </ul>
                     <p class="article__p"><b>Oferecer Profilaxia com 3HP a:</b></p>
                     <ul class="article__list article__list--ul">
-                        <li>Crianças &ge; 2 anos <strong>E</strong> Peso &ge; 10 kg <strong>E</strong> em regime de TARV contendo Dolutegravir (DTG).</li>
+                        <li>Crianças &ge; 2 anos <strong>e</strong> Peso &ge; 10 kg <strong>e</strong> em regime de TARV contendo Dolutegravir (DTG).</li>
                     </ul>
                     <div class="table">
                         <h3 class="table__header --border-b">Considerações importantes</h3>
@@ -350,14 +351,20 @@
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--criterios-para-pALD">
-                    <h2 class="article__title article__title--level-1">Critérios de Elegibilidade para o pALD</h2>
-                    <p class="article__p">Todas as crianças com peso entre <b>6 kg</b> e <b>24.9 kg</b> <b>E</b> com idade &ge; 3 meses:</p>
+                    <h2 class="article__title article__title--level-1">Critérios de Elegibilidade para pALD</h2>
+                    <p class="article__p">Todas as crianças com <span class="u --fw-700">idade &ge; 3 meses de idade</span> e com <span class="u --fw-700">peso 6 - 24.9 kg</span> (deve responder a ambos critérios) com:</p>
                     <ul class="article__list article__list--ul">
                         <li>Novos inícios;</li>
                         <li>Reinícios;</li>
                         <li>Activas em TARV na primeira linha;</li>
                         <li>Activas em TARV na segunda linha em regimes pDTG ou DTG;</li>
                         <li>Activas em TARV Co-infectadas com TB.</li>
+                    </ul>
+                    <h2 class="article__title article__title--level-2">Contra-indicações</h2>
+                    <p class="article__p">O pALD não é indicado para crianças com:</p>
+                    <ul class="article__list article__list--ul">
+                        <li>Peso inferior a 6 Kg;</li>
+                        <li>Intolerância a qualquer um dos componentes da dose fixa combinada (DFC).</li>
                     </ul>
                     <div class="table">
                         <h3 class="table__header --border-b">Considerações importantes</h3>
@@ -366,6 +373,37 @@
                             <li>O pALD não é recomendado para crianças com peso inferior a 6 kg porque a proporção dos medicamentos <b>ABC/3TC</b> e <b>DTG</b> dentro do pALD não permite obter a dosagem recomendada para essa faixa de peso.</li>
                         </ul>
                     </div>
+                    <button class="article__section__btn--close">&times;</button>
+                </section>
+                <section class="article__section article__section--fixed article__section--caracteristicas-do-pALD">
+                    <h2 class="article__title article__title--level-1">Características do pALD</h2>
+                    <table class="table table--no-margin-b">
+                        <tr class="--border-b">
+                            <td class="table__cell table__cell--text-align-left --border-r --fw-700">Comprimido DFC</td>
+                            <td class="table__cell table__cell--text-align-left">ABC/3TC/DTG (60/30/5 mg)</td>
+                        </tr>
+                        <tr class="--border-b">
+                            <td class="table__cell table__cell--text-align-left --border-r --fw-700">Formulação</td>
+                            <td class="table__cell table__cell--text-align-left">Comprimidos dispersíveis, sem marca de corte;</td>
+                        </tr>
+                        <tr class="--border-b">
+                            <td class="table__cell table__cell--text-align-left --border-r --fw-700">Sabor</td>
+                            <td class="table__cell table__cell--text-align-left">Sabor de creme de morango (semelhante ao pDTG 10 mg;</td>
+                        </tr>
+                        <tr class="--border-b">
+                            <td class="table__cell table__cell--text-align-left --border-r --fw-700">Elegibilidade</td>
+                            <td class="table__cell table__cell--text-align-left">CVHIV com peso 6 - 24.9 kg e com mais de 3 meses de idade;</td>
+                        </tr>
+                        <tr class="--border-b">
+                            <td class="table__cell table__cell--text-align-left --border-r --fw-700">Administração</td>
+                            <td class="table__cell table__cell--text-align-left">Os comprimidos são dispersíveis em água e consumidos por via oral uma vez por dia, podendo ser administrados com ou sem alimentos;</td>
+                        </tr>
+                        <tr class="--border-b">
+                            <td class="table__cell table__cell--text-align-left --border-r --fw-700">Benefícios não clínicos</td>
+                            <td class="table__cell table__cell--text-align-left">A formulação da DFC simplifica a cadeia de fornecimento de ARVs pediátricos e administração pelos cuidadores (um frasco de ARVs em comparaçãoo com dois).</td>
+                        </tr>
+                    </table>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. <a href="bibliografia/circular-03-100-dnsp-2025-pALD.pdf">Circular n<sup>o</sup> 03/100/DNSP/2025</a>.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--regimes-para-inicios-tarv">

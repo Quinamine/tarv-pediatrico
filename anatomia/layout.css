@@ -1018,6 +1018,12 @@ article .table__cell {
 .--display-none, .--hidden {
     display: none !important;
 }
+.--fw-700 {
+    font-weight: 700;
+}
+.u {
+    text-decoration: underline;
+}
 .topo-propaganda {
     position: sticky;
     top: 0;
