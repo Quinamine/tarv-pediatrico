@@ -1012,6 +1012,9 @@ article .table__cell {
 .--border-l {
     border-left: 1px solid var(--orange);
 }
+.--border-l-gray {
+    border-left: 1px solid var(--gray--c);
+}
 .--display-none, .--hidden {
     display: none !important;
 }

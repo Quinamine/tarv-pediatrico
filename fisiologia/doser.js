@@ -551,25 +551,45 @@ class Doser {
         </table>` 
     }
     printDoseDePALD(dose, qtdLiquido) {
+        let dispensaMensalEmCp = dose * 30;
+        let dispensaTrimestralEmCp = dose * 90;
+        let frascosMensais, frascosTrimestrais;
+        if(dispensaMensalEmCp === 90) {
+            frascosMensais = "1 frasco de 90 cp(s)</b>";
+            frascosTrimestrais = "1 frasco de 90 cp(s) e <br>1 frasco de 180 cp(s)"
+        } else if(dispensaMensalEmCp <= 120) {
+            frascosMensais = "1 frasco de 180 cp(s)";
+            frascosTrimestrais = "2 frascos de 180 cp(s)"
+        } else if(dispensaMensalEmCp <= 150) {
+            frascosMensais = "1 frasco de 180 cp(s)";
+            frascosTrimestrais = "1 frasco de 90 cp(s) e <br>2 frascos de 180 cp(s)"
+        } else if(dispensaTrimestralEmCp <= 180) {
+            frascosMensais = "1 frasco de 180 cp(s)";
+            frascosTrimestrais =  "3 frascos de 180 cp(s)"
+        }
         return `<table class="table table--grayscale table--layout-fixed table--no-margin-b">
                 <thead class="table__header table__header--bg-color-grayscale">
                     <tr class="--border-t">
                         <th class="table__cell">Dose</th> 
-                        <th class="table__cell">Água/Leite para dissolver</th>
+                        <th class="table__cell --border-l-gray">Quantidade de água <br>para dissolver</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="--border-t">
                         <td class="table__cell">${dose} cp(s)/dia</td>
-                        <td class="table__cell">${qtdLiquido} ml</td>
+                        <td class="table__cell --border-l-gray">${qtdLiquido} ml</td>
                     </tr>
                     <tr class="table__header table__header--bg-color-grayscale --border-t">
                         <td class="table__cell">Dispensa mensal</td> 
-                        <td class="table__cell">Dispensa trimestral</td>
+                        <td class="table__cell --border-l-gray">Dispensa trimestral</td>
+                    </tr>
+                    <tr class="--border-t">
+                        <td class="table__cell">${dispensaMensalEmCp} cp(s) <br> 👇</td> 
+                        <td class="table__cell --border-l-gray">${dispensaTrimestralEmCp} cp(s) <br> 👇</td>
                     </tr>
                     <tr class="--border-b --border-t">
-                        <td class="table__cell">${dose * 30} cp(s)</td> 
-                        <td class="table__cell">${dose * 90} cp(s)</td>
+                        <td class="table__cell">${frascosMensais}</td> 
+                        <td class="table__cell --border-l-gray">${frascosTrimestrais}</td>
                     </tr>                
                 </tbody>
             </table>`
