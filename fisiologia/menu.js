@@ -107,7 +107,7 @@ function listenToEvents() {
         tab.addEventListener("click", () => menu.showCurrentTabDoser(tab));
     });
     // Filter VIH Clinical Stage
-    const selectDeEstadios = document.querySelector(".article__staging__select");
+    const selectDeEstadios = document.querySelector(".article__section-estadiamento__select");
     selectDeEstadios.addEventListener("change", () => {
         let classNameDoEstadioSelecionado = selectDeEstadios.options[selectDeEstadios.selectedIndex].value;
         menu.filtrarEstadioClinicoOMS(classNameDoEstadioSelecionado);
