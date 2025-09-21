@@ -39,9 +39,9 @@
         </div>
         <header>
             <div class="header__row">
-                <div class="layout-row layout-row--with-min-height">
+                <div class="layout-row layout-row--header">
                     <a href="index.html" id="logo">Tarv Pediátrico</a>
-                    <div class="meatballs-menu">
+                    <div class="meatballs-menu" title="Mais conteúdos afins">
                         <div class="meatballs-menu__dot"></div>
                         <div class="meatballs-menu__dot"></div>
                         <div class="meatballs-menu__dot"></div>
@@ -49,16 +49,22 @@
                     <div class="meatballs-menu-expanded">
                         <ul>
                             <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-t" data-article="article__section--estadiamento">Estadiamento clínico pediátrico</button></li>
-                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--interacoes-de-dtg">Interacções medicamentosas de DTG</li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--criterios-de-cd4">Critérios de colheita de CD4</li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--dah">Doença Avançada por HIV</button></li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-tarv-recomendados">Regimes recomendados para TARV</li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--regimes-alternativos">Regimes alternativos se intolerância</button></li>
-                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--dah">Doença Avançada por HIV</button></li>
-                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--profilaxia-reforcada">Profilaxia reforçada com AZT e NVP</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--interacoes-de-dtg">Interacções medicamentosas de DTG</li>
                             <li><button class="meatballs-menu-expanded__option" data-article="article__section--desnutricao">Manejo da Desnutrição Aguda</button></li>
                             <li><a href="https://quinamine.github.io/tat-pediatrico/index.html" class="meatballs-menu-expanded__option">Doseador de MATs e Piridoxina</a></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--diagnostico-presuntivo">Diagnóstico Presuntivo de HIV</button></li>
+                            <li><button class="meatballs-menu-expanded__option" data-article="article__section--profilaxia-reforcada">Profilaxia reforçada com AZT e NVP</button></li>
                             <li><button class="meatballs-menu-expanded__option meatballs-menu-expanded__option--share">Partilhar TARV Pediátrico</button></li>
                             <li><a href="https://quinamine.github.io/aderito-felix-quinamine/index.html" class="meatballs-menu-expanded__option meatballs-menu-expanded__option--border-radius-b">Sobre o Desenvolvedor</a></li>
                         </ul>
+                    </div>
+                    <div class="tooltip">
+                        <div class="tooltip__arrow"></div>
+                        <p class="tooltip__tip"><span class="--hide-on-desktop">Toque</span><span class="--hide-on-mobile">Clique</span> aqui para mais conteúdos afins (estadiamento, DAH, manejo de DAG, Doseador de MATs, etc).</p>
                     </div>
                 </div>
             </div>
@@ -236,7 +242,7 @@
                         <li>&lt; 5 anos: Não faz monitoria rotineira do CD4.
                         <li>&ge; 5 anos: Pedir CD4 anualmente até atingir CD4 ≥ 350 cel/mm³.
                     </ul>
-                    <h3 class="article__title article__title--level-2">Contraindicações ao Tratamento Profilático com Cotrimoxazol</h3>
+                    <h3 class="article__title article__title--level-2">Contraindicações de TPC</h3>
                     <ul class="article__list article__list--ul">
                         <li>Alergia às Sulfamidas (ex.: Cotrimoxazol, Fanzidar, Sulfadiazina);
                         <li>Anemia (Hb &lt; 8.0) ou Neutropenia;
@@ -349,6 +355,25 @@
                         </div>
                     </div>
                     <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. <a href="bibliografia/triptico-versao-2025-manejo-de-infeccao-por-hiv.pdf" target="_blank">Manejo de infecção por HIV na criança e adolescente, versão 2025</a>, Tabela 14.</p>
+                    <button class="article__section__btn--close">&times;</button>
+                </section>
+                <section class="article__section article__section--fixed article__section--criterios-de-cd4">
+                    <h2 class="article__title article__h1">Critérios de colheita de CD4 em crianças e adolescentes</h2>
+                    <div class="table-customized table--no-margin-b --border">
+                        <h3 class="table-customized__thead table__thead--pos-sticky">Crianças e adolescentes:</h3>
+                        <ul class="article__list article__list--ul">
+                            <li>Início ou reinício TARV:
+                                <ul class="article__list article__list--sublist">
+                                    <li>Crianças <b>&lt; 5 anos colhem CD4 no início do TARV e repetem CD4 apenas quando fizer 5 anos</b>;</li>
+                                    <li>Para crianças <b>&ge; 5 anos, se CD4 inicial &lt; 350 células/mm³</b>, colher CD4 anualmente até atingir CD4 &ge; 350 células/mm³.</li>
+                                </ul>
+                            </li> 
+                            <li>Falência virológica: duas últimas CV &ge; 1000 cp/ml;</li>
+                            <li>Falência clínica: Nova condição clínica do estadio 3 ou 4 pela OMS;</li>
+                            <li>Perante qualquer motivo de internamento.</li>
+                        </ul>
+                    </div>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. <a href="bibliografia/triptico-versao-2025-manejo-de-infeccao-por-hiv.pdf" target="_blank">Manejo de infecção por HIV na criança e adolescente, versão 2025</a>, Tabela 15.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
                 <section class="article__section article__section--fixed article__section--interacoes-de-dtg">
@@ -592,12 +617,35 @@
                     <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. <a href="bibliografia/triptico-versao-2025-manejo-de-infeccao-por-hiv.pdf" target="_blank">Manejo de infecção por HIV na criança e adolescente, versão 2025</a>, Tabela 6.</p>
                     <button class="article__section__btn--close">&times;</button>
                 </section>
+                <section class="article__section article__section--fixed article__section--diagnostico-presuntivo">
+                    <h2 class="article__title article__h1">Tabela de diagnóstico presuntivo</h2>
+                    <div class="table-customized table--no-margin-b --border">
+                        <h3 class="table-customized__thead table__thead--pos-sticky">Diagnóstico Presuntivo de HIV:</h3>
+                        <ul class="article__list article__list--ul">
+                            <li>PCR não disponível e idade &lt; 18 meses</li>
+                            <li>História de exposição ao HIV (mãe HIV+ ou falecida por causas suspeitas de HIV)</li>
+                            <li>Teste rápido é HIV positivo na criança (caso exposição ao HIV não conhecida)</li>
+                            <li>Uma ou mais das seguintes condições:
+                                <ul class="article__list article__list--sublist">
+                                    <li>Pneumonia grave</li>
+                                    <li>Candidíase oro-esofágica</li>
+                                    <li>Malnutrição grave</li>
+                                    <li>Sarcoma de Kaposi</li>
+                                    <li>Pneumonia por Pneumocistis Jirovecii</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="bibliography-source bibliography-source--with-margin-b"><strong>Referência:</strong> MOÇAMBIQUE. Ministério da Saúde. Direcção Nacional de Saúde Pública. Programa Nacional de Controlo de ITS/HIV e SIDA. <a href="bibliografia/triptico-versao-2025-manejo-de-infeccao-por-hiv.pdf" target="_blank">Manejo de infecção por HIV na criança e adolescente, versão 2025</a>, Tabela 15.</p>
+                    <button class="article__section__btn--close">&times;</button>
+                </section>
                 <section class="article__section article__section--fixed article__section--dah">
                     <h2 class="article__title article__h1">Tabela Doença Avançada por HIV em crianças: Definição e indicações para testes</h2>
                     <table class="table-colorida table--no-margin-b">
+                        <thead><th colspan="2">Definição de Doença Avançada por HIV (DAH):</th></thead>
                         <tbody>
                             <tr>
-                                <td colspan="2">Definição Doença Avançada por HIV (DAH):
+                                <td colspan="2">
                                     <ul class="article__list article__list--ul">
                                         <li>Todas crianças &lt; 5 anos com HIV são consideradas com DAH no momento do diagnóstico inicial, contudo existem algumas particularidades:
                                             <ul class="article__list article__list--sublist">

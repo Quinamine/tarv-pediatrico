@@ -12,7 +12,7 @@ const referenciaBibliografia = {
 function actualizarAnoDeCopyright() {
     const tempo = new Date();
     let anoActual = tempo.getFullYear();
-    if(anoActual < 2024) anoActual = 2024;
+    if(anoActual < 2025) anoActual = 2025;
     const currentYearOutput = document.querySelector(".footer__current-year");
     currentYearOutput.textContent = anoActual;
 }
