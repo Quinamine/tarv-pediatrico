@@ -335,11 +335,6 @@
 .doser__section__note--no-padding {
     padding: 0;
 }
-.doser__section__note mark {
-    background-color: var(--gray--d);
-    padding: 2px;
-    font-family: monospace;
-}
 .doser__btn--expand-select {
     height: 35px;
     padding: 0 8px;
@@ -485,11 +480,6 @@
 }
 .bibliography-source--with-margin-b {
     margin-bottom: 40px;
-}
-@media screen and (min-width: 1024px) {
-    .bibliography-source--hide-on-desktop {
-        display: none;
-    }
 }
 /* articleS */
 .article {
@@ -1000,6 +990,11 @@
     z-index: 888;
 }
 /* CSS REUTILIZÁVEL */
+mark {
+    background-color: var(--gray--d);
+    padding: 2px;
+    font-family: monospace;
+}
 .--hide-on-mobile {
     display: none;
 }

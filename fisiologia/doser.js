@@ -164,7 +164,7 @@ class Doser {
         } else if(this.med === "inh-300" && this.wt < 25) {
             note = 'Para peso &lt; 25 kg, recomenda-se <mark>Isoniazida 100 mg Comp.</mark>'
         } else if(this.med.includes("3hp") && this.wt < 10) {
-            note = '<strong>Oferecer profilaxia com Isoniazida (TPT - INH).</strong>'
+            note = '<strong>Oferecer TPT com Isoniazida (6H).</strong> O 3HP está contraindicado em crianças &lt; 10 kg.'
         } else if(this.med=== "3hp-100/150" && this.wt >= 30) {
             note = 'Para peso &ge; 30 kg, está indicado <mark>Isoniazida/Rifapentina 300/300 mg Comp.<sup>(3HP em DFC)</sup></mark> ou, na ausência desse, <mark>Isoniazida 300 mg e Rifapentina 150 mg comprimidos não combinados</mark>.'
         } else if(this.med=== "3hp-300/150" && this.wt >= 30) {
@@ -400,7 +400,9 @@ class Doser {
         if(doseManha === "-" && doseNoite === "-") {
             return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
         } else {
-            let doseDiaria = String(doseManha + doseNoite).replace(/[^0-9.]/g, "");
+            let doseM = String(doseManha).replace(/[^0-9.]/g, "");
+            let doseN = String(doseNoite).replace(/[^0-9.]/g, "");
+            let doseDiaria = Number(doseM) + Number(doseN);
             let dM = Number(doseDiaria) * 30;
             let dT = Number(doseDiaria) * 90;
             // Calcular dispensa em frascos
