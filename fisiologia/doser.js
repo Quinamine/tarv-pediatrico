@@ -431,6 +431,8 @@ class Doser {
                 }
                 if(dT <= 90) {
                     dTEmFr = `1 frasco(s) de 60 cp(s) <strong>e</strong> <br>1 frasco(s) de 30`;
+                } else if(dT <= 150) {
+                    dTEmFr = `2 frasco(s) de 60 cp(s) <strong>e</strong>  <br>1 frasco(s) de 30`;
                 } else if(dT === 270) {
                     dTEmFr = `4 frasco(s) de 60 cp(s) <strong>e</strong>  <br>1 frasco(s) de 30`;
                 }
