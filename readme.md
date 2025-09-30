@@ -1,9 +1,9 @@
 # Doseador de Antirretrovirais
 
-O **Doseador de Antirretrovirais (DARV)** é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o tríptico [Manejo de infecção por HIV na criança e adolescente, versão 2022](bibliografia/triptico-manejo-de-infeccao-por-hiv-na-crianca-e-adolescente-versao-2022.pdf) que, até a altura da última actualização do TARV (Maio/2025), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.
+O **Doseador de Antirretrovirais (DARV)** é um serviço online gratuito que, de acordo com o peso inserido pelo usuário, doseia automaticamente antirretrovirais para crianças e adolescentes em cuidados e tratamento. Tem como referência o tríptico [Manejo de infecção por HIV na criança e adolescente, versão 2025](bibliografia/triptico-versao-2025-manejo-de-infeccao-por-hiv.pdf) que, até a altura da última actualização do TARV (Maio/2025), ainda estava em vigor no Serviço Nacional de Saúde (SNS) em Moçambique.
 
-![Trecho da Tabela de Dosagem de Arvs do tríptico Manejo de infecção por HIV na criança e adolescente, versão 2022.](imagens/tabela-de-dosagem-de-arvs.png)
-Trecho da Tabela de Dosagem de Arvs do tríptico Manejo de infecção por HIV na criança e adolescente, versão 2022 - Referência do DARV.
+![Trecho da Tabela de Dosagem de Arvs do tríptico Manejo de infecção por HIV na criança e adolescente, versão 2025.](imagens/tabela-de-dosagem-de-arvs.png)
+Trecho da Tabela de Dosagem de Arvs do tríptico Manejo de infecção por HIV na criança e adolescente, versão 2025 - Referência do DARV.
 
 O DARV está basicamente estruturado da seguinte forma:
 

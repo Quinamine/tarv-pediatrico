@@ -206,6 +206,9 @@ class Doser {
         }
         return frasco;
     }
+    lerNotasEprecaucoes(){
+        return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+    }
     getEmbalagemTrimestral() {
         let frasco = 30;
         if(this.med === "tdf/3tc/dtg" || this.med === "dtg-10") {
@@ -230,7 +233,7 @@ class Doser {
         let wt = this.wt;
         if(this.med === "pALD") {
             let dose, qtdLiquido;
-            if(wt < 6 || wt >= 25) return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+            if(wt < 6 || wt >= 25) return this.lerNotasEprecaucoes();
             wt <  10 ? (dose = 3, qtdLiquido = 15)
             : wt < 14 ? (dose = 4, qtdLiquido = 20)
             : wt < 20 ? (dose = 5, qtdLiquido = 20)
@@ -313,7 +316,7 @@ class Doser {
             doseN = doseM;
         } else if(this.med === "ctz-susp") {
             if(wt < 3) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             }
             doseM = wt < 6 ? 2.5
             : wt < 14 ? 5
@@ -321,7 +324,7 @@ class Doser {
             : "-";
         } else if(this.med === "ctz-cp") {
             if(wt < 3) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             }
             doseM = wt < 6 ? 0.25
             : wt < 14 ? 0.5
@@ -329,7 +332,7 @@ class Doser {
             : 2
         } else if(this.med === "inh-100") {
             if(wt < 4 || wt >= 25) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             }
             doseM = wt < 8 ? 0.5
             : wt < 12 ? 1
@@ -338,7 +341,7 @@ class Doser {
         } else if(this.med === "3hp-100/150") {
             let doseDeINH, doseDeRifapentina;
             if(wt < 10 || wt >= 30) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             } 
             wt < 16 ? (doseDeINH = 3, doseDeRifapentina = 2)
             : wt < 24 ? (doseDeINH = 5, doseDeRifapentina= 3)
@@ -348,7 +351,7 @@ class Doser {
         } else if(this.med === "3hp-300/150") {
             let doseDeINH, doseDeRifapentina;
             if(wt < 30) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             } else {
                 doseDeINH = 3;
                 doseDeRifapentina= 6;
@@ -357,14 +360,14 @@ class Doser {
         } else if(this.med === "3hp-300/300-dfc") {
             let dose;
             if(wt < 30) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             } else {
                 dose = 3;
                 return this.printDoseDe3hpDFC(dose);
             }
         } else if(this.med === "lfx-100") {
             if(wt < 3) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             }
             doseM = wt < 4 ? 0.5
             : wt < 7 ? 1
@@ -378,7 +381,7 @@ class Doser {
             : "-";
         } else if(this.med === "lfx-250") {
             if(wt < 3) {
-                return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+                return this.lerNotasEprecaucoes();
             }
             doseM = wt < 4 ? "-"
             : wt < 10 ? 0.5
@@ -398,7 +401,7 @@ class Doser {
     }
     printDose(doseManha, doseNoite) {
         if(doseManha === "-" && doseNoite === "-") {
-            return '<p class="doser__section__note">Ler <b>Notas e Precauções</b> 👇.</p>';
+            return this.lerNotasEprecaucoes();
         } else {
             let doseM = String(doseManha).replace(/[^0-9.]/g, "");
             let doseN = String(doseNoite).replace(/[^0-9.]/g, "");
