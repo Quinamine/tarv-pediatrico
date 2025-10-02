@@ -353,7 +353,6 @@
     overflow: hidden;
 }
 .doser__select.--open {
-    display: flex;
     padding: 10px 15px 120px;
     position: absolute;
     top: 48px;
@@ -592,6 +591,7 @@
     border: thin solid var(--gray-c);
     padding: 3px;
     line-height: 1.2;
+    vertical-align: middle;
 }
 .table-grayscale th {
     background-color: var(--gray-d);

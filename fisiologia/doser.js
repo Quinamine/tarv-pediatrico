@@ -179,11 +179,11 @@ class Doser {
             note = 'Para peso &lt; 4 kg, está indicado <mark>Levofloxacina 100 mg Comp.</mark>'
         } else if(this.med === "lfx-250" && this.wt >= 4 || this.med === "lfx-100" && this.wt < 16) {
             note = 'Se o caso fonte tiver resistência comprovada a Fluoroquinolonas, não deve ser oferecido TPT aos contactos.'
-        } else if(this.med === "vitb6-25" && this.wt < 25 || this.med === "vitb6-50" && this.wt >+ 25) {
-            note = `A Piridoxina deve ser dada a todos pacientes em TPT ou tratamento da TB com regimes contendo Isoniazida. Em caso de neuropatia periférica, a dosagem deve ser aumentada para <mark>2&nbsp;mg/kg/dia</mark>.`;
+        } else if(this.med === "vitb6-25" && this.wt < 25 || this.med === "vitb6-50" && this.wt >= 25) {
+            note = `A Piridoxina deve ser dada a todos pacientes em TPT ou tratamento da TB com regimes contendo Isoniazida. Em caso de neuropatia periférica, a dosagem deve ser aumentada para <mark>2&nbsp;mg/kg/dia</mark>. <br><b>Sinais e sintomas de neuropatia periférica</b>: Dor, queimação ou formigamento nas mãos ou pés, dormência ou perda de sensibilidade nos braços e pernas, ou cãibras ou espasmos musculares.`;
         } else if(this.med === "vitb6-25" && this.wt >= 25 || this.med === "vitb6-50" && this.wt < 25) {
             let dosagemVitB6 = (this.med === "vitb6-25") ? 50 : 25;
-            note = `*No caso de não haver comprimido de ${dosagemVitB6} mg. A Piridoxina deve ser dada a todos pacientes em TPT ou tratamento da TB com regimes contendo Isoniazida. Em caso de neuropatia periférica, a dosagem deve ser aumentada para <mark>2&nbsp;mg/kg/dia</mark>.`;
+            note = `*No caso de não haver comprimidos de ${dosagemVitB6} mg. A Piridoxina deve ser dada a todos pacientes em TPT ou tratamento da TB com regimes contendo Isoniazida. Em caso de neuropatia periférica, a dosagem deve ser aumentada para <mark>2&nbsp;mg/kg/dia</mark>. <br><b>Sinais e sintomas de neuropatia periférica</b>: Dor, queimação ou formigamento nas mãos ou pés, dormência ou perda de sensibilidade nos braços e pernas, ou cãibras ou espasmos musculares.`;
         } else {
             note = "";
         }
